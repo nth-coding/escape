@@ -1,7 +1,16 @@
 # Escape
 
 ## How to enter the game
-Go the the `build` folder and click `main.exe`
+Go the the `build` folder and click `game.exe`
+
+## Gameplay 
+
+W: go up
+A: go left
+S: go down
+D: go right
+
+Left-mouse: Attack
 
 ## Story 🧾
 
