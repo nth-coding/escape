@@ -14,7 +14,7 @@ Left-mouse: Attack
 
 ## Story 🧾
 
-In the world of monster and dungeons. There is a guy with a very normal life. His job is cooking and selling food. One time when he searched some material in the jungle, he suddenly fell off in a hole and teleported to 12 floors' dungeon. What will he do to survive in this dungeon?
+*... Will be updated soon ...*
 
 ## Explore dungeons 🔥
 
