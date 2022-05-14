@@ -1,5 +1,6 @@
 # Escape
 
+## SFML (64bit) at: https://pie-cheque-188.notion.site/C-i-t-h-a-C-Windows-ef0a99a8dcae4dae86a39dc1cbc35980#c6d70f009f8f447cadef4e60419088a0
 ## How to enter the game
 Go the the `build` folder and click `game.exe`
 
