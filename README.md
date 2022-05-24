@@ -44,6 +44,7 @@
 ## Characters and Enermies
 
 **Player**
+
 ![player_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/player.png)
 
 **Enermies**
