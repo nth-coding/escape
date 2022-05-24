@@ -3,7 +3,7 @@
 ComponentAnimation::ComponentAnimation(sf::Sprite& sprite, sf::Texture& texture_sheet) 
 : sprite(sprite), textureSheet(texture_sheet), lastAnimation(NULL), priorityAnimation(NULL)
 {
-    
+    // testing
 }
 
 ComponentAnimation::~ComponentAnimation()
