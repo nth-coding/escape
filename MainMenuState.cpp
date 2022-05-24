@@ -46,7 +46,7 @@ void MainMenuState::initGui()
 		)
 	);
 
-	if (!this->backgroundTexture.loadFromFile("../build/Resources/Images/Backgrounds/background.gif"))
+	if (!this->backgroundTexture.loadFromFile("../build/textures/background.gif"))
 	{
 		throw "ERROR::MAIN_MENU_STATE::FAILED_TO_LOAD_BACKGROUND_TEXTURE";
 	}

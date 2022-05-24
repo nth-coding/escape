@@ -83,7 +83,7 @@ void EditorState::initGui()
 
 void EditorState::initTileMap()
 {
-	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/Resources/Images/Tiles/tilesheet3.png");
+	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/tilesheet3.png");
 }
 
 void EditorState::initModes()
@@ -204,7 +204,10 @@ void EditorState::updatePauseMenuButtons()
 		this->endState();
 
 	if (this->pmenu->isButtonPressed("SAVE"))
+	{
 		this->tileMap->saveToFile("text.slmp");
+		this->endState();
+	}
 
 	if (this->pmenu->isButtonPressed("LOAD"))
 		this->tileMap->loadFromFile("text.slmp");
