@@ -43,8 +43,20 @@
 
 ## Characters and Enermies
 
+**Player**
+![player_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/player.png)
 
+**Enermies**
 
+- Each enermies have their AI, class.
+
+- Charger:
+![charger_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.4/chort_idle_anim_f0.png)
+
+- Demon:
+![demon_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.3.1/big_demon_idle_anim_f0.png)
+
+- Will update more.
 
 ## Items and weapons 🗡
   - The first weapon is a cooking knife🔪.
