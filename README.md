@@ -53,7 +53,7 @@
   - Mỗi vũ khí đều có **damage**, **attack speed** và **ability** *nếu update được sớm*. 
 
   *... Will be updated soon ...*
-  - Sẽ có **potion** (bình hồi máu) và **atk, def boost** (các loại thuốc tăng chỉ số) hay **immortal potion** (thuốc bất tử *đương nhiên chỉ trong 1 thời gian nhất định* và nhiều nhiều hơn nữa.
+  - Sẽ có **potion** (bình hồi máu) và **atk, def boost** (các loại thuốc tăng chỉ số) hay **immortal potion** (thuốc bất tử *đương nhiên chỉ trong 1 thời gian nhất định*) và nhiều nhiều hơn nữa.
 
 ### Power up! hay Level up!
   - Nhân vật sẽ có một thanh kinh nghiệm.
