@@ -123,12 +123,12 @@ const int TileMap::getLayerSize(const int x, const int y, const int layer) const
 	return -1;
 }
 
-const sf::Vector2i & TileMap::getMaxSizeGrid() const
+const sf::Vector2i& TileMap::getMaxSizeGrid() const
 {
 	return this->maxSizeWorldGrid;
 }
 
-const sf::Vector2f & TileMap::getMaxSizeF() const
+const sf::Vector2f& TileMap::getMaxSizeF() const
 {
 	return this->maxSizeWorldF;
 }
@@ -356,7 +356,7 @@ const bool TileMap::checkType(const int x, const int y, const int z, const int t
 	return this->map[x][y][this->layer].back()->getType() == type;
 }
 
-void TileMap::updateWorldBoundsCollision(Entity * entity, const float & dt)
+void TileMap::updateWorldBoundsCollision(Entity* entity, const float & dt)
 {
 	//WORLD BOUNDS
 	if (entity->getPosition().x < 0.f)
@@ -537,7 +537,6 @@ void TileMap::render
 (
 	sf::RenderTarget & target, 
 	const sf::Vector2i& gridPosition, 
-	sf::Shader* shader, 
 	const sf::Vector2f playerPosition, 
 	const bool show_collision
 )
@@ -580,10 +579,7 @@ void TileMap::render
 				}
 				else
 				{
-					if(shader)
-						this->map[x][y][this->layer][k]->render(target, shader, playerPosition);
-					else
-						this->map[x][y][this->layer][k]->render(target);
+					this->map[x][y][this->layer][k]->render(target);
 				}
 				
 				if (show_collision)
@@ -605,14 +601,11 @@ void TileMap::render
 	}	
 }
 
-void TileMap::renderDeferred(sf::RenderTarget & target, sf::Shader* shader, const sf::Vector2f playerPosition)
+void TileMap::renderDeferred(sf::RenderTarget& target, const sf::Vector2f playerPosition)
 {
 	while (!this->deferredRenderStack.empty())
 	{
-		if(shader)
-			deferredRenderStack.top()->render(target, shader, playerPosition);
-		else
-			deferredRenderStack.top()->render(target);
+		deferredRenderStack.top()->render(target);
 
 		deferredRenderStack.pop();
 	}

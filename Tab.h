@@ -1,4 +1,5 @@
-#pragma once
+#ifndef TAB_H
+#define TAB_H
 
 #include "Player.h"
 #include "Gui.h"
@@ -28,3 +29,4 @@ public:
 	virtual void render(sf::RenderTarget& target) = 0;
 };
 
+#endif

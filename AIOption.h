@@ -1,4 +1,6 @@
-#pragma once
+#ifndef AIOPTION_H
+#define AIOPTION_H
+
 #include"Entity.h"
 
 class AIOption
@@ -18,3 +20,4 @@ public:
 	virtual void update(const float& dt) = 0;
 };
 
+#endif

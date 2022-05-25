@@ -89,14 +89,6 @@ void GameState::initPauseMenu()
 	this->pmenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
 }
 
-void GameState::initShaders()
-{
-	if (!this->core_shader.loadFromFile("../build/vertex_shader.vert", "../build/fragment_shader.frag"))
-	{
-		std::cout << "ERROR::GAMESTATE::COULD NOT LOAD SHADER." << "\n";
-	}
-}
-
 void GameState::initKeyTime()
 {
 	this->keyTimeMax = 0.3f;
@@ -146,7 +138,6 @@ GameState::GameState(StateData* state_data)
 	this->initFonts();
 	this->initTextures();
 	this->initPauseMenu();
-	// this->initShaders();
 	this->initKeyTime();
 	this->initDebugText();
 
@@ -388,19 +379,18 @@ void GameState::render(sf::RenderTarget* target)
 	this->tileMap->render(
 		this->renderTexture, 
 		this->viewGridPosition, 
-		&this->core_shader,
 		this->player->getCenter(),
 		false
 	);
 
 	for (auto *enemy : this->activeEnemies)
 	{
-		enemy->render(this->renderTexture, &this->core_shader, this->player->getCenter(), true);
+		enemy->render(this->renderTexture, true);
 	}
 
-	this->player->render(this->renderTexture, &this->core_shader, this->player->getCenter(), true);
+	this->player->render(this->renderTexture, true);
 
-	this->tileMap->renderDeferred(this->renderTexture, &this->core_shader, this->player->getCenter());
+	this->tileMap->renderDeferred(this->renderTexture, this->player->getCenter());
 
 	this->tts->render(this->renderTexture);
 

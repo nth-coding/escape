@@ -1,4 +1,5 @@
-#pragma once
+#ifndef AICOMPONENT_H
+#define AICOMPONENT_H
 
 #include "Entity.h"
 
@@ -16,4 +17,6 @@ public:
 
 	void update(const float& dt);
 };
+
+#endif
 

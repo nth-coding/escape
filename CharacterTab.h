@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CHARACTERTAB_H
+#define CHARACTERTAB_H
 
 #include "Tab.h"
 
@@ -18,3 +19,4 @@ public:
 	void render(sf::RenderTarget& target);
 };
 
+#endif

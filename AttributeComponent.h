@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ATTRIBUTECOMPONENT_H
+#define ATTRIBUTECOMPONENT_H
+
 class AttributeComponent
 {
 public:
@@ -44,3 +46,4 @@ public:
 	void update();
 };
 
+#endif

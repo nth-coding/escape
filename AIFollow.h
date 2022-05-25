@@ -1,5 +1,8 @@
-#pragma once
+#ifndef AIFOLLOW_H
+#define AIFOLLOW_H
+
 #include "AIOption.h"
+
 class AIFollow :
     public AIOption
 {
@@ -12,3 +15,4 @@ public:
     void update(const float& dt);
 };
 
+#endif

@@ -5,8 +5,7 @@
 #include "EnemySpawnerTile.h"
 #include "AIFollow.h"
 
-class Enemy :
-	public Entity
+class Enemy : public Entity
 {
 protected:
 	//Variables
@@ -45,7 +44,7 @@ public:
 	virtual void updateAnimation(const float & dt) = 0;
 
 	virtual void update(const float & dt, sf::Vector2f& mouse_pos_view, const sf::View& view) = 0;
-	virtual void render(sf::RenderTarget & target, sf::Shader* shader = NULL, const sf::Vector2f light_position = sf::Vector2f(), const bool show_hitbox = false) = 0;
+	virtual void render(sf::RenderTarget & target, const bool show_hitbox = false) = 0;
 };
 
 #endif //!ENEMY_H

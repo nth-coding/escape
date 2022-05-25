@@ -103,18 +103,9 @@ void Charger::update(const float& dt, sf::Vector2f& mouse_pos_view, const sf::Vi
 	this->follow->update(dt);
 }
 
-void Charger::render(sf::RenderTarget& target, sf::Shader* shader, const sf::Vector2f light_position, const bool show_hitbox)
+void Charger::render(sf::RenderTarget& target, const bool show_hitbox)
 {
-	if (shader)
-	{
-		shader->setUniform("hasTexture", true);
-		shader->setUniform("lightPos", light_position);
-		target.draw(this->sprite, shader);
-	}
-	else
-	{
-		target.draw(this->sprite);
-	}
+	target.draw(this->sprite);
 
 	target.draw(this->hpBar);
 

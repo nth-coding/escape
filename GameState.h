@@ -6,7 +6,6 @@
 #include "TileMap.h"
 #include "PlayerGUI.h"
 #include "Sword.h"
-#include "Bow.h"
 #include "TextTagSystem.h"
 
 class GameState :
@@ -20,8 +19,6 @@ private:
 
 	sf::Font font;
 	PauseMenu* pmenu;
-
-	sf::Shader core_shader;
 
 	sf::Clock keyTimer;
 	float keyTimeMax;
