@@ -5,7 +5,7 @@
   - MSV: 21020066
   - Trường Đại học Công Nghệ - Trường Đại học Quốc Gia Hà Nội (UET-VNU)
    
-  `Escape` là một tựa game được làm bằng SFML (Simple and Fast Multimedia Library). Trong đó, SFML được sử dụng để vẽ các đối tượng trên màn hình mỗi frame. `Escape` là 1 game RPG đơn giản theo mô tuýp đánh quái vật, tăng level. Ở đây, nhiệm vụ của người chơi là đánh quái vật và sống sót thoát ra khỏi mê cung!
+  #### `Escape` là một tựa game được làm bằng SFML (Simple and Fast Multimedia Library). Trong đó, SFML được sử dụng để vẽ các đối tượng trên màn hình mỗi frame. `Escape` là 1 game RPG đơn giản theo mô tuýp đánh quái vật, tăng level. Ở đây, nhiệm vụ của người chơi là đánh quái vật và sống sót thoát ra khỏi mê cung!
   
 # Cách vào và cài đặt game
   - Bước 1: Cài đặt cho máy của bạn [mingw32 (hoặc mingw64)](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download)
