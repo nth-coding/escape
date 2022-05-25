@@ -3,8 +3,7 @@
 
 #include "Tile.h"
 
-class RegularTile :
-	public Tile
+class RegularTile : public Tile
 {
 private:
 
@@ -21,7 +20,7 @@ public:
 	virtual const std::string getAsString() const;
 
 	virtual void update();
-	virtual void render(sf::RenderTarget& target, sf::Shader* shader = NULL, const sf::Vector2f player_position = sf::Vector2f());
+	virtual void render(sf::RenderTarget& target, const sf::Vector2f player_position = sf::Vector2f());
 };
 
 #endif //!REGULARTILE_H

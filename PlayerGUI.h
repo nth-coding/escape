@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PLAYERGUI_H
+#define PLAYERGUI_H
 
 #include "PlayerGUITabs.h"
 
@@ -46,11 +47,12 @@ public:
 
 	void update(const float& dt);
 
-	void renderLevelBar(sf::RenderTarget & target);
-	void renderEXPBar(sf::RenderTarget & target);
-	void renderHPBar(sf::RenderTarget & target);
+	void renderLevelBar(sf::RenderTarget& target);
+	void renderEXPBar(sf::RenderTarget& target);
+	void renderHPBar(sf::RenderTarget& target);
 	void renderPlayerTabs(sf::RenderTarget& target);
 
 	void render(sf::RenderTarget& target);
 };
 
+#endif

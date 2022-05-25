@@ -17,9 +17,10 @@ const bool& Tab::getHidden() const
 	return this->hidden;
 }
 
-const bool& Tab::getOpen() const
+const bool Tab::getOpen() const
 {
-	return (this->hidden == false);
+	if (this->hidden == false) return true;
+	return false;
 }
 
 void Tab::toggle()

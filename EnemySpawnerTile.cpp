@@ -93,15 +93,7 @@ void EnemySpawnerTile::update()
 
 }
 
-void EnemySpawnerTile::render(sf::RenderTarget & target, sf::Shader* shader, const sf::Vector2f player_position)
+void EnemySpawnerTile::render(sf::RenderTarget & target, const sf::Vector2f player_position)
 {
-	if (shader)
-	{
-		shader->setUniform("hasTexture", true);
-		shader->setUniform("lightPos", player_position);
-
-		target.draw(this->shape, shader);
-	}
-	else
-		target.draw(this->shape);
+	target.draw(this->shape);
 }

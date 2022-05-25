@@ -34,12 +34,10 @@ void DefaultEditorMode::initGui()
 	this->selectorRect.setTextureRect(this->textureRect);
 
 	this->textureSelector = new gui::TextureSelector(
-		20.f, 20.f, 1000.f, 500.f,
+		20.f, 20.f, 300.f, 300.f,
 		this->stateData->gridSize, this->tileMap->getTileSheet(),
 		*this->editorStateData->font, "TS"
 	);
-
-	//Buttons
 }
 
 DefaultEditorMode::DefaultEditorMode(StateData* state_data, TileMap* tile_map, EditorStateData* editor_state_data)

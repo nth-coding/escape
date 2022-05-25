@@ -5,8 +5,7 @@
 
 class Tile;
 
-class EnemySpawnerTile 
-	: public Tile
+class EnemySpawnerTile : public Tile
 {
 private:
 	int enemyType;
@@ -39,7 +38,7 @@ public:
 	void decreaseEnemyCounter();
 
 	void update();
-	void render(sf::RenderTarget & target, sf::Shader* shader = NULL, const sf::Vector2f player_position = sf::Vector2f());
+	void render(sf::RenderTarget & target, const sf::Vector2f player_position = sf::Vector2f());
 };
 
-#endif //!ENEMYSPAWNERTTILE_H
+#endif 

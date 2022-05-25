@@ -8,7 +8,7 @@ void Game::initVariables()
 {
 	this->window = NULL;
 	this->dt = 0.f;
-	this->gridSize = 64.f;
+	this->gridSize = 16.f;
 }
 
 void Game::initGraphicsSettings()
@@ -105,7 +105,7 @@ void Game::endApplication()
 
 void Game::updateDt()
 {
-	/*Updates the dt variable with the time it takes to update and render one frame.*/
+	/* biến (dt) là biến để chỉ thị thời gian update và render 1 frame*/
 
 	this->dt = this->dtClock.restart().asSeconds();
 }
@@ -137,7 +137,6 @@ void Game::update()
 			}
 		}
 	}
-	//Application end
 	else
 	{
 		this->endApplication();

@@ -1,6 +1,8 @@
 #include "Header.h"
 #include "GameState.h"
 
+const bool showHitbox = true;
+
 void GameState::initDeferredRender()
 {
 	this->renderTexture.create(
@@ -105,7 +107,7 @@ void GameState::initDebugText()
 
 void GameState::initPlayers()
 {
-	this->player = new Player(220, 220, this->textures["PLAYER_SHEET"]);
+	this->player = new Player(100, 250, this->textures["PLAYER_SHEET"]);
 }
 
 void GameState::initPlayerGUI()
@@ -385,10 +387,10 @@ void GameState::render(sf::RenderTarget* target)
 
 	for (auto *enemy : this->activeEnemies)
 	{
-		enemy->render(this->renderTexture, true);
+		enemy->render(this->renderTexture, showHitbox);
 	}
 
-	this->player->render(this->renderTexture, true);
+	this->player->render(this->renderTexture, showHitbox);
 
 	this->tileMap->renderDeferred(this->renderTexture, this->player->getCenter());
 

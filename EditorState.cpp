@@ -83,7 +83,8 @@ void EditorState::initGui()
 
 void EditorState::initTileMap()
 {
-	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/tilesheet3.png");
+	// this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/tilesheet3.png");
+	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/sheet.png");
 }
 
 void EditorState::initModes()
@@ -251,7 +252,7 @@ void EditorState::renderGui(sf::RenderTarget& target)
 	
 }
 
-void EditorState::renderModes(sf::RenderTarget & target)
+void EditorState::renderModes(sf::RenderTarget& target)
 {
 	this->modes[this->activeMode]->render(target);
 }

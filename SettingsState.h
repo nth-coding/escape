@@ -14,10 +14,6 @@ private:
 	sf::Font font;
 
 	std::map<std::string, gui::Button*> buttons;
-	std::map<std::string, gui::DropDownList*> dropDownLists;
-
-	sf::Text optionsText;
-
 	std::vector<sf::VideoMode> modes;
 
 	//Functions

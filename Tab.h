@@ -18,7 +18,7 @@ public:
 
 	//Accessor
 	const bool& getHidden() const;
-	const bool& getOpen() const;
+	const bool getOpen() const;
 	void toggle();
 
 	//Functions

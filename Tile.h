@@ -30,7 +30,7 @@ public:
 	virtual const std::string getAsString() const = 0;
 
 	virtual void update() = 0;
-	virtual void render(sf::RenderTarget& target, sf::Shader* shader = NULL, const sf::Vector2f player_position = sf::Vector2f()) = 0;
+	virtual void render(sf::RenderTarget& target, const sf::Vector2f player_position = sf::Vector2f()) = 0;
 };
 
 #endif

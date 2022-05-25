@@ -102,7 +102,7 @@ void PlayerGUI::update(const float & dt)
 	this->updateLevelBar();
 	this->updateEXPBar();
 	this->updateHPBar();
-	// this->updatePlayerTabs();
+	this->updatePlayerTabs();
 }
 
 

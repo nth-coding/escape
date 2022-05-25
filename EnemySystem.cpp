@@ -40,7 +40,7 @@ void EnemySystem::removeEnemy(const int index)
 
 void EnemySystem::update(const float & dt)
 {
-
+	
 }
 
 void EnemySystem::render(sf::RenderTarget * target)
