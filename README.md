@@ -93,6 +93,7 @@
   
  Khi sang chế độ điều chỉnh sinh quái:
   - `Num1` & `Shift + Num1`: Chuyển loại quái (Ví dụ: Enemy Type: 1 -> Enemy Type: 2 và ngược lại) 
+  
   *.. Hiện tại mới có 2 thể loại quái nên vui lòng chỉ dùng 0 và 1 ..*
   
   - `Num2` & `Shift + Num2`: Tăng giảm số lượng sinh quái 
