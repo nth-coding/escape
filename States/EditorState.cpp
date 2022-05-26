@@ -83,7 +83,7 @@ void EditorState::initGui()
 void EditorState::initTileMap()
 {
 	// this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/tilesheet3.png");
-	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/sheet.png");
+	this->tileMap = new TileMap(this->stateData->gridSize, 150, 150, "../build/textures/sheet.png");
 }
 
 void EditorState::initModes()

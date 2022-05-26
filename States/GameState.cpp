@@ -1,6 +1,6 @@
 #include "GameState.h"
 
-const bool showHitbox = true;
+const bool showHitbox = false;
 
 void GameState::initDeferredRender()
 {
@@ -12,8 +12,7 @@ void GameState::initDeferredRender()
 	this->renderSprite.setTexture(this->renderTexture.getTexture());
 	this->renderSprite.setTextureRect(
 		sf::IntRect(
-			0, 
-			0, 
+			0, 0, 
 			this->stateData->gfxSettings->resolution.width, 
 			this->stateData->gfxSettings->resolution.height
 		)
@@ -106,7 +105,7 @@ void GameState::initDebugText()
 
 void GameState::initPlayers()
 {
-	this->player = new Player(100, 250, this->textures["PLAYER_SHEET"]);
+	this->player = new Player(328, 383, this->textures["PLAYER_SHEET"]);
 }
 
 void GameState::initPlayerGUI()

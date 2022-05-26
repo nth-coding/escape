@@ -20,6 +20,8 @@ void Player::initAnimations()
 {
     this->animationComponent->addAnimation("IDLE", 20.f, 0, 0, 12, 0, 32, 32);
     this->animationComponent->addAnimation("WALK", 5.f, 0, 1, 7, 1, 32, 32);
+	this->animationComponent->addAnimation("DEAD", 5.f, 0, 7, 6, 7, 32, 32);
+	this->animationComponent->addAnimation("LOOP", 5.f, 0, 12, 4, 12, 32, 32);
     this->animationComponent->addAnimation("ATTACK_1", 7.f, 0, 2, 9, 2, 32, 32);
     this->animationComponent->addAnimation("ATTACK_2", 7.f, 0, 3, 9, 3, 32, 32);
     this->animationComponent->addAnimation("ATTACK_3", 7.f, 0, 4, 9, 4, 32, 32);
@@ -138,15 +140,20 @@ void Player::updateAnimation(const float & dt)
 {
 	if (this->attacking)
 	{
-		if (this->animationComponent->play("ATTACK_3", dt, true)) this->attacking = false;
+		// if (this->animationComponent->play("ATTACK_3", dt, true)) this->attacking = false;
 	}
+
+	// if (this->movementComponent->getState(LOOP))
+    // {
+    //     this->animationComponent->play("LOOP", dt);
+    // }
 
 	if (this->movementComponent->getState(IDLE))
     {  
         this->sprite.setScale(1.f, 1.f);
         this->animationComponent->play("IDLE", dt);
     }
-    
+
     else if (this->movementComponent->getState(MOVING_RIGHT))
     {
         this->sprite.setOrigin(0.f, 0.f);

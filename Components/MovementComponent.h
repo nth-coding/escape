@@ -3,7 +3,7 @@
 
 #include "../HeaderFiles/Header.h"
 
-enum movement_states { IDLE = 0, MOVING, MOVING_LEFT, MOVING_RIGHT, MOVING_UP, MOVING_DOWN };
+enum movement_states { IDLE = 0, MOVING, MOVING_LEFT, MOVING_RIGHT, MOVING_UP, MOVING_DOWN, LOOP, DEAD };
 
 class MovementComponent
 {

@@ -77,7 +77,7 @@ const bool MovementComponent::getState(const short unsigned state) const
 
 void MovementComponent::stopVelocity()
 {
-	/* Resets the velocity to 0.*/
+	/* Reset vận tốc về 0.*/
 
 	this->velocity.x = 0.f;
 	this->velocity.y = 0.f;
@@ -85,21 +85,21 @@ void MovementComponent::stopVelocity()
 
 void MovementComponent::stopVelocityX()
 {
-	/* Resets the velocity x to 0.*/
+	/* Reset vận tốc ở tọa độ x về 0.*/
 
 	this->velocity.x = 0.f;
 }
 
 void MovementComponent::stopVelocityY()
 {
-	/* Resets the velocity y to 0.*/
+	/* Reset vận tốc ở tọa độ y về 0.*/
 
 	this->velocity.y = 0.f;
 }
 
 void MovementComponent::move(const float dir_x, const float dir_y, const float& dt)
 {
-	/* Accelerating a sprite until it reaches the max velocity. */
+	/* Tăng tốc sprite cho đến khi đạt vận tốc max (maxVelocity) */
 
 	this->velocity.x += this->acceleration * dir_x * dt;
 	this->velocity.y += this->acceleration * dir_y * dt;
@@ -108,56 +108,56 @@ void MovementComponent::move(const float dir_x, const float dir_y, const float& 
 void MovementComponent::update(const float & dt)
 {
 	/*
-	Decelerates the sprite and controls the maximum velocity.
-	Moves the sprite.
+	Giảm tốc sprite và kiểm soát vận tốc max
+	Di chuyển sprite
 	*/
 
-	if (this->velocity.x > 0.f) //Check for positive x
+	if (this->velocity.x > 0.f) //Check x dương
 	{
-		//Max velocity check
+		// Check vận tốc max
 		if (this->velocity.x > this->maxVelocity)
 			this->velocity.x = this->maxVelocity;
 
-		//Deceleration
+		// Giảm tốc
 		this->velocity.x -= deceleration * dt;
 		if (this->velocity.x < 0.f)
 			this->velocity.x = 0.f;
 	}
-	else if(this->velocity.x < 0.f) //Check for negative x
+	else if(this->velocity.x < 0.f) // Check x âm
 	{
-		//Max velocity check
+		// Check vận tốc max
 		if (this->velocity.x < -this->maxVelocity)
 			this->velocity.x = -this->maxVelocity;
 
-		//Deceleration
+		// Giảm tốc
 		this->velocity.x += deceleration * dt;
 		if (this->velocity.x > 0.f)
 			this->velocity.x = 0.f;
 	}
 	
-	if (this->velocity.y > 0.f) //Check for positive y
+	if (this->velocity.y > 0.f) // Check y dương
 	{
-		//Max velocity check
+		// Check vận tốc max
 		if (this->velocity.y > this->maxVelocity)
 			this->velocity.y = this->maxVelocity;
 
-		//Deceleration
+		// Giảm tốc
 		this->velocity.y -= deceleration * dt;
 		if (this->velocity.y < 0.f)
 			this->velocity.y = 0.f;
 	}
-	else if (this->velocity.y < 0.f) //Check for negative y
+	else if (this->velocity.y < 0.f) //Check y âm
 	{
-		//Max velocity check
+		// Check vận tốc max
 		if (this->velocity.y < -this->maxVelocity)
 			this->velocity.y = -this->maxVelocity;
 
-		//Deceleration
+		// Giảm tốc
 		this->velocity.y += deceleration * dt;
 		if (this->velocity.y > 0.f)
 			this->velocity.y = 0.f;
 	}
 
 	//Final move
-	this->sprite.move(this->velocity * dt); //Uses velocity
+	this->sprite.move(this->velocity * dt); 
 }
