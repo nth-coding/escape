@@ -1,17 +1,17 @@
 #include "AttributeComponent.h"
 
-AttributeComponent::AttributeComponent(int level)
+AttributeComponent::AttributeComponent(int level, int vitality, int strength, int dexterity, int agility, int intelligence)
 {
 	this->level = level;
 	this->exp = 0;
 	this->expNext = (50 * pow(this->level, 3) - 150 * pow(this->level, 2) + (UINT64)400 * this->level) / 3;
-	this->attributePoints = 2;
+	this->attributePoints = 5;
 
-	this->vitality = 1;
-	this->strength = 1;
-	this->dexterity = 1;
-	this->agility = 1;
-	this->intelligence = 1;
+	this->vitality = vitality;
+	this->strength = strength;
+	this->dexterity = dexterity;
+	this->agility = agility;
+	this->intelligence = intelligence;
 
 	this->updateLevel();
 	this->updateStats(true);
@@ -94,6 +94,7 @@ void AttributeComponent::updateLevel()
 		this->exp -= this->expNext;
 		this->expNext = (50 * pow(this->level, 3) - 150 * pow(this->level, 2) + (UINT64)400 * this->level) / 3;
 		++this->attributePoints;
+		this->updateStats(true);
 	}
 }
 

@@ -4,8 +4,7 @@
 #include "../HeaderFiles/Header.h"
 #include "Item.h"
 
-class Weapon :
-	public Item
+class Weapon : public Item
 {
 private:
 	void initVariables();
@@ -23,9 +22,7 @@ protected:
 
 public:
 	Weapon(unsigned level, unsigned value, std::string texture_file);
-	Weapon(unsigned level, unsigned damageMin, unsigned damageMax, unsigned range,
-		unsigned value, 
-		std::string texture_file);
+	Weapon(unsigned level, unsigned damageMin, unsigned damageMax, unsigned range, unsigned value, std::string texture_file);
 	virtual ~Weapon();
 
 	//Accessors
@@ -40,7 +37,7 @@ public:
 	virtual void generate(const unsigned levelMin, const unsigned levelMax) = 0;
 
 	virtual void update(const sf::Vector2f& mouse_pos_view, const sf::Vector2f center) = 0;
-	virtual void render(sf::RenderTarget& target, sf::Shader* shader = nullptr) = 0;
+	virtual void render(sf::RenderTarget& target) = 0;
 };
 
 #endif

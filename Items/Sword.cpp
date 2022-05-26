@@ -6,6 +6,7 @@ Sword::Sword(unsigned level, unsigned damageMin, unsigned damageMax, unsigned ra
 	: MeleeWeapon(level, damageMin, damageMax, range, value, texture_file)
 {
 	//Visual Weapon
+	this->weapon_sprite.setScale(0.7, 0.7);
 	this->weapon_sprite.setOrigin
 	(
 		this->weapon_sprite.getGlobalBounds().width / 2.f,
@@ -45,10 +46,7 @@ void Sword::update(const sf::Vector2f & mouse_pos_view, const sf::Vector2f cente
 		this->weapon_sprite.setRotation(deg + 90.f);
 }
 
-void Sword::render(sf::RenderTarget & target, sf::Shader* shader)
+void Sword::render(sf::RenderTarget & target)
 {
-	if (shader)
-		target.draw(this->weapon_sprite, shader);
-	else
-		target.draw(this->weapon_sprite);
+	target.draw(this->weapon_sprite);
 }

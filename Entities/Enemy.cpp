@@ -3,7 +3,7 @@
 //Initializer functions
 void Enemy::initVariables()
 {
-	this->gainExp = 10;
+	this->gainExp = 20;
 	this->damageTimerMax = 1000;
 	this->despawnTimerMax = 1000;
 }
@@ -26,12 +26,12 @@ Enemy::~Enemy()
 
 }
 
-const unsigned & Enemy::getGainExp() const
+const unsigned& Enemy::getGainExp() const
 {
 	return this->gainExp;
 }
 
-EnemySpawnerTile & Enemy::getEnemySpawnerTile()
+EnemySpawnerTile& Enemy::getEnemySpawnerTile()
 {
 	return this->enemySpawnerTile;
 }
@@ -53,7 +53,7 @@ void Enemy::resetDamageTimer()
 
 void Enemy::generateAttributes(const unsigned level)
 {
-	this->gainExp = level * (rand() % 5 + 1);
+	this->gainExp = level * (rand() % 20 + 1);
 }
 
 void Enemy::loseHP(const int hp)

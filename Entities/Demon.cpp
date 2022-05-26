@@ -35,7 +35,7 @@ Demon::Demon(float x, float y, sf::Texture& texture_sheet, EnemySpawnerTile& ene
 	this->createHitboxComponent(this->sprite, 14.f, 14.f, 32.f, 36.f);
 	this->createMovementComponent(70.f, 800.f, 500.f);
 	this->createAnimationComponent(texture_sheet);
-	this->createAttributeComponent(1);
+	this->createAttributeComponent(1, 4, 1, 1, 1, 1);
 
 	this->generateAttributes(this->attributeComponent->level);
 

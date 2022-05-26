@@ -29,7 +29,7 @@ public:
 	int luck;
 
 	//Con / Des
-	AttributeComponent(int level);
+	AttributeComponent(int level, int vitality, int strength, int dexterity, int agility, int intelligence);
 	virtual ~AttributeComponent();
 
 	//Functions

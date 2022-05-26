@@ -22,9 +22,9 @@ public:
 	virtual ~Item();
 
 	//Accessors
-	const short unsigned& getType() const { return this->type;}
-	const unsigned& getLevel() const { return this->level;}
-	const unsigned& getValue() const { return this->value;}
+	const short unsigned& getType() const; 
+	const unsigned& getLevel() const;
+	const unsigned& getValue() const;
 
 	//Function
 	virtual Item* clone() = 0;

@@ -46,9 +46,9 @@ void Entity::createAnimationComponent(sf::Texture & texture_sheet)
 	this->animationComponent = new AnimationComponent(this->sprite, texture_sheet);
 }
 
-void Entity::createAttributeComponent(const unsigned level)
+void Entity::createAttributeComponent(int level, int vitality, int strength, int dexterity, int agility, int intelligence)
 {
-	this->attributeComponent = new AttributeComponent(level);
+	this->attributeComponent = new AttributeComponent(level, vitality, strength, dexterity, agility, intelligence);
 }
 
 void Entity::createSkillComponent()

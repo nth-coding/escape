@@ -40,7 +40,7 @@ public:
 		float width, float height);
 	void createMovementComponent(const float maxVelocity, const float acceleration, const float deceleration);
 	void createAnimationComponent(sf::Texture& texture_sheet);
-	void createAttributeComponent(const unsigned level);
+	void createAttributeComponent(int level, int vitality, int strength, int dexterity, int agility, int intelligence);
 	void createSkillComponent();
 	void createAIComponent();
 

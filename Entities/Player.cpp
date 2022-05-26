@@ -40,7 +40,7 @@ Player::Player(float x, float y, sf::Texture& texture_sheet)
 	this->createHitboxComponent(this->sprite, 8.f, 10.f, 16.f, 20.f);
     this->createMovementComponent(140.f, 1400.f, 1000.f); 
     this->createAnimationComponent(texture_sheet);
-	this->createAttributeComponent(1);
+	this->createAttributeComponent(1, 8, 1, 1, 1, 1);
 	this->createSkillComponent();
 
 	this->setPosition(x, y);
@@ -136,6 +136,14 @@ void Player::gainEXP(const int exp)
 	this->attributeComponent->gainExp(exp);
 }
 
+void Player::updateAttack()
+{
+    if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+    {
+        this->attacking = true;
+    }
+}
+
 void Player::updateAnimation(const float & dt)
 {
 	if (this->attacking)
@@ -182,6 +190,8 @@ void Player::updateAnimation(const float & dt)
 void Player::update(const float & dt, sf::Vector2f& mouse_pos_view, const sf::View& view)
 {
 	this->movementComponent->update(dt);
+
+	this->updateAttack();
 
 	this->updateAnimation(dt);
 	
