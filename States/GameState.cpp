@@ -244,10 +244,7 @@ void GameState::updateInput(const float & dt)
 			this->unpauseState();
 	}
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("GAME_WON"))) && this->getKeyTime())
-	{
-		if (!this->won) this->winState();
-	}
+	if (this->player->isWin(player->getPosition())) this->winState();
 	
 	if (this->player->isDead()) this->deadState();
 }
@@ -306,19 +303,19 @@ void GameState::updateWinMenuButtons()
 	}
 }
 
-void GameState::updateTileMap(const float & dt)
+void GameState::updateTileMap(const float& dt)
 {
 	this->tileMap->updateWorldBoundsCollision(this->player, dt); 
 	this->tileMap->updateTileCollision(this->player, dt);
 	this->tileMap->updateTiles(this->player, dt, *this->enemySystem);
 }
 
-void GameState::updatePlayer(const float & dt)
+void GameState::updatePlayer(const float& dt)
 {
 	this->player->update(dt, this->mousePosView, this->view);
 }
 
-void GameState::updateCombatAndEnemies(const float & dt)
+void GameState::updateCombatAndEnemies(const float& dt)
 {
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->player->getWeapon()->getAttackTimer())
 		this->player->setInitAttack(true);
@@ -354,7 +351,7 @@ void GameState::updateCombatAndEnemies(const float & dt)
 	this->player->setInitAttack(false);
 }
 
-void GameState::updateCombat(Enemy* enemy, const int index, const float & dt)
+void GameState::updateCombat(Enemy* enemy, const int index, const float& dt)
 {
 	if (this->player->getInitAttack() && enemy->getGlobalBounds().contains(this->mousePosView)
 		&& enemy->getSpriteDistance(*this->player) < this->player->getWeapon()->getRange() && enemy->getDamageTimerDone())

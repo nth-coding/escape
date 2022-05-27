@@ -3,7 +3,10 @@
 //Initializer functions
 void MainMenuState::initVariables()
 {
-
+	if (!this->music.openFromFile("../build/Audio/background.ogg"))
+	{
+		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD BACKGROUND_MUSIC");
+	}
 }
 
 void MainMenuState::initFonts()
@@ -125,6 +128,11 @@ MainMenuState::~MainMenuState()
 	}
 }
 
+void MainMenuState::updateMusic()
+{
+	music.setVolume(30);
+	music.play();
+}
 
 void MainMenuState::updateInput(const float & dt)
 {
@@ -140,25 +148,28 @@ void MainMenuState::updateButtons()
 		it.second->update(this->mousePosWindow);
 	}
 
-	//New game
+	// New game
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
 		this->states->push(new GameState(this->stateData));
+		// music.stop();
 	}
 
 	//Settings
 	if (this->buttons["SETTINGS_STATE"]->isPressed())
 	{
 		this->states->push(new SettingsState(this->stateData));
+		// music.stop();
 	}
 
 	//Editor
 	if (this->buttons["EDITOR_STATE"]->isPressed())
 	{
 		this->states->push(new EditorState(this->stateData));
+		// music.stop();
 	}
 
-	//Quit the game
+	// Quit the game
 	if (this->buttons["EXIT_STATE"]->isPressed())
 	{
 		this->endState();
@@ -167,6 +178,7 @@ void MainMenuState::updateButtons()
 
 void MainMenuState::update(const float& dt)
 {
+	this->updateMusic();
 	this->updateMousePositions();
 	this->updateInput(dt);
 
@@ -192,7 +204,8 @@ void MainMenuState::render(sf::RenderTarget* target)
 
 	this->renderButtons(*target);
 
-	//REMOVE LATER!!!
+	// Hiện MousePos cho dễ cập nhật player position
+
 	//sf::Text mouseText;
 	//mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
 	//mouseText.setFont(this->font);

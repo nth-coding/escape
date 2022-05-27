@@ -22,4 +22,4 @@ public:
 	void loadFromFile(const std::string path);
 };
 
-#endif // !GRAPHICSSETTINGS_H
+#endif 

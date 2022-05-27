@@ -15,6 +15,7 @@ private:
 	sf::Texture backgroundTexture;
 	sf::RectangleShape background;
 	sf::Font font;
+	sf::Music music;
 
 	sf::RectangleShape btnBackground;
 	std::map<std::string, gui::Button*> buttons;
@@ -31,6 +32,7 @@ public:
 	virtual ~MainMenuState();
 
 	//Functions
+	void updateMusic();
 	void updateInput(const float& dt);
 	void updateButtons();
 	void update(const float& dt);

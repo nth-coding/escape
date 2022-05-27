@@ -42,6 +42,7 @@ public:
 	const unsigned getDamage() const;
 	
 	const bool isDead() const;
+	const bool isWin(sf::Vector2f playerPos) const;
 	
 	//Modifier
 	void setInitAttack(const bool initAttack);

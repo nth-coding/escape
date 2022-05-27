@@ -54,7 +54,7 @@ DefaultEditorMode::~DefaultEditorMode()
 //Functions
 void DefaultEditorMode::updateInput(const float & dt)
 {
-	//Add a tile to the tilemap
+	// Add tilemap vào map
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->getKeytime())
 	{
 		if (!this->sidebar.getGlobalBounds().contains(sf::Vector2f(*this->editorStateData->mousePosWindow)))
@@ -79,7 +79,7 @@ void DefaultEditorMode::updateInput(const float & dt)
 			}
 		}
 	}
-	//Remove a tile from the tilemap
+	// Xóa tilemap ra khỏi map
 	else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && this->getKeytime())
 	{
 		if (!this->sidebar.getGlobalBounds().contains(sf::Vector2f(*this->editorStateData->mousePosWindow)))
@@ -99,7 +99,6 @@ void DefaultEditorMode::updateInput(const float & dt)
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->editorStateData->keybinds->at("INCREASE_TYPE"))) && this->getKeytime())
 	{
-		//CHANGE TO LIMIT TO MAX TYPE!!!!
 		++this->type;
 	}
 	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->editorStateData->keybinds->at("DECREASE_TYPE"))) && this->getKeytime())
@@ -108,7 +107,7 @@ void DefaultEditorMode::updateInput(const float & dt)
 			--this->type;
 	}
 
-	//Set lock on / off
+	// Chỉnh lock on/off
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->editorStateData->keybinds->at("TOGGLE_TILE_LOCK"))) && this->getKeytime())
 	{
 		if (this->tileAddLock)

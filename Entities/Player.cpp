@@ -146,6 +146,13 @@ const bool Player::isDead() const
 	return false;
 }
 
+// pos: 1055,2270 (pix: 66-67,141) win
+const bool Player::isWin(sf::Vector2f playerPos) const
+{
+	if (playerPos.x > 1055 && playerPos.x < 1090 && playerPos.y > 2265) return true;
+	return false;
+}
+
 void Player::updateAttack()
 {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
