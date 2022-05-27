@@ -15,7 +15,7 @@ DeadMenu::DeadMenu(sf::VideoMode& vm, sf::Font& font)
 	//Init container
 	this->container.setSize(
 		sf::Vector2f(
-			static_cast<float>(vm.width) / 4.f,
+			static_cast<float>(vm.width) / 2.f,
 			static_cast<float>(vm.height) - gui::p2pY(9.3f, vm)
 		)
 	);

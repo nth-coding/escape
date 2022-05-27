@@ -35,6 +35,7 @@ protected:
 	bool quit;
 	bool paused;
 	bool dead;
+	bool won;
 	float keytime;
 	float keytimeMax;
 	float gridSize;
@@ -63,6 +64,7 @@ public:
 	void pauseState();
 	void unpauseState();
 	void deadState();
+	void winState();
 	
 	virtual void updateMousePositions(sf::View* view = NULL);
 	virtual void updateKeytime(const float& dt);

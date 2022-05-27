@@ -5,6 +5,7 @@
 #include "State.h"
 #include "../GUI/PauseMenu.h"
 #include "../GUI/DeadMenu.h"
+#include "../GUI/WinMenu.h"
 #include "../Map/TileMap.h"
 #include "../GUI/PlayerGUI.h"
 #include "../Items/Sword.h"
@@ -22,6 +23,7 @@ private:
 	sf::Font font;
 	PauseMenu* pmenu;
 	DeadMenu* deadmenu;
+	WinMenu* winmenu;
 
 	sf::Clock keyTimer;
 	float keyTimeMax;
@@ -33,7 +35,7 @@ private:
 	sf::Texture texture;
 	
 	std::vector<Enemy*> activeEnemies;
-	EnemySystem *enemySystem;
+	EnemySystem* enemySystem;
 
 	TileMap* tileMap;
 
@@ -47,6 +49,7 @@ private:
 	void initFonts();
 	void initTextures();
 	void initDeadMenu();
+	void initWinMenu();
 	void initPauseMenu();
 	void initKeyTime();
 	void initDebugText();
@@ -69,8 +72,9 @@ public:
 	void updateInput(const float& dt);
 	void updatePlayerInput(const float& dt);
 	void updatePlayerGUI(const float& dt);
-	void updateDeadMenuButtons();
 	void updatePauseMenuButtons();
+	void updateDeadMenuButtons();
+	void updateWinMenuButtons();
 	void updateTileMap(const float& dt);
 	void updatePlayer(const float& dt);
 	void updateCombatAndEnemies(const float& dt);

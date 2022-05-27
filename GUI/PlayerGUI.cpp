@@ -40,11 +40,6 @@ void PlayerGUI::initHPBar()
 		this->vm, &this->font);
 }
 
-void PlayerGUI::initPlayerTabs(sf::VideoMode &vm, sf::Font &font, Player &player)
-{
-	this->playerTabs = new PlayerGUITabs(vm, font, player);
-}
-
 PlayerGUI::PlayerGUI(Player* player, sf::VideoMode& vm)
 	: vm(vm)
 {
@@ -54,24 +49,12 @@ PlayerGUI::PlayerGUI(Player* player, sf::VideoMode& vm)
 	this->initLevelBar();
 	this->initEXPBar();
 	this->initHPBar();
-	this->initPlayerTabs(vm, font, *player);
 }
 
 PlayerGUI::~PlayerGUI()
 {
 	delete this->hpBar;
 	delete this->expBar;
-	delete this->playerTabs;
-}
-
-const bool PlayerGUI::getTabsOpen() const
-{
-	return this->playerTabs->tabsOpen();
-}
-
-void PlayerGUI::toggleCharacterTab()
-{
-	this->playerTabs->toggleTab(PLAYER_TABS::CHARACTER_TAB);
 }
 
 //Functions
@@ -91,17 +74,11 @@ void PlayerGUI::updateHPBar()
 	this->hpBar->update(this->player->getAttributeComponent()->hp, this->player->getAttributeComponent()->hpMax);
 }
 
-void PlayerGUI::updatePlayerTabs()
-{
-	this->playerTabs->update();
-}
-
 void PlayerGUI::update(const float & dt)
 {
 	this->updateLevelBar();
 	this->updateEXPBar();
 	this->updateHPBar();
-	this->updatePlayerTabs();
 }
 
 
@@ -121,15 +98,9 @@ void PlayerGUI::renderHPBar(sf::RenderTarget & target)
 	this->hpBar->render(target);
 }
 
-void PlayerGUI::renderPlayerTabs(sf::RenderTarget& target)
-{
-	this->playerTabs->render(target);
-}
-
 void PlayerGUI::render(sf::RenderTarget & target)
 {
 	this->renderLevelBar(target);
 	this->renderEXPBar(target);
 	this->renderHPBar(target);
-	// this->renderPlayerTabs(target);
 }

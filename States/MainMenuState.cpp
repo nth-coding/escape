@@ -96,12 +96,6 @@ void MainMenuState::initGui()
 
 void MainMenuState::resetGui()
 {
-	/*
-	 * Clears the GUI elements and re-initialises the GUI.
-	 *
-	 * @return void
-	 */
-	
 	auto it = this->buttons.begin();
 	for (it = this->buttons.begin(); it != this->buttons.end(); ++it)
 	{
@@ -139,7 +133,7 @@ void MainMenuState::updateInput(const float & dt)
 
 void MainMenuState::updateButtons()
 {
-	/*Updates all the buttons in the state and handles their functionlaity.*/
+	/* Update hết các nút trên state và công dụng của chúng. */
 
 	for (auto &it : this->buttons)
 	{

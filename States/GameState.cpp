@@ -72,12 +72,12 @@ void GameState::initTextures()
 
 	if(!this->textures["DEMON_SHEET"].loadFromFile("../build/textures/Demon1.png"))
 	{
-		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_CHARGER_TEXTURE";
+		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_DEMON_TEXTURE";
 	}
 
 	if (!this->textures["CHARGER_SHEET"].loadFromFile("../build/textures/charger.png"))
 	{
-		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_BIRD1_TEXTURE";
+		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_CHARGER_TEXTURE";
 	}
 }
 
@@ -95,8 +95,17 @@ void GameState::initDeadMenu()
 	this->deadmenu = new DeadMenu(this->stateData->gfxSettings->resolution, this->font);
 
 	// this->deadmenu->addButton("QUIT", 0, gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
-	this->deadmenu->addButton("YES", gui::p2pX(41.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "YES");
-	this->deadmenu->addButton("NO", gui::p2pX(46.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "NO");
+	this->deadmenu->addButton("YES", gui::p2pX(38.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "YES");
+	this->deadmenu->addButton("NO", gui::p2pX(49.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "NO");
+}
+
+void GameState::initWinMenu()
+{
+	const sf::VideoMode& vm = this->stateData->gfxSettings->resolution;	
+	this->winmenu = new WinMenu(this->stateData->gfxSettings->resolution, this->font);
+
+	this->winmenu->addButton("YES", gui::p2pX(38.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "YES");
+	this->winmenu->addButton("NO", gui::p2pX(49.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "NO");
 }
 
 void GameState::initKeyTime()
@@ -145,10 +154,12 @@ GameState::GameState(StateData* state_data)
 	this->initDeferredRender();
 	this->initView();
 	this->initKeybinds();
+	// this->initBackgroundMusic();
 	this->initFonts();
 	this->initTextures();
 	this->initPauseMenu();
 	this->initDeadMenu();
+	this->initWinMenu();
 	this->initKeyTime();
 	this->initDebugText();
 
@@ -163,6 +174,7 @@ GameState::~GameState()
 {
 	delete this->pmenu;
 	delete this->deadmenu;
+	delete this->winmenu;
 	delete this->player;
 	delete this->playerGUI;
 	delete this->enemySystem;
@@ -231,8 +243,13 @@ void GameState::updateInput(const float & dt)
 		else
 			this->unpauseState();
 	}
+
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("GAME_WON"))) && this->getKeyTime())
+	{
+		if (!this->won) this->winState();
+	}
 	
-	if (this->player->isDead()) this->deadState(); 
+	if (this->player->isDead()) this->deadState();
 }
 
 void GameState::updatePlayerInput(const float & dt)
@@ -256,16 +273,34 @@ void GameState::updatePlayerGUI(const float & dt)
 void GameState::updatePauseMenuButtons()
 {
 	if (this->pmenu->isButtonPressed("QUIT"))
+	{
 		this->endState();
+	}
 }
 
 void GameState::updateDeadMenuButtons()
 {
 	if (this->deadmenu->isButtonPressed("YES"))
 	{
+		this->endState();
 		this->states->push(new GameState(this->stateData));
 	}
+
 	if (this->deadmenu->isButtonPressed("NO"))
+	{
+		this->endState();
+	}
+}
+
+void GameState::updateWinMenuButtons()
+{
+	if (this->winmenu->isButtonPressed("YES"))
+	{
+		this->endState();
+		this->states->push(new GameState(this->stateData));
+	}
+
+	if (this->winmenu->isButtonPressed("NO"))
 	{
 		this->endState();
 	}
@@ -352,6 +387,7 @@ void GameState::updateDebugText(const float& dt)
 
 void GameState::update(const float& dt)
 {
+	// this->updateMusic();
 	this->updateMousePositions(&this->view);
 	this->updateKeytime(dt);
 	this->updateInput(dt);
@@ -373,8 +409,26 @@ void GameState::update(const float& dt)
 
 		this->updatePlayerGUI(dt);
 
-		//Update all enemies
-		// this->updateCombatAndEnemies(dt);
+		//Update systems
+		this->tts->update(dt);
+
+		return;
+	}
+
+	if (this->won)
+	{
+		this->winmenu->update(this->mousePosWindow);
+		this->updateWinMenuButtons();
+
+		this->updateView(dt);
+
+		// Update the collision
+		this->updateTileMap(dt);
+
+		// Move the player
+		this->updatePlayer(dt);
+
+		this->updatePlayerGUI(dt);
 
 		//Update systems
 		this->tts->update(dt);
@@ -417,18 +471,15 @@ void GameState::render(sf::RenderTarget* target)
 	this->renderTexture.clear();
 
 	this->renderTexture.setView(this->view);
-
 	this->tileMap->render(this->renderTexture, this->viewGridPosition, this->player->getCenter(), false);
 
 	for (auto *enemy : this->activeEnemies)
 	{
 		enemy->render(this->renderTexture, showHitbox);
 	}
-
 	this->player->render(this->renderTexture, showHitbox);
 
 	this->tileMap->renderDeferred(this->renderTexture, this->player->getCenter());
-
 	this->tts->render(this->renderTexture);
 
 	//Render GUI
@@ -436,6 +487,8 @@ void GameState::render(sf::RenderTarget* target)
 	this->playerGUI->render(this->renderTexture);
 
 	if (this->dead) this->deadmenu->render(this->renderTexture);
+
+	if (this->won) this->winmenu->render(this->renderTexture);
 
 	if (this->paused) //Pause menu render
 	{

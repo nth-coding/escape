@@ -9,6 +9,7 @@ State::State(StateData* state_data)
 	this->quit = false;
 	this->paused = false;
 	this->dead = false;
+	this->won = false;
 	this->keytime = 0.f;
 	this->keytimeMax = 10.f;
 	this->gridSize = state_data->gridSize;
@@ -55,6 +56,11 @@ void State::unpauseState()
 void State::deadState()
 {
 	this->dead = true;
+}
+
+void State::winState()
+{
+	this->won = true;
 }
 
 void State::updateMousePositions(sf::View* view)
