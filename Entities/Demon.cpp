@@ -55,31 +55,34 @@ void Demon::updateAnimation(const float & dt)
 {
 	if (this->movementComponent->getState(IDLE))
     {  
-        // this->sprite.setScale(1.f, 1.f);
+		this->sprite.setOrigin(0.f, 0.f);
+        this->sprite.setScale(1.f, 1.f);
         this->animationComponent->play("IDLE", dt);
     }
     
     else if (this->movementComponent->getState(MOVING_RIGHT))
     {
-        // this->sprite.setOrigin(0.f, 0.f);
-        // this->sprite.setScale(1.f, 1.f);
+        this->sprite.setOrigin(0.f, 0.f);
+        this->sprite.setScale(1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_LEFT))
     {
-        // this->sprite.setOrigin(32.f, 0.f);
-        // this->sprite.setScale(-1.f, 1.f);
+        this->sprite.setOrigin(32.f, 0.f);
+        this->sprite.setScale(-1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_UP))
     {
+		this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_DOWN))
     {
+		this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 

@@ -20,7 +20,7 @@ void Player::initAnimations()
 {
     this->animationComponent->addAnimation("IDLE", 20.f, 0, 0, 12, 0, 32, 32);
     this->animationComponent->addAnimation("WALK", 5.f, 0, 1, 7, 1, 32, 32);
-	this->animationComponent->addAnimation("DEAD", 5.f, 0, 7, 6, 7, 32, 32);
+	this->animationComponent->addAnimation("DEAD", 40.f, 0, 7, 6, 7, 32, 32);
 	this->animationComponent->addAnimation("LOOP", 5.f, 0, 12, 4, 12, 32, 32);
     this->animationComponent->addAnimation("ATTACK_1", 7.f, 0, 2, 9, 2, 32, 32);
     this->animationComponent->addAnimation("ATTACK_2", 7.f, 0, 3, 9, 3, 32, 32);
@@ -136,6 +136,16 @@ void Player::gainEXP(const int exp)
 	this->attributeComponent->gainExp(exp);
 }
 
+const bool Player::isDead() const
+{
+	if (this->attributeComponent)
+	{
+		return this->attributeComponent->isDead();
+	}
+
+	return false;
+}
+
 void Player::updateAttack()
 {
     if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
@@ -158,13 +168,15 @@ void Player::updateAnimation(const float & dt)
 
 	if (this->movementComponent->getState(IDLE))
     {  
+		this->sprite.setOrigin(0.f, 0.f);
         this->sprite.setScale(1.f, 1.f);
-        this->animationComponent->play("IDLE", dt);
+		if (this->isDead()) this->animationComponent->play("DEAD", dt);
+        else this->animationComponent->play("IDLE", dt);
     }
 
     else if (this->movementComponent->getState(MOVING_RIGHT))
     {
-        this->sprite.setOrigin(0.f, 0.f);
+		this->sprite.setOrigin(0.f, 0.f);
         this->sprite.setScale(1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
     }
@@ -178,11 +190,13 @@ void Player::updateAnimation(const float & dt)
 
     else if (this->movementComponent->getState(MOVING_UP))
     {
+		this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_DOWN))
     {
+		this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 }

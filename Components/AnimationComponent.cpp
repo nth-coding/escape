@@ -33,7 +33,7 @@ void AnimationComponent::addAnimation(
 
 const bool& AnimationComponent::play(const std::string key, const float & dt, const bool priority)
 {
-	if (this->priorityAnimation) //If there is a priority animation
+	if (this->priorityAnimation) // Nếu đây là 1 animation đc ưu tiên
 	{
 		if (this->priorityAnimation == this->animations[key])
 		{
@@ -48,16 +48,16 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 				}
 			}
 
-			//If the priority animation is done, remove it
+			// Nếu animation xong thì remove nó
 			if (this->animations[key]->play(dt))
 			{
 				this->priorityAnimation = NULL;
 			}
 		}
 	}
-	else //Play animation of no other priority animation is set
+	else
 	{
-		//If this is a priority animation, set it.
+		// Nếu đây là animation đc ưu tiên thì thực hiện nó
 		if (priority)
 		{
 			this->priorityAnimation = this->animations[key];
@@ -82,7 +82,7 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 
 const bool& AnimationComponent::play(const std::string key, const float & dt, const float& modifier, const float& modifier_max, const bool priority)
 {
-	if (this->priorityAnimation) //If there is a priority animation
+	if (this->priorityAnimation) // Nếu đây là 1 animation đc ưu tiên
 	{
 		if (this->priorityAnimation == this->animations[key])
 		{
@@ -97,16 +97,16 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 				}
 			}
 
-			//If the priority animation is done, remove it
+			// Nếu animation xong thì remove nó
 			if (this->animations[key]->play(dt, abs(modifier / modifier_max)))
 			{
 				this->priorityAnimation = NULL;
 			}
 		}
 	}
-	else //Play animation of no other priority animation is set
+	else 
 	{
-		//If this is a priority animation, set it.
+		// Nếu đây là animation đc ưu tiên thì thực hiện nó
 		if (priority)
 		{
 			this->priorityAnimation = this->animations[key];

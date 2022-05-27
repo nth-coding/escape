@@ -89,6 +89,16 @@ void GameState::initPauseMenu()
 	this->pmenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
 }
 
+void GameState::initDeadMenu()
+{
+	const sf::VideoMode& vm = this->stateData->gfxSettings->resolution;
+	this->deadmenu = new DeadMenu(this->stateData->gfxSettings->resolution, this->font);
+
+	// this->deadmenu->addButton("QUIT", 0, gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
+	this->deadmenu->addButton("YES", gui::p2pX(41.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "YES");
+	this->deadmenu->addButton("NO", gui::p2pX(46.f, vm), gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm) - 5, "NO");
+}
+
 void GameState::initKeyTime()
 {
 	this->keyTimeMax = 0.3f;
@@ -138,6 +148,7 @@ GameState::GameState(StateData* state_data)
 	this->initFonts();
 	this->initTextures();
 	this->initPauseMenu();
+	this->initDeadMenu();
 	this->initKeyTime();
 	this->initDebugText();
 
@@ -151,6 +162,7 @@ GameState::GameState(StateData* state_data)
 GameState::~GameState()
 {
 	delete this->pmenu;
+	delete this->deadmenu;
 	delete this->player;
 	delete this->playerGUI;
 	delete this->enemySystem;
@@ -219,6 +231,8 @@ void GameState::updateInput(const float & dt)
 		else
 			this->unpauseState();
 	}
+	
+	if (this->player->isDead()) this->deadState(); 
 }
 
 void GameState::updatePlayerInput(const float & dt)
@@ -237,17 +251,24 @@ void GameState::updatePlayerInput(const float & dt)
 void GameState::updatePlayerGUI(const float & dt)
 {
 	this->playerGUI->update(dt);
-
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("TOGGLE_PLAYER_TAB_CHARACTER"))) && this->getKeyTime())
-	{
-		this->playerGUI->toggleCharacterTab();
-	}
 }
 
 void GameState::updatePauseMenuButtons()
 {
 	if (this->pmenu->isButtonPressed("QUIT"))
 		this->endState();
+}
+
+void GameState::updateDeadMenuButtons()
+{
+	if (this->deadmenu->isButtonPressed("YES"))
+	{
+		this->states->push(new GameState(this->stateData));
+	}
+	if (this->deadmenu->isButtonPressed("NO"))
+	{
+		this->endState();
+	}
 }
 
 void GameState::updateTileMap(const float & dt)
@@ -300,10 +321,8 @@ void GameState::updateCombatAndEnemies(const float & dt)
 
 void GameState::updateCombat(Enemy* enemy, const int index, const float & dt)
 {
-	if (this->player->getInitAttack()
-	  && enemy->getGlobalBounds().contains(this->mousePosView)
-		&& enemy->getSpriteDistance(*this->player) < this->player->getWeapon()->getRange() 
-		&& enemy->getDamageTimerDone())
+	if (this->player->getInitAttack() && enemy->getGlobalBounds().contains(this->mousePosView)
+		&& enemy->getSpriteDistance(*this->player) < this->player->getWeapon()->getRange() && enemy->getDamageTimerDone())
 	{
 		//Get to this!!!!
 		int dmg = static_cast<int>(this->player->getDamage());
@@ -337,8 +356,32 @@ void GameState::update(const float& dt)
 	this->updateKeytime(dt);
 	this->updateInput(dt);
 
-	this->updateDebugText(dt);
+	// this->updateDebugText(dt);
 	
+	if (this->dead)
+	{
+		this->deadmenu->update(this->mousePosWindow);
+		this->updateDeadMenuButtons();
+
+		this->updateView(dt);
+
+		// Update the collision
+		this->updateTileMap(dt);
+
+		// Move the player
+		this->updatePlayer(dt);
+
+		this->updatePlayerGUI(dt);
+
+		//Update all enemies
+		// this->updateCombatAndEnemies(dt);
+
+		//Update systems
+		this->tts->update(dt);
+
+		return;
+	}
+
 	if (!this->paused) //Unpaused update
 	{
 		this->updateView(dt);
@@ -354,7 +397,6 @@ void GameState::update(const float& dt)
 		this->updatePlayerGUI(dt);
 
 		//Update all enemies
-		//CHANGE: Loop outside, and make functions take one enemy at a time
 		this->updateCombatAndEnemies(dt);
 
 		//Update systems
@@ -392,6 +434,8 @@ void GameState::render(sf::RenderTarget* target)
 	//Render GUI
 	this->renderTexture.setView(this->renderTexture.getDefaultView());
 	this->playerGUI->render(this->renderTexture);
+
+	if (this->dead) this->deadmenu->render(this->renderTexture);
 
 	if (this->paused) //Pause menu render
 	{

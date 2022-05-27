@@ -4,6 +4,7 @@
 #include "../HeaderFiles/Header.h"
 #include "State.h"
 #include "../GUI/PauseMenu.h"
+#include "../GUI/DeadMenu.h"
 #include "../Map/TileMap.h"
 #include "../GUI/PlayerGUI.h"
 #include "../Items/Sword.h"
@@ -20,6 +21,7 @@ private:
 
 	sf::Font font;
 	PauseMenu* pmenu;
+	DeadMenu* deadmenu;
 
 	sf::Clock keyTimer;
 	float keyTimeMax;
@@ -44,8 +46,8 @@ private:
 	void initKeybinds();
 	void initFonts();
 	void initTextures();
+	void initDeadMenu();
 	void initPauseMenu();
-	void initShaders();
 	void initKeyTime();
 	void initDebugText();
 
@@ -67,6 +69,7 @@ public:
 	void updateInput(const float& dt);
 	void updatePlayerInput(const float& dt);
 	void updatePlayerGUI(const float& dt);
+	void updateDeadMenuButtons();
 	void updatePauseMenuButtons();
 	void updateTileMap(const float& dt);
 	void updatePlayer(const float& dt);

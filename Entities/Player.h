@@ -37,11 +37,12 @@ public:
 
 	const std::string toStringCharacterTab() const;
 	const bool& getInitAttack() const;
-
+	
 	const bool getDamageTimer();
-
 	const unsigned getDamage() const;
-
+	
+	const bool isDead() const;
+	
 	//Modifier
 	void setInitAttack(const bool initAttack);
 

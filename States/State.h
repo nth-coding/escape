@@ -34,6 +34,7 @@ protected:
 	std::map<std::string, int> keybinds;
 	bool quit;
 	bool paused;
+	bool dead;
 	float keytime;
 	float keytimeMax;
 	float gridSize;
@@ -61,6 +62,7 @@ public:
 	void endState(); 
 	void pauseState();
 	void unpauseState();
+	void deadState();
 	
 	virtual void updateMousePositions(sf::View* view = NULL);
 	virtual void updateKeytime(const float& dt);
