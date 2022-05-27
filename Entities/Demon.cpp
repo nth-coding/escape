@@ -57,34 +57,48 @@ void Demon::updateAnimation(const float & dt)
     {  
 		this->sprite.setOrigin(0.f, 0.f);
         this->sprite.setScale(1.f, 1.f);
-        this->animationComponent->play("IDLE", dt);
+		this->animationComponent->play("IDLE", dt);
     }
-    
+
     else if (this->movementComponent->getState(MOVING_RIGHT))
     {
-        this->sprite.setOrigin(0.f, 0.f);
+		this->sprite.setOrigin(0.f, 0.f);
         this->sprite.setScale(1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_LEFT))
     {
-        this->sprite.setOrigin(32.f, 0.f);
+        this->sprite.setOrigin(60.f, 0.f);
         this->sprite.setScale(-1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_UP))
     {
-		this->sprite.setOrigin(0.f, 0.f);
+		// this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_DOWN))
     {
-		this->sprite.setOrigin(0.f, 0.f);
+		// this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
+
+	else if (this->movementComponent->getState(MOVING_DOWN) && this->movementComponent->getState(MOVING_LEFT))
+	{
+		// this->sprite.setOrigin(60.f, 0.f);
+        this->sprite.setScale(-1.f, 1.f);
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
+	}
+
+	else if (this->movementComponent->getState(MOVING_UP) && this->movementComponent->getState(MOVING_LEFT))
+	{
+		// this->sprite.setOrigin(60.f, 0.f);
+        this->sprite.setScale(-1.f, 1.f);
+        this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
+	}
 
 	if (this->damageTimer.getElapsedTime().asMilliseconds() <= this->damageTimerMax)
 	{
