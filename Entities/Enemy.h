@@ -48,4 +48,4 @@ public:
 	virtual void render(sf::RenderTarget & target, const bool show_hitbox = false) = 0;
 };
 
-#endif //!ENEMY_H
+#endif 

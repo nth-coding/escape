@@ -74,7 +74,7 @@ void PlayerGUI::updateHPBar()
 	this->hpBar->update(this->player->getAttributeComponent()->hp, this->player->getAttributeComponent()->hpMax);
 }
 
-void PlayerGUI::update(const float & dt)
+void PlayerGUI::update(const float& dt)
 {
 	this->updateLevelBar();
 	this->updateEXPBar();
@@ -82,23 +82,23 @@ void PlayerGUI::update(const float & dt)
 }
 
 
-void PlayerGUI::renderLevelBar(sf::RenderTarget & target)
+void PlayerGUI::renderLevelBar(sf::RenderTarget& target)
 {
 	target.draw(this->levelBarBack);
 	target.draw(this->levelBarText);
 }
 
-void PlayerGUI::renderEXPBar(sf::RenderTarget & target)
+void PlayerGUI::renderEXPBar(sf::RenderTarget& target)
 {
 	this->expBar->render(target);
 }
 
-void PlayerGUI::renderHPBar(sf::RenderTarget & target)
+void PlayerGUI::renderHPBar(sf::RenderTarget& target)
 {
 	this->hpBar->render(target);
 }
 
-void PlayerGUI::render(sf::RenderTarget & target)
+void PlayerGUI::render(sf::RenderTarget& target)
 {
 	this->renderLevelBar(target);
 	this->renderEXPBar(target);

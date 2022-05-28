@@ -11,7 +11,7 @@ GraphicsSettings::GraphicsSettings()
 	this->videoModes = sf::VideoMode::getFullscreenModes();
 }
 
-//Functions
+// Functions
 void GraphicsSettings::saveToFile(const std::string path)
 {
 	std::ofstream ofs(path);

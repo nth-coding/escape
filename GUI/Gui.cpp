@@ -4,12 +4,12 @@ const float gui::p2pX(const float perc, const sf::VideoMode& vm)
 {
 	/* 
 	
-	Chuyển đổi giá trị percentage sang pixels tương đối với một độ chính xác nhất định trong x-axis(trục hoành).
+	Chuyen doi gia tri percentage sang pixel tuong doi voi do chinh xac nhat dinh trong x-axis(truc hoanh).
 
 	float perc				percentage.
 	sf::VideoMode& vm		Current videomode của window.
 	
-	return float			Trả ra giá trị float pixel.
+	return float			Tra ra gia tri float pixel.
 	
 	*/
 
@@ -20,12 +20,12 @@ const float gui::p2pY(const float perc, const sf::VideoMode& vm)
 {
 	/*
 	
-	Chuyển đổi giá trị percentage sang pixels tương đối với một độ chính xác nhất định trong y-axis(trục tung).
+	Chuyen doi gia tri percentage sang pixel tuong doi voi do chinh xac nhat dinh trong y-axis(truc tung).
 	
 	float perc				percentage.
 	sf::VideoMode& vm		Current videomode của window.
 	
-	return float			Trả ra giá trị float pixel.
+	return float			Tra ra gia tri float pixel.
 	
 	*/
 
@@ -36,12 +36,12 @@ const unsigned gui::calcCharSize(const sf::VideoMode& vm, const unsigned modifie
 {
 	/*
 	
-	Tính toán character size hợp lý cho current resolution và constant.
+	Tinh toan character_size hop ly cho current resolution va constant.
 
 	sf::VideoMode& vm		Current videomode của window.
-	unsigned modifier		Dùng để modify character size theo nhiều cách khác nhau
+	unsigned modifier		Dung de modify character_size theo nhieu cach khac nhau 
 	
-	return	unsigned		Giá trị character size đã được tính toán
+	return	unsigned		Gia tri character_size da duoc tinh toan
 
 	*/
 
@@ -126,8 +126,8 @@ void gui::Button::setId(const short unsigned id)
 //Functions
 void gui::Button::update(const sf::Vector2i& mousePosWindow)
 {
-	/* Update các giá trị booleans cho các hiệu ứng của button khi hover và pressed */
-
+	/* Update cac gia tri booleans cho cac hieu ung cua button (hover, pressed) */
+	
 	//Idle
 	this->buttonState = BTN_IDLE;
 

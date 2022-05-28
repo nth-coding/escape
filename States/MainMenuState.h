@@ -7,11 +7,10 @@
 #include "SettingsState.h"
 #include "../GUI/Gui.h"
 
-class MainMenuState :
-	public State
+class MainMenuState : public State
 {
 private:
-	//Variables
+	// Variables
 	sf::Texture backgroundTexture;
 	sf::RectangleShape background;
 	sf::Font font;
@@ -20,7 +19,7 @@ private:
 	sf::RectangleShape btnBackground;
 	std::map<std::string, gui::Button*> buttons;
 
-	//Functions
+	// Functions
 	void initVariables();
 	void initFonts();
 	void initKeybinds();
@@ -31,7 +30,7 @@ public:
 	MainMenuState(StateData* state_data);
 	virtual ~MainMenuState();
 
-	//Functions
+	// Functions
 	void updateMusic();
 	void updateInput(const float& dt);
 	void updateButtons();

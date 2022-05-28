@@ -5,11 +5,10 @@
 #include "State.h"
 #include "../GUI/Gui.h"
 
-class SettingsState :
-	public State
+class SettingsState : public State
 {
 private:
-	//Variables
+	// Variables
 	sf::Texture backgroundTexture;
 	sf::RectangleShape background;
 	sf::Font font;
@@ -17,7 +16,7 @@ private:
 	std::map<std::string, gui::Button*> buttons;
 	std::vector<sf::VideoMode> modes;
 
-	//Functions
+	// Functions
 	void initVariables();
 	void initFonts();
 	void initKeybinds();
@@ -28,9 +27,9 @@ public:
 	SettingsState(StateData* state_data);
 	virtual ~SettingsState();
 
-	//Accessors
+	// Accessors
 
-	//Functions
+	// Functions
 	void updateInput(const float& dt);
 	void updateGui(const float& dt);
 	void update(const float& dt);

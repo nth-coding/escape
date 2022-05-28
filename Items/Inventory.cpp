@@ -1,6 +1,6 @@
 #include "Inventory.h"
 
-//Private functions
+// Private functions
 void Inventory::initialize()
 {
 	this->nrOfItems = 0;
@@ -27,7 +27,7 @@ void Inventory::freeMemory()
 	delete[] this->itemArray;
 }
 
-//Constructors & Destructors
+// Constructors / Destructors
 Inventory::Inventory(unsigned capacity)
 {
 	this->capacity = capacity;
@@ -40,7 +40,7 @@ Inventory::~Inventory()
 	this->freeMemory();
 }
 
-//Accessors
+// Accessors
 
 const unsigned & Inventory::size() const
 {
@@ -52,10 +52,7 @@ const unsigned & Inventory::maxSize() const
 	return this->capacity;
 }
 
-//Modifiers
-
-//Functions
-
+// Functions
 void Inventory::clear()
 {
 	for (size_t i = 0; i < this->nrOfItems; i++)

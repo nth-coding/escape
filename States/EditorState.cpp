@@ -1,6 +1,6 @@
 #include "EditorState.h"
 
-//Initializer functions
+// Initializer functions
 void EditorState::initVariables()
 {
 	this->cameraSpeed = 1000.f;
@@ -82,7 +82,6 @@ void EditorState::initGui()
 
 void EditorState::initTileMap()
 {
-	// this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "../build/textures/tilesheet3.png");
 	this->tileMap = new TileMap(this->stateData->gridSize, 150, 150, "../build/textures/sheet2.png");
 }
 
@@ -127,7 +126,7 @@ EditorState::~EditorState()
 	}
 }
 
-//Functions
+// Functions
 void EditorState::updateInput(const float & dt)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("CLOSE"))) && this->getKeytime())
@@ -141,7 +140,7 @@ void EditorState::updateInput(const float & dt)
 
 void EditorState::updateEditorInput(const float& dt)
 {
-	//Move view
+	// Move view
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_CAMERA_UP"))))
 	{
 		this->view.move(0.f, -this->cameraSpeed * dt);
@@ -185,7 +184,7 @@ void EditorState::updateEditorInput(const float& dt)
 
 void EditorState::updateButtons()
 {
-	/*Updates all the buttons in the state and handles their functionlaity.*/
+	/* Update cac button trong state va chuc nang cua chung */
 
 	for (auto &it : this->buttons)
 	{

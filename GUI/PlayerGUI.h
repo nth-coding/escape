@@ -33,8 +33,6 @@ public:
 	PlayerGUI(Player* player, sf::VideoMode& vm);
 	virtual ~PlayerGUI();
 
-	//Accessor
-
 	//Functions
 	void updateLevelBar();
 	void updateEXPBar();

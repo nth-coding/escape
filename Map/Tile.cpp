@@ -10,8 +10,6 @@ Tile::Tile(short type, int grid_x, int grid_y, float gridSizeF,
 	const sf::Texture& texture, const sf::IntRect& texture_rect,
 	const bool collision)
 {
-	//this->shape.setOutlineThickness(1.f);
-	//this->shape.setOutlineColor(sf::Color::Black);
 	this->shape.setPosition(static_cast<float>(grid_x) * gridSizeF, static_cast<float>(grid_y) * gridSizeF);
 	this->shape.setTexture(texture);
 	this->shape.setTextureRect(texture_rect);
@@ -26,17 +24,17 @@ Tile::~Tile()
 }
 
 //Accessors
-const short & Tile::getType() const
+const short& Tile::getType() const
 {
 	return this->type;
 }
 
-const bool & Tile::getCollision() const
+const bool& Tile::getCollision() const
 {
 	return this->collision;
 }
 
-const sf::Vector2f & Tile::getPosition() const
+const sf::Vector2f& Tile::getPosition() const
 {
 	return this->shape.getPosition();
 }

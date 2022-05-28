@@ -76,26 +76,22 @@ void Demon::updateAnimation(const float & dt)
 
     else if (this->movementComponent->getState(MOVING_UP))
     {
-		// this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_DOWN))
     {
-		// this->sprite.setOrigin(0.f, 0.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 
 	else if (this->movementComponent->getState(MOVING_DOWN) && this->movementComponent->getState(MOVING_LEFT))
 	{
-		// this->sprite.setOrigin(60.f, 0.f);
         this->sprite.setScale(-1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
 	}
 
 	else if (this->movementComponent->getState(MOVING_UP) && this->movementComponent->getState(MOVING_LEFT))
 	{
-		// this->sprite.setOrigin(60.f, 0.f);
         this->sprite.setScale(-1.f, 1.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().x, this->movementComponent->getMaxVelocity());
 	}
@@ -114,11 +110,8 @@ void Demon::update(const float & dt, sf::Vector2f& mouse_pos_view, const sf::Vie
 
 	this->movementComponent->update(dt);
 
-	//Update GUI REMOVE THIS!!!!
 	this->hpBar.setSize(sf::Vector2f(60.f * (static_cast<float>(this->attributeComponent->hp) / this->attributeComponent->hpMax), 10.f));
 	this->hpBar.setPosition(this->sprite.getPosition());
-
-	//this->updateAttack();
 
 	this->updateAnimation(dt);
 
@@ -130,7 +123,6 @@ void Demon::update(const float & dt, sf::Vector2f& mouse_pos_view, const sf::Vie
 void Demon::render(sf::RenderTarget & target, const bool show_hitbox)
 {
 	target.draw(this->sprite);
-
 	target.draw(this->hpBar);
 
 	if (show_hitbox)

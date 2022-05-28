@@ -2,7 +2,7 @@
 
 void Weapon::initVariables()
 {
-	this->range = 50;
+	this->range = 40;
 	this->damageMin = 1;
 	this->damageMax = 2;
 	
@@ -42,12 +42,12 @@ Weapon::~Weapon()
 
 }
 
-const unsigned & Weapon::getDamageMin() const
+const unsigned& Weapon::getDamageMin() const
 {
 	return this->damageMin;
 }
 
-const unsigned & Weapon::getDamageMax() const
+const unsigned& Weapon::getDamageMax() const
 {
 	return this->damageMax;
 }
@@ -58,7 +58,7 @@ const unsigned Weapon::getDamage() const
 }
 
 //Accessors
-const unsigned & Weapon::getRange() const
+const unsigned& Weapon::getRange() const
 {
 	return this->range;
 }

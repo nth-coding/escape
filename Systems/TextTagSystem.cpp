@@ -1,6 +1,6 @@
 #include "TextTagSystem.h"
 
-//Private functions
+// Private functions
 void TextTagSystem::initVariables()
 {
 
@@ -19,7 +19,7 @@ void TextTagSystem::initTagTemplates()
 	this->tagTemplates[EXPERIENCE_TAG] = new TextTag(this->font, "", 100.f, 100.f, 0.f, -1.f, sf::Color::Cyan, 30, 200.f, true, 200.f, 200.f, 2);
 }
 
-//Constructor / Destructor
+// Constructor / Destructor
 TextTagSystem::TextTagSystem(std::string font_file)
 {
 	this->initFonts(font_file);
@@ -29,20 +29,20 @@ TextTagSystem::TextTagSystem(std::string font_file)
 
 TextTagSystem::~TextTagSystem()
 {
-	//Clean up tags
+	// Clean tags
 	for (auto *tag : this->tags)
 	{
 		delete tag;
 	}
 
-	//Clean up templates
+	// Clean templates
 	for (auto &tag : this->tagTemplates)
 	{
 		delete tag.second;
 	}
 }
 
-//Functions
+// Functions
 void TextTagSystem::addTextTag(const unsigned tag_type, const float pos_x, const float pos_y, const std::string str, const std::string prefix = "", const std::string postfix = "")
 {
 	std::stringstream ss;

@@ -30,7 +30,6 @@ private:
 		~Skill() {}
 
 		//Accessors
-		//Accessors
 		inline const int& getType() const { return this->type; }
 		inline const int& getLevel() const { return this->level; }
 		inline const int& getExp() const { return this->exp; }
@@ -54,11 +53,6 @@ private:
 
 		void updateLevel(const bool up = true)
 		{
-			/**
-			  * Increases or decreases the level of the skill depending on if there is a deficit in the exp or not. 
-			  *
-			  */
-
 			if (up)
 			{
 				if (this->level < this->levelCap)
@@ -105,4 +99,4 @@ public:
 	const void gainExp(const int skill, const int exp);
 };
 
-#endif //!SKILLCOMPONENT_H
+#endif 

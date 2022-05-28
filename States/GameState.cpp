@@ -19,7 +19,7 @@ void GameState::initDeferredRender()
 	);
 }
 
-//Initializer functions
+// Initializer functions
 void GameState::initView()
 {
 	this->view.setSize(
@@ -198,7 +198,7 @@ const bool GameState::getKeyTime()
 	return false;	
 }
 
-//Functions
+// Functions
 void GameState::updateView(const float & dt)
 {
 	this->view.setCenter(
@@ -251,7 +251,7 @@ void GameState::updateInput(const float & dt)
 
 void GameState::updatePlayerInput(const float & dt)
 {
-	//Update player input
+	// Update player input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
 		this->player->move(-1.f, 0.f, dt);
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
@@ -330,7 +330,6 @@ void GameState::updateCombatAndEnemies(const float& dt)
 
 	  this->updateCombat(enemy, index, dt);
 
-		//DANGEROUS!!!
 		if (enemy->isDead())
 		{
 			this->player->gainEXP(enemy->getGainExp());
@@ -356,14 +355,13 @@ void GameState::updateCombat(Enemy* enemy, const int index, const float& dt)
 	if (this->player->getInitAttack() && enemy->getGlobalBounds().contains(this->mousePosView)
 		&& enemy->getSpriteDistance(*this->player) < this->player->getWeapon()->getRange() && enemy->getDamageTimerDone())
 	{
-		//Get to this!!!!
 		int dmg = static_cast<int>(this->player->getDamage());
 		enemy->loseHP(dmg);
 		enemy->resetDamageTimer();
 		this->tts->addTextTag(DEFAULT_TAG, enemy->getPosition().x, enemy->getPosition().y, dmg, "", "");	
 	}
 
-	//Check for enemy damage
+	// Check enemy damage
 	if (enemy->getGlobalBounds().intersects(this->player->getGlobalBounds()) && this->player->getDamageTimer())
 	{
 		int dmg = enemy->getAttributeComp()->damageMax;

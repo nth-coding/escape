@@ -1,7 +1,6 @@
 #include "EnemySystem.h"
 
-EnemySystem::EnemySystem(std::vector<Enemy*>& activeEnemies,
-	std::map<std::string, sf::Texture>& textures, Entity& player)
+EnemySystem::EnemySystem(std::vector<Enemy*>& activeEnemies, std::map<std::string, sf::Texture>& textures, Entity& player)
 	: textures(textures), activeEnemies(activeEnemies), player(player)
 {
 

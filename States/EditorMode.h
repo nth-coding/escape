@@ -6,11 +6,6 @@
 #include "../map/TileMap.h"
 #include "../GUI/Gui.h"
 
-class State;
-class StateData;
-class TileMap;
-class Tile;
-
 class EditorStateData
 {
 public:
@@ -56,4 +51,4 @@ public:
 	virtual void render(sf::RenderTarget& target) = 0;
 };
 
-#endif //!EDITORMODE_H
+#endif

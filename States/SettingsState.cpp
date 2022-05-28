@@ -35,7 +35,7 @@ void SettingsState::initGui()
 {
 	const sf::VideoMode& vm = this->stateData->gfxSettings->resolution;
 
-	//Background
+	// Background
 	this->background.setSize(
 		sf::Vector2f
 		(
@@ -51,7 +51,7 @@ void SettingsState::initGui()
 
 	this->background.setTexture(&this->backgroundTexture);
 
-	//Buttons
+	// Buttons
 	this->buttons["BACK"] = new gui::Button(
 		gui::p2pX(72.f, vm), gui::p2pY(81.5f, vm),
 		gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
@@ -84,9 +84,9 @@ SettingsState::~SettingsState()
 	}
 }
 
-//Accessors
+// Accessors
 
-//Functions
+// Functions
 void SettingsState::updateInput(const float & dt)
 {
 
@@ -94,19 +94,19 @@ void SettingsState::updateInput(const float & dt)
 
 void SettingsState::updateGui(const float & dt)
 {
-	//Buttons
+	// Buttons
 	for (auto &it : this->buttons)
 	{
 		it.second->update(this->mousePosWindow);
 	}
 
-	//Quit the game
+	// Quit the game
 	if (this->buttons["BACK"]->isPressed())
 	{
 		this->endState();
 	}
 
-	//Apply selected settings
+	// Apply selected settings
 	if (this->buttons["APPLY"]->isPressed())
 	{
 		
@@ -138,7 +138,7 @@ void SettingsState::render(sf::RenderTarget* target)
 
 	this->renderGui(*target);
 
-	// Tạo pos tại vị trí chuột
+	// Tao mousePos
 	sf::Text mouseText;
 	mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
 	mouseText.setFont(this->font);

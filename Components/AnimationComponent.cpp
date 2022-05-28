@@ -18,11 +18,8 @@ const bool & AnimationComponent::isDone(const std::string key)
 }
 
 //Functions
-void AnimationComponent::addAnimation(
-	const std::string key,
-	float animation_timer,
-	int start_frame_x, int start_frame_y, int frames_x, int frames_y, int width, int height
-)
+void AnimationComponent::addAnimation(const std::string key,float animation_timer,
+	int start_frame_x, int start_frame_y, int frames_x, int frames_y, int width, int height)
 {
 	this->animations[key] = new Animation(
 		this->sprite, this->textureSheet,
@@ -33,7 +30,7 @@ void AnimationComponent::addAnimation(
 
 const bool& AnimationComponent::play(const std::string key, const float & dt, const bool priority)
 {
-	if (this->priorityAnimation) // Nếu đây là 1 animation đc ưu tiên
+	if (this->priorityAnimation) // Neu day la 1 animation duoc uu tien 
 	{
 		if (this->priorityAnimation == this->animations[key])
 		{
@@ -48,7 +45,7 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 				}
 			}
 
-			// Nếu animation xong thì remove nó
+			// Neu animation xong thi remove
 			if (this->animations[key]->play(dt))
 			{
 				this->priorityAnimation = NULL;
@@ -57,7 +54,7 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 	}
 	else
 	{
-		// Nếu đây là animation đc ưu tiên thì thực hiện nó
+		// Neu day la animation duoc uu tien thi chay prio 
 		if (priority)
 		{
 			this->priorityAnimation = this->animations[key];
@@ -80,9 +77,10 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 	return this->animations[key]->isDone();
 }
 
-const bool& AnimationComponent::play(const std::string key, const float & dt, const float& modifier, const float& modifier_max, const bool priority)
+const bool& AnimationComponent::play(const std::string key, const float & dt, const float& modifier, 
+	const float& modifier_max, const bool priority)
 {
-	if (this->priorityAnimation) // Nếu đây là 1 animation đc ưu tiên
+	if (this->priorityAnimation) // Neu day la 1 animation duoc uu tien 
 	{
 		if (this->priorityAnimation == this->animations[key])
 		{
@@ -97,7 +95,7 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 				}
 			}
 
-			// Nếu animation xong thì remove nó
+			// Neu animation xong thi remove
 			if (this->animations[key]->play(dt, abs(modifier / modifier_max)))
 			{
 				this->priorityAnimation = NULL;
@@ -106,7 +104,7 @@ const bool& AnimationComponent::play(const std::string key, const float & dt, co
 	}
 	else 
 	{
-		// Nếu đây là animation đc ưu tiên thì thực hiện nó
+		// Neu day la animation duoc uu tien thi chay prio 
 		if (priority)
 		{
 			this->priorityAnimation = this->animations[key];

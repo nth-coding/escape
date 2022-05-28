@@ -8,12 +8,6 @@
 #include "../components/AttributeComponent.h"
 #include "../components/SkillComponent.h"
 
-class HitboxComponent;
-class MovementComponent;
-class AnimationComponent;
-class AttributeComponent;
-class SkillComponent;
-
 class Entity
 {
 private:

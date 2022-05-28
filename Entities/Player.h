@@ -6,8 +6,6 @@
 #include "../items/Items.h"
 #include "../items/Inventory.h"
 
-class Entity;
-
 class Player : public Entity
 {
 private:

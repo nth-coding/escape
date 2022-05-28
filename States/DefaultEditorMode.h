@@ -4,14 +4,7 @@
 #include "../header_files/Header.h"
 #include "EditorMode.h"
 
-class State;
-class StateData;
-class EditorMode;
-class TileMap;
-class Tile;
-
-class DefaultEditorMode :
-	public EditorMode
+class DefaultEditorMode : public EditorMode
 {
 private:
 	sf::Text cursorText;
@@ -39,4 +32,4 @@ public:
 	void render(sf::RenderTarget& target);
 };
 
-#endif //!DEFAULTEDITORMODE_H
+#endif 

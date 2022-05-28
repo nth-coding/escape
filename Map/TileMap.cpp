@@ -15,15 +15,11 @@ void TileMap::clear()
 						delete this->map[x][y][z][k];
 						this->map[x][y][z][k] = NULL;
 					}
-					// this->map[x][y][z].clear();
 				}
-				// this->map[x][y].clear();
 			}
-			// this->map[x].clear();
 		}
 		this->map.clear();
 	}
-	//std::cout << this->map.size() << "\n";
 }
 
 TileMap::TileMap(float gridSize, int width, int height, std::string texture_file)
@@ -135,15 +131,12 @@ const sf::Vector2f& TileMap::getMaxSizeF() const
 //Functions
 void TileMap::addTile(const int x, const int y, const int z, const sf::IntRect& texture_rect, const bool& collision, const short& type)
 {
-	/* Take three indicies from the mouse position in the grid and add a tile to that position if the internal tilemap array allows it. */
-
+	/* Lay 3 toa do x, y, z o dang grid r add tile vao vi tri do neu internal tilemap allow */
 	if (x < this->maxSizeWorldGrid.x && x >= 0 &&
 		y < this->maxSizeWorldGrid.y && y >= 0 &&
 		z < this->layers && z >= 0)
 	{
-		/* OK To add tile. */
 		this->map[x][y][z].push_back(new RegularTile(type, x, y, this->gridSizeF, this->tileSheet, texture_rect, collision));
-
 		//std::cout << "DEGBUG: ADDED TILE!" << "\n";	
 	}
 }
@@ -162,7 +155,7 @@ void TileMap::addTile(const int x, const int y, const int z, const sf::IntRect &
 
 void TileMap::removeTile(const int x, const int y, const int z, const int type)
 {
-	/* Take three indicies from the mouse position in the grid and remove a tile at that position if the internal tilemap array allows it. */
+	/* Lay 3 toa do x, y, z o dang grid r add tile vao vi tri do neu internal tilemap allow */
 
 	if (x < this->maxSizeWorldGrid.x && x >= 0 &&
 		y < this->maxSizeWorldGrid.y && y >= 0 &&
@@ -170,7 +163,6 @@ void TileMap::removeTile(const int x, const int y, const int z, const int type)
 	{
 		if (!this->map[x][y][z].empty())
 		{
-			/* OK To remove tile. */
 			if (type >= 0)
 			{
 				if (this->map[x][y][z].back()->getType() == type)
@@ -304,7 +296,7 @@ void TileMap::loadFromFile(const std::string file_name)
 			std::cout << type << "\n";
 			if (type == TileTypes::ENEMYSPAWNER)
 			{
-				//amount, time, max dist
+				// amount, time, max dist
 				int enemy_type = 0;
 				int	enemy_am = 0;
 				int	enemy_tts = 0;
@@ -532,13 +524,7 @@ void TileMap::update(Entity * entity, const float& dt)
 	
 }
 
-void TileMap::render
-(
-	sf::RenderTarget & target, 
-	const sf::Vector2i& gridPosition, 
-	const sf::Vector2f playerPosition, 
-	const bool show_collision
-)
+void TileMap::render(sf::RenderTarget & target, const sf::Vector2i& gridPosition, const sf::Vector2f playerPosition, const bool show_collision)
 {
 	this->layer = 0;
 

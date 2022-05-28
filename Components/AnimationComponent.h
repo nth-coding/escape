@@ -12,17 +12,18 @@ private:
 		//Variables
 		sf::Sprite& sprite;
 		sf::Texture& textureSheet;
+		
 		float animationTimer;
 		float timer;
 		bool done;
 		int width;
 		int height;
+
 		sf::IntRect startRect;
 		sf::IntRect currentRect;
 		sf::IntRect endRect;
 
-		Animation(sf::Sprite& sprite, sf::Texture& texture_sheet, 
-			float animation_timer, 
+		Animation(sf::Sprite& sprite, sf::Texture& texture_sheet, float animation_timer, 
 			int start_frame_x, int start_frame_y, int frames_x, int frames_y, int width, int height)
 			: sprite(sprite), textureSheet(texture_sheet), 
 			animationTimer(animation_timer), timer(0.f), done(false),
@@ -121,8 +122,7 @@ public:
 	const bool& isDone(const std::string key);
 
 	//Functions
-	void addAnimation(const std::string key, 
-		float animation_timer,
+	void addAnimation(const std::string key, float animation_timer,
 		int start_frame_x, int start_frame_y, int frames_x, int frames_y, int width, int height);
 
 	const bool& play(const std::string key, const float& dt, const bool priority = false);

@@ -7,7 +7,7 @@ int main()
 {
 	Game game;
 	game.run();
-
+	
 	//system("pause");
 	return 0;
 }

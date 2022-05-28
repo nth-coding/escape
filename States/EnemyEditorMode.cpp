@@ -8,16 +8,16 @@ void EnemyEditorMode::initVariables()
 	maxDistance = 1000.f;
 }
 
-//Initializer functions
+// Initializer functions
 void EnemyEditorMode::initGui()
 {
-	//Text
+	// Text
 	this->cursorText.setFont(*this->editorStateData->font);
 	this->cursorText.setFillColor(sf::Color::White);
 	this->cursorText.setCharacterSize(12);
 	this->cursorText.setPosition(this->editorStateData->mousePosView->x, this->editorStateData->mousePosView->y);
 
-	//General GUI
+	// General GUI
 	this->sidebar.setSize(sf::Vector2f(80.f, static_cast<float>(this->stateData->gfxSettings->resolution.height)));
 	this->sidebar.setFillColor(sf::Color(50, 50, 50, 100));
 	this->sidebar.setOutlineColor(sf::Color(200, 200, 200, 150));
@@ -30,7 +30,7 @@ void EnemyEditorMode::initGui()
 	this->selectorRect.setOutlineColor(sf::Color::Green);
 }
 
-//Constructors/Destructors
+// Constructors/Destructors
 EnemyEditorMode::EnemyEditorMode(StateData* state_data, TileMap* tile_map, EditorStateData* editor_state_data)
 	: EditorMode(state_data, tile_map, editor_state_data)
 {
@@ -43,10 +43,10 @@ EnemyEditorMode::~EnemyEditorMode()
 
 }
 
-//Functions
+// Functions
 void EnemyEditorMode::updateInput(const float & dt)
 {
-	//Add a tile to the tilemap
+	// Them tile vao tilemap
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->getKeytime())
 	{
 		if (!this->sidebar.getGlobalBounds().contains(sf::Vector2f(*this->editorStateData->mousePosWindow)))
@@ -55,7 +55,7 @@ void EnemyEditorMode::updateInput(const float & dt)
 				this->type, this->amount, this->timeToSpawn, this->maxDistance );
 		}	
 	}
-	//Remove a tile from the tilemap
+	// Xoa tile khoi tilemap
 	else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && this->getKeytime())
 	{
 		if (!this->sidebar.getGlobalBounds().contains(sf::Vector2f(*this->editorStateData->mousePosWindow)))
@@ -64,7 +64,7 @@ void EnemyEditorMode::updateInput(const float & dt)
 		}
 	}
 
-	//Toggle collision
+	// Toggle collision
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->editorStateData->keybinds->at("TYPE_UP"))) && this->getKeytime())
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))

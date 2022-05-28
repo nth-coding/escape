@@ -1,7 +1,6 @@
 #include "WinMenu.h"
 
-WinMenu::WinMenu(sf::VideoMode& vm, sf::Font& font)
-	: font(font)
+WinMenu::WinMenu(sf::VideoMode& vm, sf::Font& font) : font(font)
 {
 	//Init background
 	this->background.setSize(

@@ -82,7 +82,7 @@ void PauseMenu::update(const sf::Vector2i& mousePosWindow)
 	}
 }
 
-void PauseMenu::render(sf::RenderTarget & target)
+void PauseMenu::render(sf::RenderTarget& target)
 {
 	target.draw(this->background);
 	target.draw(this->container);

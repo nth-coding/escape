@@ -30,4 +30,4 @@ public:
 	virtual Item* clone() = 0;
 };
 
-#endif //Item.h
+#endif

@@ -130,10 +130,6 @@ namespace gui
 			sf::VideoMode& vm, sf::Font* font = NULL);
 		~ProgressBar();
 
-		//Accessors
-
-		//Modifiers
-
 		//Functions
 		void update(const int current_value, const int max_value);
 		void render(sf::RenderTarget & target);

@@ -9,24 +9,12 @@
 #include "DefaultEditorMode.h"
 #include "EnemyEditorMode.h"
 
-class State;
-class StateData;
-class Gui;
-class PauseMenu;
-class TileMap;
-class Tile;
-class EditorMode;
-class DefaultEditorMode;
-class EnemyEditorMode;
-class EditorStateData;
-
 enum EditorModes {DEFAULT_EDITOR_MODE = 0, ENEMY_EDITOR_MODE};
 
-class EditorState :
-	public State
+class EditorState : public State
 {
 private:
-	//Variables
+	// Variables
 	EditorStateData editorStateData;
 
 	sf::View view;
@@ -42,7 +30,7 @@ private:
 	std::vector<EditorMode*> modes;
 	unsigned activeMode;
 
-	//Functions
+	// Functions
 	void initVariables();
 	void initEditorStateData();
 	void initView();
@@ -58,7 +46,7 @@ public:
 	EditorState(StateData* state_data);
 	virtual ~EditorState();
 
-	//Functions
+	// Functions
 	void updateInput(const float& dt);
 	void updateEditorInput(const float& dt);
 	void updateButtons();

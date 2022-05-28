@@ -11,8 +11,7 @@
 #include "../items/Sword.h"
 #include "../systems/TextTagSystem.h"
 
-class GameState :
-	public State
+class GameState : public State
 {
 private:
 	sf::View view;
@@ -39,10 +38,10 @@ private:
 
 	TileMap* tileMap;
 
-	//Systems
+	// Systems
 	TextTagSystem* tts;
 
-	//Functions
+	// Functions
 	void initDeferredRender();
 	void initView();
 	void initKeybinds();
@@ -64,10 +63,10 @@ public:
 	GameState(StateData* state_data);
 	virtual ~GameState();
 
-	//Accessors
+	// Accessors
 	const bool getKeyTime();
 
-	//Functions
+	// Functions
 	void updateView(const float& dt);
 	void updateInput(const float& dt);
 	void updatePlayerInput(const float& dt);

@@ -20,7 +20,7 @@ State::~State()
 	
 }
 
-//Accessors
+// Accessors
 const bool & State::getQuit() const
 {
 	return this->quit;
@@ -37,7 +37,7 @@ const bool State::getKeytime()
 	return false;
 }
 
-//Functions
+// Functions
 void State::endState()
 {
 	this->quit = true;

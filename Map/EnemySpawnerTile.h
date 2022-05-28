@@ -4,8 +4,6 @@
 #include "../header_files/Header.h"
 #include "Tile.h"
 
-class Tile;
-
 class EnemySpawnerTile : public Tile
 {
 private:
@@ -16,9 +14,6 @@ private:
 	sf::Int32 enemyTimeToSpawn;
 	float enemyMaxDistance;
 	bool firstSpawn;
-
-	//Spawn timer
-
 
 public:
 	EnemySpawnerTile(int grid_x, int grid_y, float gridSizeF,

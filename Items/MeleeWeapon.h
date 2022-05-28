@@ -8,8 +8,6 @@ class MeleeWeapon : public Weapon
 {
 private:
 
-protected:
-
 public:
 	MeleeWeapon(unsigned level, unsigned damageMin, unsigned damageMax, unsigned range, unsigned value, std::string texture_file);
 	virtual ~MeleeWeapon();
@@ -22,4 +20,4 @@ public:
 	virtual void render(sf::RenderTarget& target) = 0;
 };
 
-#endif // !MELEEWEAPON_H
+#endif 

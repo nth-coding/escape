@@ -1,6 +1,6 @@
 #include "MainMenuState.h"
 
-//Initializer functions
+// Initializer functions
 void MainMenuState::initVariables()
 {
 	if (!this->music.openFromFile("../build/Audio/background.ogg"))
@@ -39,7 +39,7 @@ void MainMenuState::initGui()
 {
 	const sf::VideoMode& vm = this->stateData->gfxSettings->resolution;
 
-	//Background
+	// Background
 	this->background.setSize(
 		sf::Vector2f
 		(
@@ -55,7 +55,7 @@ void MainMenuState::initGui()
 
 	this->background.setTexture(&this->backgroundTexture);
 
-	//Button background
+	// Button background
 	this->btnBackground.setSize(
 		sf::Vector2f(
 			static_cast<float>(vm.width / 5), 
@@ -66,7 +66,7 @@ void MainMenuState::initGui()
 	this->btnBackground.setPosition(gui::p2pX(11.5f, vm), 0.f);	
 	this->btnBackground.setFillColor(sf::Color(10, 10, 10, 220));
 
-	//Buttons
+	// Buttons
 	this->buttons["GAME_STATE"] = new gui::Button(
 		gui::p2pX(15.6f, vm), gui::p2pY(30.f, vm), 
 		gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
@@ -152,21 +152,18 @@ void MainMenuState::updateButtons()
 	if (this->buttons["GAME_STATE"]->isPressed())
 	{
 		this->states->push(new GameState(this->stateData));
-		// music.stop();
 	}
 
 	//Settings
 	if (this->buttons["SETTINGS_STATE"]->isPressed())
 	{
 		this->states->push(new SettingsState(this->stateData));
-		// music.stop();
 	}
 
 	//Editor
 	if (this->buttons["EDITOR_STATE"]->isPressed())
 	{
 		this->states->push(new EditorState(this->stateData));
-		// music.stop();
 	}
 
 	// Quit the game
@@ -204,7 +201,7 @@ void MainMenuState::render(sf::RenderTarget* target)
 
 	this->renderButtons(*target);
 
-	// Hiện MousePos cho dễ cập nhật player position
+	// Hien mousePos cho de cap nhat player_position 
 
 	//sf::Text mouseText;
 	//mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);

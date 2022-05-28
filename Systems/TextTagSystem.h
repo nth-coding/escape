@@ -72,18 +72,18 @@ private:
 
 		}
 
-		//Accessor
+		// Accessor
 		inline const bool isExpired() const{ return this->lifetime <= 0.f; }
 
-		//Function
+		// Function
 		void update(const float& dt)
 		{
 			if (this->lifetime > 0.f)
 			{
-				//Update the lifetime
+				// Update the lifetime
 				this->lifetime -= 100.f * dt;
 
-				//Accelerate
+				// Accelerate
 				if (this->acceleration > 0.f)
 				{
 					if (this->reverse)
@@ -115,7 +115,7 @@ private:
 				}
 				else
 				{
-					//Move the tag
+					// Move the tag
 					this->text.move(this->dirX * this->speed * dt, this->dirY * this->speed * dt);
 				}
 
@@ -144,7 +144,7 @@ private:
 	std::map<unsigned, TextTag*> tagTemplates;
 	std::vector<TextTag*> tags;
 
-	//Private functions
+	// Private functions
 	void initVariables();
 	void initFonts(std::string font_file);
 	void initTagTemplates();
@@ -153,7 +153,7 @@ public:
 	TextTagSystem(std::string font_file);
 	virtual ~TextTagSystem();
 
-	//Functions
+	// Functions
 	void addTextTag(const unsigned tag_type, const float pos_x, const float pos_y, const std::string str, const std::string prefix, const std::string postfix);
 	void addTextTag(const unsigned tag_type, const float pos_x, const float pos_y, const int i, const std::string prefix, const std::string postfix);
 	void addTextTag(const unsigned tag_type, const float pos_x, const float pos_y, const float f, const std::string prefix, const std::string postfix);
@@ -162,4 +162,4 @@ public:
 	void render(sf::RenderTarget & target);
 };
 
-#endif // !TEXTTAGSYSTEM_H
+#endif

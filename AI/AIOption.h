@@ -11,8 +11,7 @@ protected:
 	Entity& entity;
 
 public:
-	AIOption(Entity& self, Entity& entity)
-		: self(self), entity(entity)
+	AIOption(Entity& self, Entity& entity) : self(self), entity(entity)
 	{
 		
 	}

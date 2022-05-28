@@ -1,9 +1,7 @@
 #include "../header_files/Header.h"
 #include "../header_files/Game.h"
 
-//Static functions
-
-//Initializer functions
+// Initializer functions
 void Game::initVariables()
 {
 	this->window = NULL;
@@ -18,7 +16,7 @@ void Game::initGraphicsSettings()
 
 void Game::initWindow()
 {
-	/*Creates a SFML window.*/
+	/* Tao window SFML */
 
 	if(this->gfxSettings.fullscreen)
 		this->window = new sf::RenderWindow(
@@ -55,10 +53,10 @@ void Game::initKeys()
 	ifs.close();
 
 //DEBUG REMOVE LATER!
-	for (auto i : this->supportedKeys)
-	{
-		std::cout << i.first << " " << i.second << "\n";
-	} 
+	// for (auto i : this->supportedKeys)
+	// {
+	// 	std::cout << i.first << " " << i.second << "\n";
+	// } 
 }
 
 void Game::initStateData()
@@ -75,7 +73,7 @@ void Game::initStates()
 	this->states.push(new MainMenuState(&this->stateData));
 }
 
-//Constructors/Destructors
+// Constructors/Destructors
 Game::Game()
 {
 	this->initVariables();
@@ -97,7 +95,7 @@ Game::~Game()
 	}
 }
 
-//Functions
+// Functions
 void Game::endApplication()
 {
 	std::cout << "Ending Application!" << "\n";
@@ -105,7 +103,7 @@ void Game::endApplication()
 
 void Game::updateDt()
 {
-	/* biến (dt) là biến để chỉ thị thời gian update và render 1 frame*/
+	/* (dt) là bien de chi thi thoi gian update va render 1 frame */
 
 	this->dt = this->dtClock.restart().asSeconds();
 }
@@ -148,7 +146,7 @@ void Game::render()
 {
 	this->window->clear();
 
-	//Render items
+	// Render items
 	if (!this->states.empty())
 		this->states.top()->render();
 

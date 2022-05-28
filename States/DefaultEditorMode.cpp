@@ -11,13 +11,13 @@ void DefaultEditorMode::initVariables()
 
 void DefaultEditorMode::initGui()
 {
-	//Text
+	// Text
 	this->cursorText.setFont(*this->editorStateData->font);
 	this->cursorText.setFillColor(sf::Color::White);
 	this->cursorText.setCharacterSize(12);
 	this->cursorText.setPosition(this->editorStateData->mousePosView->x, this->editorStateData->mousePosView->y);
 
-	//General GUI
+	// General GUI
 	this->sidebar.setSize(sf::Vector2f(80.f, static_cast<float>(this->stateData->gfxSettings->resolution.height)));
 	this->sidebar.setFillColor(sf::Color(50, 50, 50, 100));
 	this->sidebar.setOutlineColor(sf::Color(200, 200, 200, 150));
@@ -51,10 +51,10 @@ DefaultEditorMode::~DefaultEditorMode()
 	delete this->textureSelector;
 }
 
-//Functions
+// Functions
 void DefaultEditorMode::updateInput(const float & dt)
 {
-	// Add tilemap vào map
+	// Add tilemap vao map
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && this->getKeytime())
 	{
 		if (!this->sidebar.getGlobalBounds().contains(sf::Vector2f(*this->editorStateData->mousePosWindow)))
@@ -79,7 +79,7 @@ void DefaultEditorMode::updateInput(const float & dt)
 			}
 		}
 	}
-	// Xóa tilemap ra khỏi map
+	// Xoa tilemap ra khoi map
 	else if (sf::Mouse::isButtonPressed(sf::Mouse::Right) && this->getKeytime())
 	{
 		if (!this->sidebar.getGlobalBounds().contains(sf::Vector2f(*this->editorStateData->mousePosWindow)))
@@ -89,7 +89,7 @@ void DefaultEditorMode::updateInput(const float & dt)
 		}
 	}
 
-	//Toggle collision
+	// Toggle collision
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->editorStateData->keybinds->at("TOGGLE_COLLISION"))) && this->getKeytime())
 	{
 		if (this->collision)
@@ -107,7 +107,7 @@ void DefaultEditorMode::updateInput(const float & dt)
 			--this->type;
 	}
 
-	// Chỉnh lock on/off
+	// Chinh lock on/off
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->editorStateData->keybinds->at("TOGGLE_TILE_LOCK"))) && this->getKeytime())
 	{
 		if (this->tileAddLock)

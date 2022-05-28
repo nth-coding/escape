@@ -5,15 +5,7 @@
 #include "EditorMode.h"
 #include "../map/EnemySpawnerTile.h"
 
-class State;
-class StateData;
-class EditorMode;
-class TileMap;
-class Tile;
-class EnemySpawner;
-
-class EnemyEditorMode :
-	public EditorMode
+class EnemyEditorMode : public EditorMode
 {
 private:
 	sf::Text cursorText;
@@ -42,4 +34,4 @@ public:
 	void render(sf::RenderTarget& target);
 };
 
-#endif //!ENEMYEDITORMODE_H
+#endif

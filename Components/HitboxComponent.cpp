@@ -1,8 +1,6 @@
 #include "HitboxComponent.h"
 
-HitboxComponent::HitboxComponent(sf::Sprite& sprite, 
-	float offset_x, float offset_y, 
-	float width, float height)
+HitboxComponent::HitboxComponent(sf::Sprite& sprite, float offset_x, float offset_y, float width, float height)
 	: sprite(sprite), offsetX(offset_x), offsetY(offset_y)
 {
 	this->nextPosition.left = 0.f;
@@ -34,7 +32,7 @@ const sf::FloatRect HitboxComponent::getGlobalBounds() const
 	return this->hitbox.getGlobalBounds();
 }
 
-const sf::FloatRect & HitboxComponent::getNextPosition(const sf::Vector2f & velocity)
+const sf::FloatRect& HitboxComponent::getNextPosition(const sf::Vector2f & velocity)
 {
 	this->nextPosition.left = this->hitbox.getPosition().x + velocity.x;
 	this->nextPosition.top = this->hitbox.getPosition().y + velocity.y;
@@ -66,7 +64,7 @@ void HitboxComponent::update()
 	this->hitbox.setPosition(this->sprite.getPosition().x + this->offsetX, this->sprite.getPosition().y + this->offsetY);
 }
 
-void HitboxComponent::render(sf::RenderTarget & target)
+void HitboxComponent::render(sf::RenderTarget& target)
 {
 	target.draw(this->hitbox);
 }

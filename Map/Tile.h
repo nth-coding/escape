@@ -23,7 +23,7 @@ public:
 
 	//Accessors
 	const short& getType() const;
-	virtual const bool & getCollision() const;
+	virtual const bool& getCollision() const;
 
 	//Functions
 	virtual const sf::Vector2f& getPosition() const;

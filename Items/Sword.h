@@ -4,8 +4,6 @@
 #include "../header_files/Header.h"
 #include "MeleeWeapon.h"
 
-class MeleeWeapon;
-
 class Sword : public MeleeWeapon
 {
 private:
@@ -22,4 +20,4 @@ public:
 	virtual void render(sf::RenderTarget& target);
 };
 
-#endif //!SWORD_H
+#endif 

@@ -18,8 +18,6 @@ private:
 
 	std::map<std::string, gui::Button*> buttons;
 
-	//Private Functions
-
 public:
 	DeadMenu(sf::VideoMode& vm, sf::Font& font);
 	virtual ~DeadMenu();

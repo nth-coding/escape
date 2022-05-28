@@ -5,7 +5,8 @@ DeadMenu::DeadMenu(sf::VideoMode& vm, sf::Font& font)
 {
 	//Init background
 	this->background.setSize(
-		sf::Vector2f(
+		sf::Vector2f
+		(
 			static_cast<float>(vm.width), 
 			static_cast<float>(vm.height)
 		)
@@ -14,13 +15,15 @@ DeadMenu::DeadMenu(sf::VideoMode& vm, sf::Font& font)
 
 	//Init container
 	this->container.setSize(
-		sf::Vector2f(
+		sf::Vector2f
+		(
 			static_cast<float>(vm.width) / 2.f,
 			static_cast<float>(vm.height) - gui::p2pY(9.3f, vm)
 		)
 	);
 	this->container.setFillColor(sf::Color(20, 20, 20, 200));
-	this->container.setPosition(
+	this->container.setPosition
+	(
 		static_cast<float>(vm.width) / 2.f - this->container.getSize().x / 2.f,
 		30.f
 	);
@@ -30,7 +33,8 @@ DeadMenu::DeadMenu(sf::VideoMode& vm, sf::Font& font)
 	this->menuText.setFillColor(sf::Color(255, 255, 255, 200));
 	this->menuText.setCharacterSize(gui::calcCharSize(vm));
 	this->menuText.setString("GAME OVER!");
-	this->menuText.setPosition(
+	this->menuText.setPosition
+	(
 		this->container.getPosition().x + this->container.getSize().x / 2.f - this->menuText.getGlobalBounds().width / 2.f,
 		this->container.getPosition().y + gui::p2pY(4.f, vm)
 	);
@@ -39,7 +43,8 @@ DeadMenu::DeadMenu(sf::VideoMode& vm, sf::Font& font)
 	this->menuText2.setFillColor(sf::Color(255, 255, 255, 200));
 	this->menuText2.setCharacterSize(gui::calcCharSize(vm));
 	this->menuText2.setString("New Game?");
-	this->menuText2.setPosition(
+	this->menuText2.setPosition
+	(
 		this->container.getPosition().x + this->container.getSize().x / 2.f - this->menuText2.getGlobalBounds().width / 2.f,
 		gui::p2pY(67.f, vm)
 	);

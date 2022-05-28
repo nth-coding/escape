@@ -5,7 +5,7 @@ Sword::Sword(unsigned level, unsigned damageMin, unsigned damageMax, unsigned ra
 	std::string texture_file)
 	: MeleeWeapon(level, damageMin, damageMax, range, value, texture_file)
 {
-	//Visual Weapon
+	//Weapon visual 
 	this->weapon_sprite.setScale(0.7, 0.7);
 	this->weapon_sprite.setOrigin
 	(
@@ -26,7 +26,7 @@ Sword * Sword::clone()
 
 void Sword::update(const sf::Vector2f & mouse_pos_view, const sf::Vector2f center)
 {
-	//Update visual weapon
+	//Update weapon visual 
 	this->weapon_sprite.setPosition(center);
 
 	float dX = mouse_pos_view.x - this->weapon_sprite.getPosition().x;

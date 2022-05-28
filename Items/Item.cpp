@@ -2,6 +2,7 @@
 
 void Item::initVariables()
 {
+
 }
 
 Item::Item(unsigned level, unsigned value)
@@ -15,6 +16,7 @@ Item::Item(unsigned level, unsigned value)
 
 Item::~Item()
 {
+	
 }
 
 const short unsigned& Item::getType() const
