@@ -52,6 +52,8 @@ protected:
 	virtual void initKeybinds() = 0;
 
 public:
+	bool sound_paused = false;
+	static sf::Music music;
 	State(StateData* state_data);
 	virtual ~State();
 
@@ -60,6 +62,7 @@ public:
 	const bool getKeytime();
 
 	//Functions	
+	void music_run();
 	void endState(); 
 	void pauseState();
 	void unpauseState();

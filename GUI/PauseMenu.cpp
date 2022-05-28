@@ -1,7 +1,6 @@
 #include "PauseMenu.h"
 
-PauseMenu::PauseMenu(sf::VideoMode& vm, sf::Font& font)
-	: font(font)
+PauseMenu::PauseMenu(sf::VideoMode& vm, sf::Font& font) : font(font)
 {
 	//Init background
 	this->background.setSize(

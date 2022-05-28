@@ -97,6 +97,7 @@ void GameState::initPauseMenu()
 	this->pmenu = new PauseMenu(this->stateData->gfxSettings->resolution, this->font);
 
 	this->pmenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
+	this->pmenu->addButton("SOUND_ON/OFF", gui::p2pY(25.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "SOUND ON/OFF");
 }
 
 void GameState::initDeadMenu()
@@ -198,7 +199,7 @@ GameState::~GameState()
 }
 
 const bool GameState::getKeyTime()
-{	
+{
 	if (this->keyTimer.getElapsedTime().asSeconds() >= this->keyTimeMax)
 	{
 		this->keyTimer.restart();
@@ -282,6 +283,20 @@ void GameState::updatePauseMenuButtons()
 	if (this->pmenu->isButtonPressed("QUIT"))
 	{
 		this->endState();
+	}
+
+	if (this->pmenu->isButtonPressed("SOUND_ON/OFF"))
+	{
+		sound_paused = sound_paused ^ 1;
+
+		if (sound_paused)
+		{
+			this->music.pause();
+		}
+		else 
+		{
+			this->music.play();
+		}
 	}
 }
 

@@ -53,6 +53,7 @@ Ogre::~Ogre()
 
 void Ogre::updateAnimation(const float & dt)
 {
+	this->sprite.setScale(2.f, 2.f);
 	if (this->movementComponent->getState(IDLE))
     {  
 		this->sprite.setOrigin(0.f, 0.f);
@@ -76,13 +77,11 @@ void Ogre::updateAnimation(const float & dt)
 
     else if (this->movementComponent->getState(MOVING_UP))
     {
-		this->sprite.setScale(2.f, 2.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 
     else if (this->movementComponent->getState(MOVING_DOWN))
     {
-		this->sprite.setScale(2.f, 2.f);
         this->animationComponent->play("WALK", dt, this->movementComponent->getVelocity().y, this->movementComponent->getMaxVelocity());
     }
 

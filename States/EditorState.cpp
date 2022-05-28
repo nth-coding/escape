@@ -21,14 +21,16 @@ void EditorState::initEditorStateData()
 
 void EditorState::initView()
 {
-	this->view.setSize(
+	this->view.setSize
+	(
 		sf::Vector2f(
 			static_cast<float>(this->stateData->gfxSettings->resolution.width),
 			static_cast<float>(this->stateData->gfxSettings->resolution.height)
 		)
 	);
 
-	this->view.setCenter(
+	this->view.setCenter
+	(
 		static_cast<float>(this->stateData->gfxSettings->resolution.width) / 2.f,
 		static_cast<float>(this->stateData->gfxSettings->resolution.height) / 2.f
 	);
@@ -66,6 +68,7 @@ void EditorState::initPauseMenu()
 	this->pmenu = new PauseMenu(this->stateData->gfxSettings->resolution, this->font);
 
 	this->pmenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
+	this->pmenu->addButton("SOUND_ON/OFF", gui::p2pY(25.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "SOUND ON/OFF");
 	this->pmenu->addButton("SAVE", gui::p2pY(46.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Save");
 	this->pmenu->addButton("LOAD", gui::p2pY(37.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Load");
 }
@@ -209,7 +212,24 @@ void EditorState::updatePauseMenuButtons()
 	}
 
 	if (this->pmenu->isButtonPressed("LOAD"))
+	{
 		this->tileMap->loadFromFile("text.slmp");
+	}
+
+	if (this->pmenu->isButtonPressed("SOUND_ON/OFF"))
+	{
+		sound_paused ^= 1;
+
+		if (sound_paused)
+		{
+			this->music.pause();
+		}
+		else 
+		{
+			this->music.play();
+		}
+	}
+
 }
 
 void EditorState::updateModes(const float & dt)

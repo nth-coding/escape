@@ -1,12 +1,11 @@
 #include "MainMenuState.h"
 
+sf::Music State::music;
+
 // Initializer functions
 void MainMenuState::initVariables()
 {
-	if (!this->music.openFromFile("../build/Audio/background.ogg"))
-	{
-		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD BACKGROUND_MUSIC");
-	}
+	
 }
 
 void MainMenuState::initFonts()
@@ -109,9 +108,9 @@ void MainMenuState::resetGui()
 	this->initGui();
 }
 
-MainMenuState::MainMenuState(StateData* state_data)
-	: State(state_data)
+MainMenuState::MainMenuState(StateData* state_data) : State(state_data)
 {
+	this->music_run();
 	this->initVariables();
 	this->initFonts();
 	this->initKeybinds();
@@ -126,13 +125,6 @@ MainMenuState::~MainMenuState()
 	{
 		delete it->second;
 	}
-}
-
-void MainMenuState::updateMusic()
-{
-	music.setVolume(30);
-	music.setLoop(true);
-	music.play();
 }
 
 void MainMenuState::updateInput(const float & dt)
@@ -155,7 +147,7 @@ void MainMenuState::updateButtons()
 		this->states->push(new GameState(this->stateData));
 	}
 
-	// Settings
+	// Setting
 	if (this->buttons["SETTINGS_STATE"]->isPressed())
 	{
 		this->states->push(new SettingsState(this->stateData));
@@ -167,7 +159,7 @@ void MainMenuState::updateButtons()
 		this->states->push(new EditorState(this->stateData));
 	}
 
-	// Quit the game
+	// Quit
 	if (this->buttons["EXIT_STATE"]->isPressed())
 	{
 		this->endState();
@@ -176,7 +168,6 @@ void MainMenuState::updateButtons()
 
 void MainMenuState::update(const float& dt)
 {
-	this->updateMusic();
 	this->updateMousePositions();
 	this->updateInput(dt);
 

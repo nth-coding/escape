@@ -1,5 +1,16 @@
 #include "State.h"
 
+void State::music_run()
+{
+	if (!this->music.openFromFile("../build/Audio/background.ogg"))
+	{
+		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD BACKGROUND_MUSIC");
+	}
+	this->music.setVolume(30);
+	this->music.setLoop(true);
+	this->music.play();
+}
+
 State::State(StateData* state_data)
 {
 	this->stateData = state_data;
@@ -21,7 +32,7 @@ State::~State()
 }
 
 // Accessors
-const bool & State::getQuit() const
+const bool& State::getQuit() const
 {
 	return this->quit;
 }
@@ -68,7 +79,7 @@ void State::updateMousePositions(sf::View* view)
 	this->mousePosScreen = sf::Mouse::getPosition();
 	this->mousePosWindow = sf::Mouse::getPosition(*this->window);
 
-	if(view)
+	if (view)
 		this->window->setView(*view);
 
 	this->mousePosView = this->window->mapPixelToCoords(sf::Mouse::getPosition(*this->window));
