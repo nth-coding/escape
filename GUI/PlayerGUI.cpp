@@ -2,7 +2,7 @@
 
 void PlayerGUI::initFont()
 {
-	this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf");
+	this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf");
 }
 
 void PlayerGUI::initLevelBar()

@@ -18,7 +18,7 @@ const std::string RegularTile::getAsString() const
 
 	ss << this->type << " " << this->shape.getTextureRect().left << " " << this->shape.getTextureRect().top << " " << this->collision;
 
-	std::cout << ss.str() << "\n";
+	// std::cout << ss.str() << "\n";
 
 	return ss.str();
 }

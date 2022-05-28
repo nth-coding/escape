@@ -5,7 +5,7 @@ void Player::initVariables()
 {
 	this->initAttack = false;
 	this->attacking = false;
-	this->weapon = new Sword(1, 2, 5, 100, 20, "textures/weapon_cleaver.png");
+	this->weapon = new Sword(1, 5, 10, 100, 20, "textures/weapon_cleaver.png");
 	this->weapon->generate(1, 3);
 
 	this->damageTimerMax = 500;
@@ -40,7 +40,7 @@ Player::Player(float x, float y, sf::Texture& texture_sheet)
 	this->createHitboxComponent(this->sprite, 8.f, 10.f, 16.f, 20.f);
     this->createMovementComponent(140.f, 1400.f, 1000.f); 
     this->createAnimationComponent(texture_sheet);
-	this->createAttributeComponent(1, 8, 1, 1, 1, 1);
+	this->createAttributeComponent(1, 10, 1, 1, 1, 1);
 	this->createSkillComponent();
 
 	this->setPosition(x, y);

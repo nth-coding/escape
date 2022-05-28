@@ -1,6 +1,6 @@
 #include "Demon.h"
 
-//Initializer functions
+// Initializer functions
 void Demon::initVariables()
 {
 
@@ -25,17 +25,17 @@ void Demon::initGUI()
 	this->hpBar.setPosition(this->sprite.getPosition());
 }
 
-//Constructors / Destructors
+// Constructors / Destructors
 Demon::Demon(float x, float y, sf::Texture& texture_sheet, EnemySpawnerTile& enemy_spawner_tile, Entity& player)
 	: Enemy(enemy_spawner_tile)
 {
 	this->initVariables();
 	this->initGUI();
 
-	this->createHitboxComponent(this->sprite, 14.f, 14.f, 32.f, 36.f);
+	this->createHitboxComponent(this->sprite, 14.f, 13.f, 32.f, 36.f);
 	this->createMovementComponent(70.f, 800.f, 500.f);
 	this->createAnimationComponent(texture_sheet);
-	this->createAttributeComponent(1, 4, 1, 1, 1, 1);
+	this->createAttributeComponent(1, 2, 3, 1, 1, 1);
 
 	this->generateAttributes(this->attributeComponent->level);
 

@@ -293,7 +293,7 @@ void TileMap::loadFromFile(const std::string file_name)
 		//Load all tiles
 		while (in_file >> x >> y >> z >> type)
 		{
-			std::cout << type << "\n";
+			// std::cout << type << "\n";
 			if (type == TileTypes::ENEMYSPAWNER)
 			{
 				// amount, time, max dist

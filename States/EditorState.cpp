@@ -36,7 +36,7 @@ void EditorState::initView()
 
 void EditorState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
+	if (!this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf"))
 	{
 		throw("ERROR::EDITORSTATE::COULD NOT LOAD FONT");
 	}

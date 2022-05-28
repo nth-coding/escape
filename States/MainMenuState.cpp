@@ -11,7 +11,7 @@ void MainMenuState::initVariables()
 
 void MainMenuState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
+	if (!this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
 	}

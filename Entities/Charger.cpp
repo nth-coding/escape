@@ -32,7 +32,7 @@ Charger::Charger(float x, float y, sf::Texture& texture_sheet, EnemySpawnerTile&
 	this->initVariables();
 	this->initGUI();
 
-	this->createHitboxComponent(this->sprite, 15.f, 15.f, 30.f, 30.f);
+	this->createHitboxComponent(this->sprite, 22.f, 15.f, 16.f, 24.f);
 	this->createMovementComponent(250.f, 350.f, 50.f);
 	this->createAnimationComponent(texture_sheet);
 	this->createAttributeComponent(1, 1, 1, 1, 1, 1);

@@ -22,7 +22,7 @@ HitboxComponent::~HitboxComponent()
 }
 
 //Accessors
-const sf::Vector2f & HitboxComponent::getPosition() const
+const sf::Vector2f& HitboxComponent::getPosition() const
 {
 	return this->hitbox.getPosition();
 }

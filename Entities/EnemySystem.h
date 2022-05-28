@@ -5,8 +5,10 @@
 #include "../map/EnemySpawnerTile.h"
 #include "Charger.h"
 #include "Demon.h"
+#include "Muddy.h"
+#include "Ogre.h"
 
-enum EnemyTypes {DEMON = 0, CHARGER = 1};
+enum EnemyTypes {DEMON = 0, CHARGER = 1, MUDDY = 2, OGRE = 3};
 
 class EnemySystem
 {
@@ -16,8 +18,7 @@ private:
 	Entity& player;
 
 public:
-	EnemySystem(std::vector<Enemy*>& activeEnemies, 
-		std::map<std::string, sf::Texture>& textures, Entity& player);
+	EnemySystem(std::vector<Enemy*>& activeEnemies, std::map<std::string, sf::Texture>& textures, Entity& player);
 	virtual ~EnemySystem();
 
 	//Functions

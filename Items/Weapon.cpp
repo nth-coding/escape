@@ -2,7 +2,7 @@
 
 void Weapon::initVariables()
 {
-	this->range = 40;
+	this->range = 50;
 	this->damageMin = 1;
 	this->damageMax = 2;
 	
@@ -70,6 +70,5 @@ const bool Weapon::getAttackTimer()
 		this->attackTimer.restart();
 		return true;
 	}
-
 	return false;
 }

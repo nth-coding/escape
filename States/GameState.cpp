@@ -1,6 +1,6 @@
 #include "GameState.h"
 
-const bool showHitbox = false;
+const bool showHitbox = true;
 
 void GameState::initDeferredRender()
 {
@@ -57,7 +57,7 @@ void GameState::initKeybinds()
 
 void GameState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
+	if (!this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
 	}
@@ -78,6 +78,16 @@ void GameState::initTextures()
 	if (!this->textures["CHARGER_SHEET"].loadFromFile("../build/textures/charger.png"))
 	{
 		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_CHARGER_TEXTURE";
+	}
+
+	if (!this->textures["MUDDY_SHEET"].loadFromFile("../build/textures/muddy_green.png"))
+	{
+		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_MUDDY_TEXTURE";
+	}
+
+	if (!this->textures["OGRE_SHEET"].loadFromFile("../build/textures/ogre.png"))
+	{
+		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_OGRE_TEXTURE";
 	}
 }
 
