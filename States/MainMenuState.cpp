@@ -131,6 +131,7 @@ MainMenuState::~MainMenuState()
 void MainMenuState::updateMusic()
 {
 	music.setVolume(30);
+	music.setLoop(true);
 	music.play();
 }
 
@@ -141,7 +142,7 @@ void MainMenuState::updateInput(const float & dt)
 
 void MainMenuState::updateButtons()
 {
-	/* Update hết các nút trên state và công dụng của chúng. */
+	/* Update het cac nut va cong dung cua chung */
 
 	for (auto &it : this->buttons)
 	{
@@ -154,13 +155,13 @@ void MainMenuState::updateButtons()
 		this->states->push(new GameState(this->stateData));
 	}
 
-	//Settings
+	// Settings
 	if (this->buttons["SETTINGS_STATE"]->isPressed())
 	{
 		this->states->push(new SettingsState(this->stateData));
 	}
 
-	//Editor
+	// Editor
 	if (this->buttons["EDITOR_STATE"]->isPressed())
 	{
 		this->states->push(new EditorState(this->stateData));

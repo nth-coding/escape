@@ -19,14 +19,14 @@ Sword::~Sword()
 
 }
 
-Sword * Sword::clone()
+Sword* Sword::clone()
 {
 	return new Sword(*this);
 }
 
-void Sword::update(const sf::Vector2f & mouse_pos_view, const sf::Vector2f center)
+void Sword::update(const sf::Vector2f& mouse_pos_view, const sf::Vector2f center)
 {
-	//Update weapon visual 
+	// Update weapon visual 
 	this->weapon_sprite.setPosition(center);
 
 	float dX = mouse_pos_view.x - this->weapon_sprite.getPosition().x;
@@ -46,7 +46,7 @@ void Sword::update(const sf::Vector2f & mouse_pos_view, const sf::Vector2f cente
 		this->weapon_sprite.setRotation(deg + 90.f);
 }
 
-void Sword::render(sf::RenderTarget & target)
+void Sword::render(sf::RenderTarget& target)
 {
 	target.draw(this->weapon_sprite);
 }
