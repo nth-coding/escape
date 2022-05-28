@@ -18,7 +18,7 @@
 # Chi tiết về game:
 
 ## Cốt truyện 🧾
-  Một đầu bếp đã bị isekai vào một thế giới lạ và nơi anh tỉnh dậy là trong một hầm ngục với đầy những quái vật. Vũ khí duy nhất của anh chỉ có một chiếc dao phay mang theo người từ thế giới trước...  Và anh sẽ làm gì để trốn thoát ra khỏi đây ?!
+  Một đầu bếp đã bị isekai vào một thế giới lạ và nơi anh tỉnh dậy là trong một hầm ngục với đầy những quái vật. Vũ khí duy nhất của anh chỉ có một chiếc dao phay mang theo người từ thế giới trước...
 
 ## Gameplay 
 **Control (Keybind)**
@@ -50,17 +50,14 @@
 
 ### Vũ khí và các đồ buff
   - Vũ khí đầu là dao phay 🔪.
-  - Mỗi vũ khí đều có **damage**, **attack speed** và **ability** *nếu update được sớm*. 
-
-  *... Will be updated soon ...*
-  - Sẽ có **potion** (bình hồi máu) và **atk, def boost** (các loại thuốc tăng chỉ số) hay **immortal potion** (thuốc bất tử *đương nhiên chỉ trong 1 thời gian nhất định*) và nhiều nhiều hơn nữa.
+  - Mỗi vũ khí đều có **level**, **damage min/max**, **range**. 
 
 ### Power up! hay Level up!
   - Nhân vật sẽ có một thanh kinh nghiệm.
-  - Mỗi khi thanh kinh nghiệm đầy thì các chỉ số sẽ được cập nhật lại và mạnh hơn trước.
+  - Mỗi khi thanh kinh nghiệm đầy thì các chỉ số sẽ được cập nhật lại và mạnh hơn trước và máu sẽ đc reset.
 
 ### Battle ⚔
-  - Né và tiêu diệt quái vật, quan trọng hơn là **sống sót**
+  - Tìm đường thoát và tiêu diệt quái vật, quan trọng hơn là **sống sót**
   - Giết quái vật sẽ cho bạn kinh nghiệm *và có thể tiền hoặc điểm (sẽ cố update trong tương lai)* 
 
   *... Still working on it ...*
@@ -124,7 +121,6 @@
  - Các kĩ thuật cơ bản: mảng, hàm, con trỏ, struct, class
  - Ngoài ra, sử dụng các kiểu dữ liệu như map, vector, stack,... 
  - Tạo ra AI có chức năng tấn công và tìm đường đi ngắn nhất đến player.
- - Sử dụng [GIMP](https://www.gimp.org/) để tạo và chỉnh sửa textures để điều chỉnh và làm các animation đẹp mắt của các nhân vật.
  - Nâng cao: sử dụng tối đa thư viện đồ họa SFML, lập trình hướng đối tượng (OOP), module hóa code, Clean Code...
 
 ## Điều tâm đắc rút ra được
@@ -134,12 +130,11 @@
  - Sử dụng khá tốt các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
  - Rèn luyện cách code của bản thân "sạch" hơn.
  - Cách debug và sửa những bug ẩn của game *(rất rất khó và ngốn thời gian :<)*.
- - Rèn luyện được thêm khả năng sử dụng các phần mềm chỉnh sửa như PTS, GIMP.
+ - Rèn luyện được thêm khả năng sử dụng các phần mềm chỉnh sửa như PTS, GIMP để vẽ và cắt ghép textures.
  - Cách chia file hợp lý và dễ theo dõi, chỉnh sửa, cập nhật.
- - Cuối cùng là feel nice vì đã làm được 1 game khá hay.
  - Điểm yếu rút ra được là vẫn chưa phân chia thời gian hợp lý và thông minh. 
  
 ## Bổ sung chương trình
- - Do thời gian có hạn và hiểu biết còn kém nên đã mất khá nhiều thời gian để học và làm nên 1 tựa game như thế này. Nếu có thể bổ sung thì sẽ còn phát triển items cho game, quái mới, nhiều tầng của hầm ngục hơn và cả bảng điểm, kỉ lục của top những người chơi... Khá nhiều thứ để tiếp cận và bổ sung...
+ - Nếu có thể bổ sung thì sẽ còn phát triển items cho game, quái mới, nhiều tầng của hầm ngục hơn và cả bảng điểm, kỉ lục của top những người chơi... Khá nhiều thứ để tiếp cận và bổ sung...
 
 
