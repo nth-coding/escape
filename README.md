@@ -9,9 +9,10 @@
   
 # Cách vào và cài đặt game
   - Bước 1: Cài đặt cho máy của bạn [mingw32 (hoặc mingw64)](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download)
-  - Bước 2: Clone game về bằng lệnh git clone hoặc tải về [tại đây](https://github.com/nth-coding/escape/archive/refs/heads/main.zip)
-  - Bước 3: Hãy để vị trí của game tại ngoài ổ \C: của máy tính của bạn
-  - Bước 4: Mở thư mục `build` và click vào `game.exe` để bắt đầu chơi game!!
+  - Bước 2: Đặt path trong system environment variables
+  - Bước 3: Clone game về bằng lệnh git clone hoặc tải về [tại đây](https://github.com/nth-coding/escape/archive/refs/heads/main.zip)
+  - Bước 4: Hãy để vị trí của game tại ngoài ổ \C: của máy tính của bạn
+  - Bước 5: Mở thư mục `build` và click vào `game.exe` để bắt đầu chơi game nàooo!
 
 *Còn nếu muốn bật hitbox thì vào GameState.cpp và chuyển `const bool showHitbox = false` thành `const bool showHitbox = true`*
 
@@ -28,6 +29,7 @@
   - `D`: Đi sang phải
 
   - `Left-mouse`: Tấn công
+  
   *.. Tăng thêm độ khó trong combat: Để tấn công được quái thì ta còn cần click chuột đúng vào trong vùng hitbox của quái để gây dmg cho quái ..*
 
 ### Các nhân vật trong game
@@ -49,7 +51,7 @@
 *.. Will update more ..*
 
 ### Vũ khí và các đồ buff
-  - Vũ khí đầu là dao phay 🔪.
+  - Vũ khí đầu là dao phay ![](https://user-images.githubusercontent.com/93527021/170829350-f936e157-5e2e-4ea6-a70b-3d81290a1734.png).
   - Mỗi vũ khí đều có **level**, **damage min/max**, **range**. 
 
 ### Power up! hay Level up!
