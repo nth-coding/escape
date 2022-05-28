@@ -1,7 +1,7 @@
 #ifndef MELEEWEAPON_H
 #define MELEEWEAPON_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Weapon.h"
 
 class MeleeWeapon : public Weapon

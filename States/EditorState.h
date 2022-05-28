@@ -1,11 +1,11 @@
 #ifndef EDITORSTATE_H
 #define EDITORSTATE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "State.h"
 #include "../GUI/Gui.h"
 #include "../GUI/PauseMenu.h"
-#include "../Map/TileMap.h"
+#include "../map/TileMap.h"
 #include "DefaultEditorMode.h"
 #include "EnemyEditorMode.h"
 

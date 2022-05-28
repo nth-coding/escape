@@ -1,7 +1,7 @@
 #ifndef ATTRIBUTECOMPONENT_H
 #define ATTRIBUTECOMPONENT_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 class AttributeComponent
 {

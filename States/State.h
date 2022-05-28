@@ -1,9 +1,9 @@
 #ifndef STATE_H
 #define STATE_H
 
-#include "../HeaderFiles/Header.h"
-#include "../Entities/Player.h"
-#include "../ResourceFiles/GraphicsSettings.h"
+#include "../header_files/Header.h"
+#include "../entities/Player.h"
+#include "../resource_files/GraphicsSettings.h"
 
 class Player;
 class GraphicsSettings;

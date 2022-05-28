@@ -1,7 +1,7 @@
 #ifndef HITBOXCOMPONENT_H
 #define HITBOXCOMPONENT_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 class HitboxComponent
 {

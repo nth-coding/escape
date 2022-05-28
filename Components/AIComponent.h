@@ -1,8 +1,8 @@
 #ifndef AICOMPONENT_H
 #define AICOMPONENT_H
 
-#include "../HeaderFiles/Header.h"
-#include "../Entities/Entity.h"
+#include "../header_files/Header.h"
+#include "../entities/Entity.h"
 #include "../AI/AIFollow.h"
 
 class AIComponent

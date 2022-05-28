@@ -1,8 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "../HeaderFiles/Header.h"
-#include "../States/MainMenuState.h"
+#include "../header_files/Header.h"
+#include "../states/MainMenuState.h"
 
 class Game
 {

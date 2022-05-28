@@ -1,8 +1,8 @@
 #ifndef PLAYERGUI_H
 #define PLAYERGUI_H
 
-#include "../HeaderFiles/Header.h"
-#include "../Entities/Player.h"
+#include "../header_files/Header.h"
+#include "../entities/Player.h"
 #include "../GUI/Gui.h"
 
 class PlayerGUI

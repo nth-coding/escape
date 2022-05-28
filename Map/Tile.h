@@ -1,7 +1,7 @@
 #ifndef TILE_H
 #define TILE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 enum TileTypes {DEFAULT = 0, DAMAGING, DOODAD, ENEMYSPAWNER};
 

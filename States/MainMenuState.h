@@ -1,7 +1,7 @@
 #ifndef MAINMENUSTATE_H
 #define MAINMENUSTATE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "GameState.h"
 #include "EditorState.h"
 #include "SettingsState.h"

@@ -1,7 +1,7 @@
 #ifndef TEXTTAGSYSTEM_H
 #define TEXTTAGSYSTEM_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 enum TAGTYPES { DEFAULT_TAG, NEGATIVE_TAG, POSITIVE_TAG, EXPERIENCE_TAG, ENVIRONMETAL_TAG};
 

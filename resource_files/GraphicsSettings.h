@@ -1,7 +1,7 @@
 #ifndef GRAPHICSSETTINGS_H
 #define GRAPHICSSETTINGS_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 class GraphicsSettings
 {

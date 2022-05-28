@@ -1,7 +1,7 @@
 #ifndef SWORD_H
 #define SWORD_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "MeleeWeapon.h"
 
 class MeleeWeapon;

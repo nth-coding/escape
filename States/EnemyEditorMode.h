@@ -1,9 +1,9 @@
 #ifndef ENEMYEDITORMODE_H
 #define ENEMYEDITORMODE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "EditorMode.h"
-#include "../Map/EnemySpawnerTile.h"
+#include "../map/EnemySpawnerTile.h"
 
 class State;
 class StateData;

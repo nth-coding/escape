@@ -1,7 +1,7 @@
 #ifndef ANIMATIONCOMPONENT_H
 #define ANIMATIONCOMPONENT_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 class AnimationComponent
 {

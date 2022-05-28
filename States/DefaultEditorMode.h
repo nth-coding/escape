@@ -1,7 +1,7 @@
 #ifndef DEFAULTEDITORMODE_H
 #define DEFAULTEDITORMODE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "EditorMode.h"
 
 class State;

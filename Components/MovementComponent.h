@@ -1,7 +1,7 @@
 #ifndef MOVEMENTCOMPONENT_H
 #define MOVEMENTCOMPONENT_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 enum movement_states { IDLE = 0, MOVING, MOVING_LEFT, MOVING_RIGHT, MOVING_UP, MOVING_DOWN, LOOP, DEAD };
 

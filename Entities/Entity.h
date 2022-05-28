@@ -1,12 +1,12 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include "../HeaderFiles/Header.h"
-#include "../Components/HitboxComponent.h"
-#include "../Components/MovementComponent.h"
-#include "../Components/AnimationComponent.h"
-#include "../Components/AttributeComponent.h"
-#include "../Components/SkillComponent.h"
+#include "../header_files/Header.h"
+#include "../components/HitboxComponent.h"
+#include "../components/MovementComponent.h"
+#include "../components/AnimationComponent.h"
+#include "../components/AttributeComponent.h"
+#include "../components/SkillComponent.h"
 
 class HitboxComponent;
 class MovementComponent;

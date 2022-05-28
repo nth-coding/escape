@@ -1,7 +1,7 @@
 #ifndef AIOPTION_H
 #define AIOPTION_H
 
-#include "../Entities/Entity.h"
+#include "../entities/Entity.h"
 
 class AIOption
 {

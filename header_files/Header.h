@@ -26,7 +26,7 @@
 #include <SFML\Network.hpp>
 
 //Custom
-#include "../Custom/VectorMath.h"
+#include "../custom/VectorMath.h"
 
 #endif
 

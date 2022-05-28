@@ -1,7 +1,7 @@
 #ifndef DEADMENU_H
 #define DEADMENU_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Gui.h"
 
 class Gui;

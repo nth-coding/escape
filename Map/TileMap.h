@@ -1,10 +1,10 @@
 #ifndef TILEMAP_H
 #define TILEMAP_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "EnemySpawnerTile.h"
 #include "RegularTile.h"
-#include "../Entities/EnemySystem.h"
+#include "../entities/EnemySystem.h"
 
 class TileMap
 {

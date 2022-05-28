@@ -1,7 +1,7 @@
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Item.h"
 
 class Inventory

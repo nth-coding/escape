@@ -1,7 +1,7 @@
 #ifndef CHARGER_H
 #define CHARGER_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Enemy.h"
 
 class Charger : public Enemy

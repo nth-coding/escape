@@ -1,7 +1,7 @@
 #ifndef SKILLCOMPONENT_H
 #define SKILLCOMPONENT_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 
 enum SKILLS { CONSTITUTION = 0, MELEE_COMBAT, RANGED_COMBAT, ENDURANCE };
 

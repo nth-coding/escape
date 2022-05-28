@@ -1,7 +1,7 @@
 #ifndef SETTINGSSTATE_H
 #define SETTINGSSTATE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "State.h"
 #include "../GUI/Gui.h"
 

@@ -1,5 +1,5 @@
-#include "../HeaderFiles/Header.h"
-#include "../HeaderFiles/Game.h"
+#include "../header_files/Header.h"
+#include "../header_files/Game.h"
 
 //Static functions
 

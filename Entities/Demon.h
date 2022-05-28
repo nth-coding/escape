@@ -1,7 +1,7 @@
 #ifndef DEMON_H
 #define DEMON_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Enemy.h"
 
 class Demon : public Enemy

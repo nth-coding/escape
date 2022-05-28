@@ -1,8 +1,8 @@
 #ifndef ENEMYSYSTEM_H
 #define ENEMYSYSTEM_H
 
-#include "../HeaderFiles/Header.h"
-#include "../Map/EnemySpawnerTile.h"
+#include "../header_files/Header.h"
+#include "../map/EnemySpawnerTile.h"
 #include "Charger.h"
 #include "Demon.h"
 

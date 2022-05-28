@@ -1,9 +1,9 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "../HeaderFiles/Header.h"
-#include "../Entities/Entity.h"
-#include "../Map/EnemySpawnerTile.h"
+#include "../header_files/Header.h"
+#include "../entities/Entity.h"
+#include "../map/EnemySpawnerTile.h"
 #include "../AI/AIFollow.h"
 
 class Enemy : public Entity

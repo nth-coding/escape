@@ -1,15 +1,15 @@
 #ifndef GAMESTATE_H
 #define GAMESTATE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "State.h"
 #include "../GUI/PauseMenu.h"
 #include "../GUI/DeadMenu.h"
 #include "../GUI/WinMenu.h"
-#include "../Map/TileMap.h"
+#include "../map/TileMap.h"
 #include "../GUI/PlayerGUI.h"
-#include "../Items/Sword.h"
-#include "../Systems/TextTagSystem.h"
+#include "../items/Sword.h"
+#include "../systems/TextTagSystem.h"
 
 class GameState :
 	public State

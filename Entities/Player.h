@@ -1,10 +1,10 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Entity.h"
-#include "../Items/Items.h"
-#include "../Items/Inventory.h"
+#include "../items/Items.h"
+#include "../items/Inventory.h"
 
 class Entity;
 

@@ -1,7 +1,7 @@
 #ifndef REGULARTILE_H
 #define REGULARTILE_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "Tile.h"
 
 class RegularTile : public Tile

@@ -1,7 +1,7 @@
 #ifndef AIFOLLOW_H
 #define AIFOLLOW_H
 
-#include "../HeaderFiles/Header.h"
+#include "../header_files/Header.h"
 #include "AIOption.h"
 
 class AIFollow :

@@ -1,6 +1,5 @@
 #pragma once
 
-#include "../HeaderFiles/Header.h"
 #include <SFML/System.hpp>
 #include <math.h>
 
