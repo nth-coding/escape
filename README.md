@@ -29,7 +29,7 @@
   - `D`: Đi sang phải
 
   - `Left-mouse`: Tấn công
-  - 
+  
   *.. Tăng thêm độ khó trong combat: Để tấn công được quái thì ta còn cần click chuột đúng vào trong vùng hitbox của quái để gây dmg cho quái ..*
 
 ### Các nhân vật trong game
