@@ -51,7 +51,7 @@
 *.. Will update more ..*
 
 ### Vũ khí và các đồ buff
-  - Vũ khí đầu là dao phay 🔪.
+  - Vũ khí đầu là dao phay ![](https://user-images.githubusercontent.com/93527021/170829350-f936e157-5e2e-4ea6-a70b-3d81290a1734.png).
   - Mỗi vũ khí đều có **level**, **damage min/max**, **range**. 
 
 ### Power up! hay Level up!
