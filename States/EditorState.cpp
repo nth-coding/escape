@@ -38,7 +38,7 @@ void EditorState::initView()
 
 void EditorState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf"))
+	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
 	{
 		throw("ERROR::EDITORSTATE::COULD NOT LOAD FONT");
 	}
@@ -68,7 +68,8 @@ void EditorState::initPauseMenu()
 	this->pmenu = new PauseMenu(this->stateData->gfxSettings->resolution, this->font);
 
 	this->pmenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
-	this->pmenu->addButton("SOUND_ON/OFF", gui::p2pY(25.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "SOUND ON/OFF");
+	this->pmenu->addButton("SOUND_ON/OFF", gui::p2pY(60.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Sound: ON/OFF");
+	this->pmenu->addButton("CONTINUE", gui::p2pY(28.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Continue");
 	this->pmenu->addButton("SAVE", gui::p2pY(46.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Save");
 	this->pmenu->addButton("LOAD", gui::p2pY(37.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Load");
 }
@@ -203,7 +204,14 @@ void EditorState::updateGui(const float& dt)
 void EditorState::updatePauseMenuButtons()
 {
 	if (this->pmenu->isButtonPressed("QUIT"))
+	{
 		this->endState();
+	}
+
+	if (this->pmenu->isButtonPressed("CONTINUE") && this->getKeytime())
+	{
+		this->unpauseState();
+	}
 
 	if (this->pmenu->isButtonPressed("SAVE"))
 	{
@@ -216,7 +224,7 @@ void EditorState::updatePauseMenuButtons()
 		this->tileMap->loadFromFile("text.slmp");
 	}
 
-	if (this->pmenu->isButtonPressed("SOUND_ON/OFF"))
+	if (this->pmenu->isButtonPressed("SOUND_ON/OFF") && this->getKeytime())
 	{
 		sound_paused ^= 1;
 

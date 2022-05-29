@@ -33,6 +33,25 @@ PauseMenu::PauseMenu(sf::VideoMode& vm, sf::Font& font) : font(font)
 		this->container.getPosition().x + this->container.getSize().x / 2.f - this->menuText.getGlobalBounds().width / 2.f,
 		this->container.getPosition().y + gui::p2pY(4.f, vm)
 	);
+
+	// this->menuText_sound_on.setFont(font);
+	// this->menuText_sound_on.setFillColor(sf::Color(255, 255, 255, 200));
+	// this->menuText_sound_on.setCharacterSize(gui::calcCharSize(vm));
+	// this->menuText_sound_on.setString("ON");
+	// this->menuText_sound_on.setPosition
+	// (
+	// 	30.f, 30.f
+	// );
+
+	// this->menuText_sound_on.setFont(font);
+	// this->menuText_sound_on.setFillColor(sf::Color(255, 255, 255, 200));
+	// this->menuText_sound_on.setCharacterSize(gui::calcCharSize(vm));
+	// this->menuText_sound_on.setString("OFF");
+	// this->menuText_sound_on.setPosition
+	// (
+	// 	gui::p2pX(20.f, vm),
+	// 	gui::p2pY(25.f, vm)
+	// );
 }
 
 PauseMenu::~PauseMenu()

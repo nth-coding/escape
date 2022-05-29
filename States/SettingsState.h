@@ -30,6 +30,7 @@ public:
 	// Accessors
 
 	// Functions
+	void updateWinMenuButtons();
 	void updateInput(const float& dt);
 	void updateGui(const float& dt);
 	void update(const float& dt);

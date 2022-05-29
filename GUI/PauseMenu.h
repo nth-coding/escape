@@ -11,6 +11,8 @@ class PauseMenu
 private:
 	sf::Font& font;
 	sf::Text menuText;
+	sf::Text menuText_sound_on;
+	sf::Text menuText_sound_off;
 
 	sf::RectangleShape background;
 	sf::RectangleShape container;

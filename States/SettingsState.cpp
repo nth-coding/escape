@@ -65,6 +65,13 @@ void SettingsState::initGui()
 		&this->font, "Apply", gui::calcCharSize(vm),
 		sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
+
+	// this->buttons["SOUND_ON/OFF"] = new gui::Button(
+	// 	gui::p2pX(30.f, vm), gui::p2pY(30.5f, vm),
+	// 	gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
+	// 	&this->font, "SOUND ON/OFF", gui::calcCharSize(vm),
+	// 	sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
+	// 	sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
 }
 
 SettingsState::SettingsState(StateData* state_data)
@@ -111,12 +118,26 @@ void SettingsState::updateGui(const float & dt)
 	{
 		
 	}
+
+	// if (this->buttons["SOUND ON/OFF"]->isPressed())
+	// {
+	// 	sound_paused = sound_paused ^ 1;
+
+	// 	if (sound_paused)
+	// 	{
+	// 		this->music.pause();
+	// 	}
+	// 	else 
+	// 	{
+	// 		this->music.play();
+	// 	}
+	// }
 }
 
 void SettingsState::update(const float& dt)
 {
 	this->updateMousePositions();
-	this->updateInput(dt);
+	// this->updateInput(dt);
 
 	this->updateGui(dt);
 }

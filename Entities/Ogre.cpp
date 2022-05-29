@@ -53,7 +53,6 @@ Ogre::~Ogre()
 
 void Ogre::updateAnimation(const float & dt)
 {
-	this->sprite.setScale(2.f, 2.f);
 	if (this->movementComponent->getState(IDLE))
     {  
 		this->sprite.setOrigin(0.f, 0.f);

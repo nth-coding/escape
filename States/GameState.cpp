@@ -57,7 +57,7 @@ void GameState::initKeybinds()
 
 void GameState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf"))
+	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
 	}
@@ -96,8 +96,10 @@ void GameState::initPauseMenu()
 	const sf::VideoMode& vm = this->stateData->gfxSettings->resolution;
 	this->pmenu = new PauseMenu(this->stateData->gfxSettings->resolution, this->font);
 
+	this->pmenu->addButton("CONTINUE", gui::p2pY(28.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Continue");
 	this->pmenu->addButton("QUIT", gui::p2pY(74.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Quit");
-	this->pmenu->addButton("SOUND_ON/OFF", gui::p2pY(25.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "SOUND ON/OFF");
+	this->pmenu->addButton("SOUND_ON/OFF", gui::p2pY(60.f, vm), gui::p2pX(13.f, vm), gui::p2pY(6.f, vm), gui::calcCharSize(vm), "Sound: ON/OFF");
+
 }
 
 void GameState::initDeadMenu()
@@ -285,7 +287,12 @@ void GameState::updatePauseMenuButtons()
 		this->endState();
 	}
 
-	if (this->pmenu->isButtonPressed("SOUND_ON/OFF"))
+	if (this->pmenu->isButtonPressed("CONTINUE") && this->getKeytime())
+	{
+		this->unpauseState();
+	}
+
+	if (this->pmenu->isButtonPressed("SOUND_ON/OFF") && this->getKeytime())
 	{
 		sound_paused = sound_paused ^ 1;
 
