@@ -142,7 +142,7 @@
  - Tham khảo thật nhiều nguồn code chất lượng để có thể code "sạch", "đẹp" hơn.
  - Biết được cách làm nên 1 game và biến nó trở nên sống động hơn.
  - Được tiếp xúc và sử dụng triệt để thư viện đồ họa SFML.
- - Sử dụng khá tốt các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
+ - Sử dụng tốt đa các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
  - Rèn luyện cách code của bản thân "sạch" hơn.
  - Cách debug và sửa những bug ẩn của game *(rất rất khó và ngốn thời gian :<)*.
  - Rèn luyện được thêm khả năng sử dụng các phần mềm chỉnh sửa như PTS, GIMP để vẽ và cắt ghép textures.
