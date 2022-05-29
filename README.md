@@ -46,16 +46,16 @@
 - Mỗi loại quái đều có những chỉ số và các đặc điểm khác nhau, đặc trưng cho từng loại... Khám phá thêm trong gameplay.
 - Đây là hình ảnh minh họa của 4 loại quái đến hiện tại:
 
-- Charger:
+  - Charger:
 ![chort_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170883286-b241fe8a-b57e-4159-9e45-9c34c719ba97.png)
 
-- Demon:
+  - Demon:
 ![big_demon_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170883270-25631dd5-8aa7-4a2e-bbe3-8f0a2af9e5aa.png)
 
-- Muddy:
+  - Muddy:
 ![swampy_idle_anim_f2](https://user-images.githubusercontent.com/93527021/170861951-29b7a727-fa97-4774-a293-4513b084987d.png)
 
-- Ogre (Boss):
+  - Ogre (Boss):
 ![ogre_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170861974-393a1c11-789d-4b6b-b2d4-67e00c4dfba9.png)
 
 *.. Will update more ..*
