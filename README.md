@@ -60,9 +60,11 @@
 
 *.. Will update more ..*
 
-### Vũ khí và các đồ buff
+### Vũ khí và items khác
   - Vũ khí đầu là dao phay ![](https://user-images.githubusercontent.com/93527021/170829350-f936e157-5e2e-4ea6-a70b-3d81290a1734.png).
   - Mỗi vũ khí đều có **level**, **damage min/max**, **range**. 
+
+  *..Sẽ cố update các loại items như potions, atk_buff, def_buff,..vân vân..mây mây..*
 
 ### Power up! hay Level up!
   - Nhân vật sẽ có một thanh kinh nghiệm.
@@ -71,8 +73,8 @@
 ### Battle ⚔
   - Tìm đường thoát và tiêu diệt quái vật, quan trọng hơn là **sống sót**
   - Giết quái vật sẽ cho bạn kinh nghiệm *và có thể tiền hoặc điểm (sẽ cố update trong tương lai)* 
-  - Giết được boss để thoát khỏi mê cung
-  - 
+  - Giết boss và thoát khỏi mê cung
+  
   *... Still working on it ...*
   - Sẽ có save point cho nhân vật nếu game được update dài hơn
   - Sẽ có nhiều loại quái mạnh hơn nếu đi sâu vào trong hầm ngục
@@ -133,7 +135,7 @@
 # Kết luận
 
 ## Các kĩ thuật dùng trong làm game
- - Các kĩ thuật cơ bản: mảng, hàm, con trỏ, struct, class
+ - Các kĩ thuật cơ bản: mảng, hàm, con trỏ, struct, class,...
  - Ngoài ra, sử dụng các kiểu dữ liệu như map, vector, stack,... 
  - Tạo ra AI có chức năng tấn công và tìm đường đi ngắn nhất đến player.
  - Nâng cao: sử dụng tối đa thư viện đồ họa SFML, lập trình hướng đối tượng (OOP), module hóa code, Clean Code...
