@@ -47,10 +47,10 @@
 - Đây là hình ảnh minh họa của 4 loại quái đến hiện tại:
 
 - Charger:
-![charger_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.4/chort_idle_anim_f0.png)
+![chort_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170883286-b241fe8a-b57e-4159-9e45-9c34c719ba97.png)
 
 - Demon:
-![demon_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.3.1/big_demon_idle_anim_f0.png)
+![big_demon_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170883270-25631dd5-8aa7-4a2e-bbe3-8f0a2af9e5aa.png)
 
 - Muddy:
 ![swampy_idle_anim_f2](https://user-images.githubusercontent.com/93527021/170861951-29b7a727-fa97-4774-a293-4513b084987d.png)
