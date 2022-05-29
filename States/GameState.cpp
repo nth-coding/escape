@@ -1,6 +1,6 @@
 #include "GameState.h"
 
-const bool showHitbox = true;
+const bool showHitbox = false;
 
 void GameState::initDeferredRender()
 {

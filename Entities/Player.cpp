@@ -5,7 +5,7 @@ void Player::initVariables()
 {
 	this->initAttack = false;
 	this->attacking = false;
-	this->weapon = new Sword(1, 5, 10, 100, 20, "textures/weapon_cleaver.png");
+	this->weapon = new Sword(1, 5, 10, 80, 20, "textures/weapon_cleaver.png");
 	this->weapon->generate(1, 3);
 
 	this->damageTimerMax = 500;
@@ -56,34 +56,14 @@ Player::~Player()
 }
 
 //Accessors
-AttributeComponent * Player::getAttributeComponent()
+AttributeComponent* Player::getAttributeComponent()
 {
 	return this->attributeComponent;
 }
 
-Weapon * Player::getWeapon() const
+Weapon* Player::getWeapon() const
 {
 	return this->weapon;
-}
-
-const std::string Player::toStringCharacterTab() const
-{
-	std::stringstream ss;
-	const AttributeComponent* ac = this->attributeComponent;
-	const Weapon* w = this->weapon;
-
-	ss << "Level: " << ac->level << "\n"
-		<< "Exp: " << ac->exp << "\n"
-		<< "Exp next: " << ac->expNext << "\n"
-		
-		<< "Weapon Level: " << w->getLevel() << "\n"
-		<< "Weapon Type: " << w->getType() << "\n"
-		<< "Weapon Value: " << w->getValue() << "\n"
-		<< "Weapon Range: " << w->getRange() << "\n"
-		<< "Weapon Damage Min: " << w->getDamageMin() + this->attributeComponent->damageMin << " (" << this->attributeComponent->damageMin << ")" << "\n"
-		<< "Weapon Damage Max: " << w->getDamageMax() + this->attributeComponent->damageMax << " (" << this->attributeComponent->damageMax << ")" << "\n";
-
-	return ss.str();
 }
 
 const bool& Player::getInitAttack() const

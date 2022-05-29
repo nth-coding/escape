@@ -33,7 +33,6 @@ public:
 	AttributeComponent* getAttributeComponent();
 	Weapon* getWeapon() const;
 
-	const std::string toStringCharacterTab() const;
 	const bool& getInitAttack() const;
 	
 	const bool getDamageTimer();
