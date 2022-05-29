@@ -40,13 +40,20 @@
 
 **Enermies**
 
-- Mỗi loại quái đều có những chỉ số và các đặc điểm khác nhau, đặc trưng cho từng loại... Khám phá thêm trong gameplay và đây là hình ảnh minh họa của 2 loại quái đến hiện tại:
+- Mỗi loại quái đều có những chỉ số và các đặc điểm khác nhau, đặc trưng cho từng loại... Khám phá thêm trong gameplay.
+- Đây là hình ảnh minh họa của 4 loại quái đến hiện tại:
 
 - Charger:
 ![charger_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.4/chort_idle_anim_f0.png)
 
 - Demon:
 ![demon_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.3.1/big_demon_idle_anim_f0.png)
+
+- Muddy:
+![swampy_idle_anim_f2](https://user-images.githubusercontent.com/93527021/170861951-29b7a727-fa97-4774-a293-4513b084987d.png)
+
+- Ogre (Boss):
+![ogre_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170861974-393a1c11-789d-4b6b-b2d4-67e00c4dfba9.png)
 
 *.. Will update more ..*
 
@@ -61,9 +68,9 @@
 ### Battle ⚔
   - Tìm đường thoát và tiêu diệt quái vật, quan trọng hơn là **sống sót**
   - Giết quái vật sẽ cho bạn kinh nghiệm *và có thể tiền hoặc điểm (sẽ cố update trong tương lai)* 
-
-  *... Still working on it ...*
   - Giết được boss để thoát khỏi mê cung
+  - 
+  *... Still working on it ...*
   - Sẽ có save point cho nhân vật nếu game được update dài hơn
   - Sẽ có nhiều loại quái mạnh hơn nếu đi sâu vào trong hầm ngục
 
@@ -93,7 +100,7 @@
  Khi sang chế độ điều chỉnh sinh quái:
   - `Num1` & `Shift + Num1`: Chuyển loại quái (Ví dụ: Enemy Type: 1 -> Enemy Type: 2 và ngược lại) 
   
-  *.. Hiện tại mới có 2 thể loại quái nên vui lòng chỉ dùng 0 và 1 ..*
+  *.. Hiện tại mới có 4 thể loại quái nên vui lòng chỉ dùng từ 0 -> 3 ..*
   
   - `Num2` & `Shift + Num2`: Tăng giảm số lượng sinh quái 
   - `Num3` & `Shift + Num3`: Tăng giảm thời gian sinh quái
@@ -109,13 +116,16 @@
   - Pause Menu có tác dụng trong gameplay và map editor
  
   - Ở MapEditor, Pause menu sẽ có:
+    - `Continue`: Tiếp tục game (Unpause)
+    - `Sound: ON/OFF`: Tắt tiếng nhạc nền
     - `Load`: Tải map được lưu gần đây nhất
     - `Save`: Lưu map vừa tạo (sau khi click save sẽ tự out ra menu)
     - `Quit`: Thoát ra menu
   
   - Ở Gameplay, Pause menu sẽ có:
+    - `Continue`: Tiếp tục game (Unpause)
+    - `Sound: ON/OFF`: Tắt tiếng nhạc nền
     - `Quit`: Thoát ra menu
-    *.. Có thể sẽ có tăng giảm âm lượng nhạc nếu có thể bổ sung sớm nhất có thể ..*
 
 # Kết luận
 
