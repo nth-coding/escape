@@ -11,7 +11,7 @@
   - Bước 1: Cài đặt cho máy của bạn [mingw32 (hoặc mingw64)](https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Personal%20Builds/mingw-builds/7.3.0/threads-win32/seh/x86_64-7.3.0-release-win32-seh-rt_v5-rev0.7z/download)
   - Bước 2: Đặt path trong system environment variables
   - Bước 3: Clone game về bằng lệnh git clone hoặc tải về [tại đây](https://github.com/nth-coding/escape/archive/refs/heads/main.zip)
-  - Bước 4: Hãy để vị trí của game tại ngoài ổ \C: của máy tính của bạn
+  - Bước 4: Hãy để vị trí của game tại ngoài ổ \C: máy tính của bạn
   - Bước 5: Mở thư mục `build` và click vào `game.exe` để bắt đầu chơi game nàooo!
 
 *Còn nếu muốn bật hitbox thì vào GameState.cpp và chuyển `const bool showHitbox = false` thành `const bool showHitbox = true`*
@@ -22,6 +22,9 @@
   Một đầu bếp đã bị isekai vào một thế giới lạ và nơi anh tỉnh dậy là trong một hầm ngục với đầy những quái vật. Vũ khí duy nhất của anh chỉ có một chiếc dao phay mang theo người từ thế giới trước...
 
 ## Gameplay 
+
+**- Xem qua video gameplay tại đây: https://youtu.be/tk_UHkXyfec**
+
 **Control (Keybind)**
   - `W`: Đi lên
   - `A`: Đi sang trái
@@ -43,23 +46,25 @@
 - Mỗi loại quái đều có những chỉ số và các đặc điểm khác nhau, đặc trưng cho từng loại... Khám phá thêm trong gameplay.
 - Đây là hình ảnh minh họa của 4 loại quái đến hiện tại:
 
-- Charger:
-![charger_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.4/chort_idle_anim_f0.png)
+  - Charger:
+![chort_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170883286-b241fe8a-b57e-4159-9e45-9c34c719ba97.png)
 
-- Demon:
-![demon_sheet](https://github.com/nth-coding/escape/blob/main/build/textures/0x72_DungeonTilesetII_v1.3.1/big_demon_idle_anim_f0.png)
+  - Demon:
+![big_demon_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170883270-25631dd5-8aa7-4a2e-bbe3-8f0a2af9e5aa.png)
 
-- Muddy:
+  - Muddy:
 ![swampy_idle_anim_f2](https://user-images.githubusercontent.com/93527021/170861951-29b7a727-fa97-4774-a293-4513b084987d.png)
 
-- Ogre (Boss):
+  - Ogre (Boss):
 ![ogre_idle_anim_f0](https://user-images.githubusercontent.com/93527021/170861974-393a1c11-789d-4b6b-b2d4-67e00c4dfba9.png)
 
 *.. Will update more ..*
 
-### Vũ khí và các đồ buff
+### Vũ khí và items khác
   - Vũ khí đầu là dao phay ![](https://user-images.githubusercontent.com/93527021/170829350-f936e157-5e2e-4ea6-a70b-3d81290a1734.png).
   - Mỗi vũ khí đều có **level**, **damage min/max**, **range**. 
+
+  *..Sẽ cố update các loại items như potions, atk_buff, def_buff,..vân vân..mây mây..*
 
 ### Power up! hay Level up!
   - Nhân vật sẽ có một thanh kinh nghiệm.
@@ -68,8 +73,8 @@
 ### Battle ⚔
   - Tìm đường thoát và tiêu diệt quái vật, quan trọng hơn là **sống sót**
   - Giết quái vật sẽ cho bạn kinh nghiệm *và có thể tiền hoặc điểm (sẽ cố update trong tương lai)* 
-  - Giết được boss để thoát khỏi mê cung
-  - 
+  - Giết boss và thoát khỏi mê cung
+  
   *... Still working on it ...*
   - Sẽ có save point cho nhân vật nếu game được update dài hơn
   - Sẽ có nhiều loại quái mạnh hơn nếu đi sâu vào trong hầm ngục
@@ -130,16 +135,16 @@
 # Kết luận
 
 ## Các kĩ thuật dùng trong làm game
- - Các kĩ thuật cơ bản: mảng, hàm, con trỏ, struct, class
+ - Các kĩ thuật cơ bản: mảng, hàm, con trỏ, struct, class,...
  - Ngoài ra, sử dụng các kiểu dữ liệu như map, vector, stack,... 
  - Tạo ra AI có chức năng tấn công và tìm đường đi ngắn nhất đến player.
  - Nâng cao: sử dụng tối đa thư viện đồ họa SFML, lập trình hướng đối tượng (OOP), module hóa code, Clean Code...
 
 ## Điều tâm đắc rút ra được
  - Tham khảo thật nhiều nguồn code chất lượng để có thể code "sạch", "đẹp" hơn.
- - Biết được cách làm nên 1 game và biến nó trở nên sống động bằng chính bộ não của mình.
+ - Biết được cách làm nên 1 game và biến nó trở nên sống động hơn.
  - Được tiếp xúc và sử dụng triệt để thư viện đồ họa SFML.
- - Sử dụng khá tốt các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
+ - Sử dụng tốt đa các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
  - Rèn luyện cách code của bản thân "sạch" hơn.
  - Cách debug và sửa những bug ẩn của game *(rất rất khó và ngốn thời gian :<)*.
  - Rèn luyện được thêm khả năng sử dụng các phần mềm chỉnh sửa như PTS, GIMP để vẽ và cắt ghép textures.
