@@ -3,11 +3,22 @@
 
 #include <Windows.h>
 
-int main()
+bool show_hitbox = false;
+std::ofstream fout("log.txt");
+
+int main(int argc, char* argv[])
 {
 	Game game;
-	game.run();
 	
+	if (argc != 1) show_hitbox = true;
+    try 
+	{
+      	game.run();
+    }
+    catch (const std::exception& e) 
+	{
+      	fout << "Exception: " << e.what() << '\n';
+	}
 	//system("pause");
 	return 0;
 }

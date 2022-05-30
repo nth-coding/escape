@@ -2,7 +2,7 @@
 
 void State::music_run()
 {
-	if (!this->music.openFromFile("../build/Audio/background.ogg"))
+	if (!this->music.openFromFile("../build/audio/background.ogg"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD BACKGROUND_MUSIC");
 	}

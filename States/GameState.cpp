@@ -1,6 +1,7 @@
 #include "GameState.h"
 
-const bool showHitbox = false;
+// extern: tham chieu 1 bien (h) 1 ham cung ten, da dc d/n ben ngoai. No chi la khai bao kp d/n (cap phat bo nho cho bien)
+extern bool show_hitbox;
 
 void GameState::initDeferredRender()
 {
@@ -39,7 +40,7 @@ void GameState::initView()
 
 void GameState::initKeybinds()
 {
-	std::ifstream ifs("../build/Config/gamestate_keybinds.ini");
+	std::ifstream ifs("../build/config/gamestate_keybinds.ini");
 
 	if (ifs.is_open())
 	{
@@ -57,7 +58,7 @@ void GameState::initKeybinds()
 
 void GameState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
+	if (!this->font.loadFromFile("../build/fonts/Dosis-Light.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
 	}
@@ -157,7 +158,7 @@ void GameState::initTileMap()
 
 void GameState::initSystems()
 {
-	this->tts = new TextTagSystem("../build/Fonts/PixellettersFull.ttf");
+	this->tts = new TextTagSystem("../build/fonts/PixellettersFull.ttf");
 }
 
 //Constructors / Destructors
@@ -502,9 +503,9 @@ void GameState::render(sf::RenderTarget* target)
 
 	for (auto *enemy : this->activeEnemies)
 	{
-		enemy->render(this->renderTexture, showHitbox);
+		enemy->render(this->renderTexture, show_hitbox);
 	}
-	this->player->render(this->renderTexture, showHitbox);
+	this->player->render(this->renderTexture, show_hitbox);
 
 	this->tileMap->renderDeferred(this->renderTexture, this->player->getCenter());
 	this->tts->render(this->renderTexture);

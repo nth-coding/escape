@@ -38,7 +38,7 @@ void EditorState::initView()
 
 void EditorState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Dosis-Light.ttf"))
+	if (!this->font.loadFromFile("../build/fonts/Dosis-Light.ttf"))
 	{
 		throw("ERROR::EDITORSTATE::COULD NOT LOAD FONT");
 	}
@@ -46,7 +46,7 @@ void EditorState::initFonts()
 
 void EditorState::initKeybinds()
 {
-	std::ifstream ifs("../build/Config/editorstate_keybinds.ini");
+	std::ifstream ifs("../build/config/editorstate_keybinds.ini");
 
 	if (ifs.is_open())
 	{

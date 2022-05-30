@@ -7,7 +7,7 @@ void SettingsState::initVariables()
 
 void SettingsState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/Fonts/Pixeboy-z8XGD.ttf"))
+	if (!this->font.loadFromFile("../build/fonts/Pixeboy-z8XGD.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
 	}
@@ -15,7 +15,7 @@ void SettingsState::initFonts()
 
 void SettingsState::initKeybinds()
 {
-	std::ifstream ifs("../build/Config/mainmenustate_keybinds.ini");
+	std::ifstream ifs("../build/config/mainmenustate_keybinds.ini");
 
 	if (ifs.is_open())
 	{
