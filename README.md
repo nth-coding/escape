@@ -141,7 +141,7 @@
  - Nâng cao: sử dụng tối đa thư viện đồ họa SFML, lập trình hướng đối tượng (OOP), module hóa code, Clean Code...
 
 ## Điều tâm đắc rút ra được
- - Tham khảo thật nhiều nguồn code chất lượng để có thể code "sạch", "đẹp" hơn.
+ - Tham khảo thật nhiều nguồn code chất lượng để có thể code thông minh hơn.
  - Biết được cách làm nên 1 game và biến nó trở nên sống động hơn.
  - Được tiếp xúc và sử dụng triệt để thư viện đồ họa SFML.
  - Sử dụng tốt đa các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
