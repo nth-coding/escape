@@ -90,6 +90,11 @@ void GameState::initTextures()
 	{
 		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_OGRE_TEXTURE";
 	}
+
+	if (!this->textures["CHEST_SHEET"].loadFromFile("../build/textures/chest.png"))
+	{
+		throw "ERROR::GAME_STATE::COULD_NOT_LOAD_CHEST_TEXTURE";
+	}
 }
 
 void GameState::initPauseMenu()
@@ -361,7 +366,7 @@ void GameState::updateCombatAndEnemies(const float& dt)
 		this->tileMap->updateWorldBoundsCollision(enemy, dt);
 		this->tileMap->updateTileCollision(enemy, dt);
 
-	  this->updateCombat(enemy, index, dt);
+	  	this->updateCombat(enemy, index, dt);
 
 		if (enemy->isDead())
 		{
@@ -393,6 +398,24 @@ void GameState::updateCombat(Enemy* enemy, const int index, const float& dt)
 		enemy->resetDamageTimer();
 		this->tts->addTextTag(DEFAULT_TAG, enemy->getPosition().x, enemy->getPosition().y, dmg, "", "");	
 	}
+
+	// Check chest open
+	// if (enemy->getGlobalBounds().intersects(this->player->getGlobalBounds()) &&
+	// 	sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("OPEN"))))
+	// {
+	// 	int type = rand() % 2;
+	// 	if (type == 0) 
+	// 	{
+	// 		this->player->gainHP(60);1
+	// 		this->tts->addTextTag(NEGATIVE_TAG, player->getPosition().x - 30.f, player->getPosition().y, 60, "+", "HP");
+	// 	}
+	// 	else if (type == 1)
+	// 	{
+	// 		int exp_up = (rand() % 5) * 100;
+	// 		this->player->gainEXP(exp_up);
+	// 		this->tts->addTextTag(EXPERIENCE_TAG, player->getPosition().x - 30.f, player->getPosition().y, 60, "+", "EXP");
+	// 	}
+	// }
 
 	// Check enemy damage
 	if (enemy->getGlobalBounds().intersects(this->player->getGlobalBounds()) && this->player->getDamageTimer())
@@ -437,7 +460,7 @@ void GameState::update(const float& dt)
 
 		this->updatePlayerGUI(dt);
 
-		//Update systems
+		// Update systems
 		this->tts->update(dt);
 
 		return;
@@ -458,13 +481,13 @@ void GameState::update(const float& dt)
 
 		this->updatePlayerGUI(dt);
 
-		//Update systems
+		// Update systems
 		this->tts->update(dt);
 
 		return;
 	}
 
-	if (!this->paused) //Unpaused update
+	if (!this->paused) // Unpaused update
 	{
 		this->updateView(dt);
 
@@ -478,13 +501,13 @@ void GameState::update(const float& dt)
 
 		this->updatePlayerGUI(dt);
 
-		//Update all enemies
+		// Update all enemies
 		this->updateCombatAndEnemies(dt);
 
-		//Update systems
+		// Update systems
 		this->tts->update(dt);
 	}
-	else //Paused update
+	else // Paused update
 	{
 		this->pmenu->update(this->mousePosWindow);
 		this->updatePauseMenuButtons();
@@ -510,7 +533,7 @@ void GameState::render(sf::RenderTarget* target)
 	this->tileMap->renderDeferred(this->renderTexture, this->player->getCenter());
 	this->tts->render(this->renderTexture);
 
-	//Render GUI
+	// Render GUI
 	this->renderTexture.setView(this->renderTexture.getDefaultView());
 	this->playerGUI->render(this->renderTexture);
 
@@ -518,15 +541,14 @@ void GameState::render(sf::RenderTarget* target)
 
 	if (this->won) this->winmenu->render(this->renderTexture);
 
-	if (this->paused) //Pause menu render
+	if (this->paused) // Pause menu render
 	{
 		this->pmenu->render(this->renderTexture);
 	}
 
-	//Debug Text
+	// Debug Text
 	this->renderTexture.draw(this->debugText);
 
-	//FINAL RENDER
 	this->renderTexture.display();
 	target->draw(this->renderSprite);
 }

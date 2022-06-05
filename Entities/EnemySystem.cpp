@@ -31,6 +31,10 @@ void EnemySystem::createEnemy(const short type, const float xPos, const float yP
 		this->activeEnemies.push_back(new Ogre(xPos, yPos, this->textures["OGRE_SHEET"], enemy_spawner_tile, this->player));
 		enemy_spawner_tile.increaseEnemyCounter();
 		break;
+	case EnemyTypes::CHEST:
+		this->activeEnemies.push_back(new Chest(xPos, yPos, this->textures["CHEST_SHEET"], enemy_spawner_tile, this->player));
+		enemy_spawner_tile.increaseEnemyCounter();
+		break;
 	default:
 		std::cout << "ERROR::ENEMYSYSTEM::CREATEENEMY::TYPE DOES NOT EXIST" << "\n";
 		break;

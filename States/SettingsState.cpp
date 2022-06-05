@@ -7,7 +7,7 @@ void SettingsState::initVariables()
 
 void SettingsState::initFonts()
 {
-	if (!this->font.loadFromFile("../build/fonts/Pixeboy-z8XGD.ttf"))
+	if (!this->font.loadFromFile("Fonts/Dosis-Light.ttf"))
 	{
 		throw("ERROR::MAINMENUSTATE::COULD NOT LOAD FONT");
 	}
@@ -15,7 +15,7 @@ void SettingsState::initFonts()
 
 void SettingsState::initKeybinds()
 {
-	std::ifstream ifs("../build/config/mainmenustate_keybinds.ini");
+	std::ifstream ifs("Config/mainmenustate_keybinds.ini");
 
 	if (ifs.is_open())
 	{
@@ -66,12 +66,48 @@ void SettingsState::initGui()
 		sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
 
-	// this->buttons["SOUND_ON/OFF"] = new gui::Button(
-	// 	gui::p2pX(30.f, vm), gui::p2pY(30.5f, vm),
-	// 	gui::p2pX(13.f, vm), gui::p2pY(6.f, vm),
-	// 	&this->font, "SOUND ON/OFF", gui::calcCharSize(vm),
-	// 	sf::Color(70, 70, 70, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
-	// 	sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
+	// Modes
+	std::vector<std::string> modes_str;
+	for (auto &i : this->modes)
+	{
+		modes_str.push_back(std::to_string(i.width) + 'x' + std::to_string(i.height));
+	}
+
+	// Drop down lists
+	this->dropDownLists["RESOLUTION"] = new gui::DropDownList(
+		gui::p2pX(42.f, vm), gui::p2pY(42.f, vm),
+		gui::p2pX(10.4f, vm), gui::p2pY(4.5f, vm),
+		font, modes_str.data(), modes_str.size()
+	);
+
+	// Text init
+	this->optionsText.setFont(this->font);
+	this->optionsText.setPosition(sf::Vector2f(gui::p2pX(5.2f, vm), gui::p2pY(41.7f, vm)));
+	this->optionsText.setCharacterSize(gui::calcCharSize(vm, 70));
+	this->optionsText.setFillColor(sf::Color(255, 255, 255, 200));
+
+	this->optionsText.setString(
+		"Resolution \n\nFullscreen \n\nVsync \n\nAntialiasing \n\n "
+	);
+}
+
+void SettingsState::resetGui()
+{
+	auto it = this->buttons.begin();
+	for (it = this->buttons.begin(); it != this->buttons.end(); ++it)
+	{
+		delete it->second;
+	}
+	this->buttons.clear();
+
+	auto it2 = this->dropDownLists.begin();
+	for (it2 = this->dropDownLists.begin(); it2 != this->dropDownLists.end(); ++it2)
+	{
+		delete it2->second;
+	}
+	this->dropDownLists.clear();
+
+	this->initGui();
 }
 
 SettingsState::SettingsState(StateData* state_data)
@@ -85,13 +121,18 @@ SettingsState::SettingsState(StateData* state_data)
 
 SettingsState::~SettingsState()
 {
-	for (auto it = this->buttons.begin(); it != this->buttons.end(); ++it)
+	auto it = this->buttons.begin();
+	for (it = this->buttons.begin(); it != this->buttons.end(); ++it)
 	{
 		delete it->second;
 	}
+	
+	auto it2 = this->dropDownLists.begin();
+	for (it2 = this->dropDownLists.begin(); it2 != this->dropDownLists.end(); ++it2)
+	{
+		delete it2->second;
+	}
 }
-
-// Accessors
 
 // Functions
 void SettingsState::updateInput(const float & dt)
@@ -101,13 +142,15 @@ void SettingsState::updateInput(const float & dt)
 
 void SettingsState::updateGui(const float & dt)
 {
+	/* Update het gui_elements va chuc nang cua chung tai state */
 	// Buttons
 	for (auto &it : this->buttons)
 	{
 		it.second->update(this->mousePosWindow);
 	}
 
-	// Quit the game
+	// Button functionality
+	// Quit to menu
 	if (this->buttons["BACK"]->isPressed())
 	{
 		this->endState();
@@ -116,28 +159,24 @@ void SettingsState::updateGui(const float & dt)
 	// Apply selected settings
 	if (this->buttons["APPLY"]->isPressed())
 	{
-		
+		this->stateData->gfxSettings->resolution = this->modes[this->dropDownLists["RESOLUTION"]->getActiveElementId()];
+
+		this->window->create(this->stateData->gfxSettings->resolution, this->stateData->gfxSettings->title, sf::Style::Default);
+
+		this->resetGui();
 	}
 
-	// if (this->buttons["SOUND ON/OFF"]->isPressed())
-	// {
-	// 	sound_paused = sound_paused ^ 1;
-
-	// 	if (sound_paused)
-	// 	{
-	// 		this->music.pause();
-	// 	}
-	// 	else 
-	// 	{
-	// 		this->music.play();
-	// 	}
-	// }
+	// Dropdown lists
+	for (auto &it : this->dropDownLists)
+	{
+		it.second->update(this->mousePosWindow, dt);
+	}
 }
 
 void SettingsState::update(const float& dt)
 {
 	this->updateMousePositions();
-	// this->updateInput(dt);
+	this->updateInput(dt);
 
 	this->updateGui(dt);
 }
@@ -145,6 +184,11 @@ void SettingsState::update(const float& dt)
 void SettingsState::renderGui(sf::RenderTarget& target)
 {
 	for (auto &it : this->buttons)
+	{
+		it.second->render(target);
+	}
+
+	for (auto &it : this->dropDownLists)
 	{
 		it.second->render(target);
 	}
@@ -159,13 +203,15 @@ void SettingsState::render(sf::RenderTarget* target)
 
 	this->renderGui(*target);
 
-	// Tao mousePos
-	sf::Text mouseText;
-	mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
-	mouseText.setFont(this->font);
-	mouseText.setCharacterSize(12);
-	std::stringstream ss;
-	ss << this->mousePosView.x << " " << this->mousePosView.y;
-	mouseText.setString(ss.str());
-	target->draw(mouseText);
+	target->draw(this->optionsText);
+
+	//REMOVE LATER!!!
+	// sf::Text mouseText;
+	// mouseText.setPosition(this->mousePosView.x, this->mousePosView.y - 50);
+	// mouseText.setFont(this->font);
+	// mouseText.setCharacterSize(12);
+	// std::stringstream ss;
+	// ss << this->mousePosView.x << " " << this->mousePosView.y;
+	// mouseText.setString(ss.str());
+	// target->draw(mouseText);
 }

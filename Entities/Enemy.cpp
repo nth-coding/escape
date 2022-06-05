@@ -74,7 +74,7 @@ const bool Enemy::isDead() const
 	return false;
 }
 
-const AttributeComponent * Enemy::getAttributeComp() const
+const AttributeComponent* Enemy::getAttributeComp() const
 {
 	if (this->attributeComponent)
 		return this->attributeComponent;

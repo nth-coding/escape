@@ -56,33 +56,6 @@ namespace gui
 		void render(sf::RenderTarget& target);
 	};
 
-	class DropDownList
-	{
-	private:
-		float keytime;
-		float keytimeMax;
-
-		sf::Font& font;
-		gui::Button* activeElement;
-		std::vector<gui::Button*> list;
-		bool showList;
-
-	public:
-		DropDownList(float x, float y, float width, float height, 
-			sf::Font& font, std::string list[], 
-			unsigned nrOfElements, unsigned default_index = 0);
-		~DropDownList();
-
-		//Accessors
-		const unsigned short& getActiveElementId() const;
-
-		//Functions
-		const bool getKeytime();
-		void updateKeytime(const float& dt);
-		void update(const sf::Vector2i& mousePosWindow, const float& dt);
-		void render(sf::RenderTarget& target);
-	};
-
 	class TextureSelector
 	{
 	private:
@@ -99,9 +72,7 @@ namespace gui
 		sf::IntRect textureRect;
 
 	public:
-		TextureSelector(float x, float y, float width, float height, 
-			float gridSize, const sf::Texture* texture_sheet, 
-			sf::Font& font, std::string text);
+		TextureSelector(float x, float y, float width, float height, float gridSize, const sf::Texture* texture_sheet, sf::Font& font, std::string text);
 		~TextureSelector();
 
 		//Accessors
@@ -125,14 +96,37 @@ namespace gui
 		sf::RectangleShape inner;
 
 	public:
-		ProgressBar(float x, float y, float width, float height,
-			sf::Color inner_color, unsigned character_size,
-			sf::VideoMode& vm, sf::Font* font = NULL);
+		ProgressBar(float x, float y, float width, float height, sf::Color inner_color, unsigned character_size, sf::VideoMode& vm, sf::Font* font = NULL);
 		~ProgressBar();
 
 		//Functions
 		void update(const int current_value, const int max_value);
 		void render(sf::RenderTarget & target);
+	};
+
+	class DropDownList
+	{
+	private:
+		float keytime;
+		float keytimeMax;
+
+		sf::Font& font;
+		gui::Button* activeElement;
+		std::vector<gui::Button*> list;
+		bool showList;
+
+	public:
+		DropDownList(float x, float y, float width, float height, sf::Font& font, std::string list[], unsigned nrOfElements, unsigned default_index = 0);
+		~DropDownList();
+
+		//Accessors
+		const unsigned short& getActiveElementId() const;
+
+		//Functions
+		const bool getKeytime();
+		void updateKeytime(const float& dt);
+		void update(const sf::Vector2i& mousePosWindow, const float& dt);
+		void render(sf::RenderTarget& target);
 	};
 }
 

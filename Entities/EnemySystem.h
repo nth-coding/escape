@@ -7,8 +7,9 @@
 #include "Demon.h"
 #include "Muddy.h"
 #include "Ogre.h"
+#include "Chest.h"
 
-enum EnemyTypes {DEMON = 0, CHARGER = 1, MUDDY = 2, OGRE = 3};
+enum EnemyTypes {DEMON = 0, CHARGER = 1, MUDDY = 2, OGRE = 3, CHEST = 4};
 
 class EnemySystem
 {

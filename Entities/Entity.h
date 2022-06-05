@@ -14,7 +14,6 @@ private:
 	void initVariables();
 
 protected:
-
 	sf::Sprite sprite;
 
 	HitboxComponent* hitboxComponent;
@@ -29,9 +28,7 @@ public:
 
 	//Component functions
 	void setTexture(sf::Texture& texture);
-	void createHitboxComponent(sf::Sprite& sprite, 
-		float offset_x, float offset_y,
-		float width, float height);
+	void createHitboxComponent(sf::Sprite& sprite, float offset_x, float offset_y, float width, float height);
 	void createMovementComponent(const float maxVelocity, const float acceleration, const float deceleration);
 	void createAnimationComponent(sf::Texture& texture_sheet);
 	void createAttributeComponent(int level, int vitality, int strength, int dexterity, int agility, int intelligence);
