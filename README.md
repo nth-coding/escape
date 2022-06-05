@@ -23,7 +23,7 @@
 
 ## Gameplay 
 
-**- Xem qua video gameplay tại đây: https://youtu.be/tk_UHkXyfec**
+**- Xem qua video gameplay tại đây: https://youtu.be/0f7jj8l0zjQ**
 
 **Control (Keybind)**
   - `W`: Đi lên
