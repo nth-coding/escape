@@ -12,7 +12,8 @@ void GameState::initDeferredRender()
 
 	this->renderSprite.setTexture(this->renderTexture.getTexture());
 	this->renderSprite.setTextureRect(
-		sf::IntRect(
+		sf::IntRect
+		(
 			0, 0, 
 			this->stateData->gfxSettings->resolution.width, 
 			this->stateData->gfxSettings->resolution.height
@@ -370,9 +371,27 @@ void GameState::updateCombatAndEnemies(const float& dt)
 
 		if (enemy->isDead())
 		{
-			this->player->gainEXP(enemy->getGainExp());
-			this->tts->addTextTag(EXPERIENCE_TAG, this->player->getPosition().x - 40.f, this->player->getPosition().y - 30.f, static_cast<int>(enemy->getGainExp()), "+", "EXP");
-
+			int dmg = enemy->getAttributeComp()->damageMax;
+			if (dmg == 0)
+			{
+				int type = rand() % 2;
+				if (type == 0) 
+				{
+					this->player->gainHP(30);
+					this->tts->addTextTag(NEGATIVE_TAG, player->getPosition().x - 30.f, player->getPosition().y, 30, "+", "HP");
+				}
+				else if (type == 1)
+				{
+					int exp_up = (rand() % 5) * 100;
+					this->player->gainEXP(exp_up);
+					this->tts->addTextTag(EXPERIENCE_TAG, player->getPosition().x - 30.f, player->getPosition().y, exp_up, "+", "EXP");
+				}
+			}
+			else
+			{
+				this->player->gainEXP(enemy->getGainExp());
+				this->tts->addTextTag(EXPERIENCE_TAG, this->player->getPosition().x - 40.f, this->player->getPosition().y - 30.f, static_cast<int>(enemy->getGainExp()), "+", "EXP");
+			}
 			this->enemySystem->removeEnemy(index);
 			continue;
 		}
@@ -399,30 +418,16 @@ void GameState::updateCombat(Enemy* enemy, const int index, const float& dt)
 		this->tts->addTextTag(DEFAULT_TAG, enemy->getPosition().x, enemy->getPosition().y, dmg, "", "");	
 	}
 
-	// Check chest open
-	// if (enemy->getGlobalBounds().intersects(this->player->getGlobalBounds()) &&
-	// 	sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("OPEN"))))
-	// {
-	// 	int type = rand() % 2;
-	// 	if (type == 0) 
-	// 	{
-	// 		this->player->gainHP(60);1
-	// 		this->tts->addTextTag(NEGATIVE_TAG, player->getPosition().x - 30.f, player->getPosition().y, 60, "+", "HP");
-	// 	}
-	// 	else if (type == 1)
-	// 	{
-	// 		int exp_up = (rand() % 5) * 100;
-	// 		this->player->gainEXP(exp_up);
-	// 		this->tts->addTextTag(EXPERIENCE_TAG, player->getPosition().x - 30.f, player->getPosition().y, 60, "+", "EXP");
-	// 	}
-	// }
-
 	// Check enemy damage
 	if (enemy->getGlobalBounds().intersects(this->player->getGlobalBounds()) && this->player->getDamageTimer())
 	{
 		int dmg = enemy->getAttributeComp()->damageMax;
-		this->player->loseHP(dmg);
-		this->tts->addTextTag(NEGATIVE_TAG, player->getPosition().x - 30.f, player->getPosition().y, dmg, "-", "HP");
+
+		if (dmg != 0)
+		{
+			this->player->loseHP(dmg);
+			this->tts->addTextTag(NEGATIVE_TAG, player->getPosition().x - 30.f, player->getPosition().y, dmg, "-", "HP");
+		}
 	}
 }
 

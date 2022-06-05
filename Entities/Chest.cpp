@@ -21,7 +21,7 @@ Chest::Chest(float x, float y, sf::Texture& texture_sheet, EnemySpawnerTile& ene
 	this->createHitboxComponent(this->sprite, 0.f, 0.f, 16.f, 16.f);
 	this->createMovementComponent(0.f, 0.f, 0.f);
 	this->createAnimationComponent(texture_sheet);
-	this->createAttributeComponent(1, 1, 1, 1, 1, 1);
+	this->createAttributeComponent(1, 1, 0, 1, 1, 1);
 
 	this->setPosition(x, y);
 	this->initAnimations();

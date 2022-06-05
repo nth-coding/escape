@@ -35,7 +35,7 @@ Ogre::Ogre(float x, float y, sf::Texture& texture_sheet, EnemySpawnerTile& enemy
 	this->createHitboxComponent(this->sprite, 28.f, 32.f, 64.f, 64.f);
 	this->createMovementComponent(50.f, 700.f, 500.f);
 	this->createAnimationComponent(texture_sheet);
-	this->createAttributeComponent(2, 10, 3, 3, 3, 3);
+	this->createAttributeComponent(3, 10, 10, 10, 10, 10);
 
 	this->generateAttributes(this->attributeComponent->level);
 

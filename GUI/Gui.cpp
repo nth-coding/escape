@@ -228,7 +228,7 @@ gui::TextureSelector::~TextureSelector()
 	delete this->hide_btn;
 }
 
-//Accessors
+// Accessors
 const bool& gui::TextureSelector::getActive() const
 {
 	return this->active;
@@ -250,7 +250,7 @@ const bool gui::TextureSelector::getKeytime()
 	return false;
 }
 
-//Functions
+// Functions
 void gui::TextureSelector::updateKeytime(const float& dt)
 {
 	if (this->keytime < this->keytimeMax)
@@ -350,7 +350,8 @@ void gui::ProgressBar::update(const int current_value, const int max_value)
 	float percent = static_cast<float>(current_value) / static_cast<float>(max_value);
 
 	this->inner.setSize(
-		sf::Vector2f(
+		sf::Vector2f
+		(
 			static_cast<float>(std::floor(max_value * percent * 3.3f)),
 			this->inner.getSize().y
 		)
