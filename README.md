@@ -12,9 +12,9 @@
   - Bước 2: Đặt path trong system environment variables
   - Bước 3: Clone game về bằng lệnh git clone hoặc tải về [tại đây](https://github.com/nth-coding/escape/archive/refs/heads/main.zip)
   - Bước 4: Hãy để vị trí của game tại ngoài ổ \C: máy tính của bạn
-  - Bước 5: Mở thư mục `build` và click vào `game.exe` để bắt đầu chơi game nàooo!
+  - Bước 5: Mở thư mục `build` và click vào `game.exe` hoặc `build.sh` để bắt đầu chơi game nàooo!
 
-*Còn nếu muốn bật hitbox thì vào GameState.cpp và chuyển `const bool showHitbox = false` thành `const bool showHitbox = true`*
+*Còn nếu muốn bật hitbox thì hãy chạy `build_with_hitbox.sh` trong `build`*
 
 # Chi tiết về game:
 
@@ -141,7 +141,7 @@
  - Nâng cao: sử dụng tối đa thư viện đồ họa SFML, lập trình hướng đối tượng (OOP), module hóa code, Clean Code...
 
 ## Điều tâm đắc rút ra được
- - Tham khảo thật nhiều nguồn code chất lượng để có thể code "sạch", "đẹp" hơn.
+ - Tham khảo thật nhiều nguồn code chất lượng để có thể code thông minh hơn.
  - Biết được cách làm nên 1 game và biến nó trở nên sống động hơn.
  - Được tiếp xúc và sử dụng triệt để thư viện đồ họa SFML.
  - Sử dụng tốt đa các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
