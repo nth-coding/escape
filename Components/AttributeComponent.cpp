@@ -82,7 +82,7 @@ void AttributeComponent::updateStats(const bool reset)
 
 	if (reset)
 	{
-		this->hpMax += 20;
+		// this->hpMax += 20;
 		this->hp = this->hpMax;
 	}
 }

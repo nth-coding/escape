@@ -5,7 +5,7 @@ void Player::initVariables()
 {
 	this->initAttack = false;
 	this->attacking = false;
-	this->weapon = new Sword(1, 5, 10, 80, 20, "textures/weapon_cleaver.png");
+	this->weapon = new Sword(2, 8, 12, 80, 20, "textures/weapon_cleaver.png");
 	this->weapon->generate(1, 3);
 
 	this->damageTimerMax = 500;
@@ -22,9 +22,9 @@ void Player::initAnimations()
     this->animationComponent->addAnimation("WALK", 5.f, 0, 1, 7, 1, 32, 32);
 	this->animationComponent->addAnimation("DEAD", 40.f, 0, 7, 6, 7, 32, 32);
 	this->animationComponent->addAnimation("LOOP", 5.f, 0, 12, 4, 12, 32, 32);
-    this->animationComponent->addAnimation("ATTACK_1", 7.f, 0, 2, 9, 2, 32, 32);
-    this->animationComponent->addAnimation("ATTACK_2", 7.f, 0, 3, 9, 3, 32, 32);
-    this->animationComponent->addAnimation("ATTACK_3", 7.f, 0, 4, 9, 4, 32, 32);
+    // this->animationComponent->addAnimation("ATTACK_1", 7.f, 0, 2, 9, 2, 32, 32);
+    // this->animationComponent->addAnimation("ATTACK_2", 7.f, 0, 3, 9, 3, 32, 32);
+    // this->animationComponent->addAnimation("ATTACK_3", 7.f, 0, 4, 9, 4, 32, 32);
 }
 
 void Player::initInventory()
