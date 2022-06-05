@@ -75,15 +75,13 @@
   - Giết quái vật sẽ cho bạn kinh nghiệm *và có thể tiền hoặc điểm (sẽ cố update trong tương lai)* 
   - Giết boss và thoát khỏi mê cung
   
-  *... Still working on it ...*
-  - Sẽ có save point cho nhân vật nếu game được update dài hơn
-  - Sẽ có nhiều loại quái mạnh hơn nếu đi sâu vào trong hầm ngục
 
 ## Các tính năng của game:
 
 ### Setting
-  *... Will be updated soon ...*
-  Sẽ có tính năng điều chỉnh cửa sổ game như Fullscreen hay các kích thước khác đều có thể lựa chọn
+  - Có thể thay đổi size của window theo các thông số có trước
+  - Ấn vào `Apply` để kích hoạt thông số đã chọn
+  - Ấn vào `Quit` để out ra menu
 
 ### Map Editor 
   Là một công cụ để vẽ map, điều chỉnh các hình ảnh, collision, sinh quái vật...
