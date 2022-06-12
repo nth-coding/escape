@@ -64,6 +64,13 @@
   - Vũ khí đầu là dao phay ![](https://user-images.githubusercontent.com/93527021/170829350-f936e157-5e2e-4ea6-a70b-3d81290a1734.png).
   - Mỗi vũ khí đều có **level**, **damage min/max**, **range**. 
 
+  **Items**
+  
+  - Đặt bằng cách vào map_editor, chuyển sang loại enemy_editor và chọn type.
+  - Chest: [type = 4]
+![chest_empty_open_anim_f0](https://user-images.githubusercontent.com/93527021/173222771-b7088a43-56ed-40ff-a4ba-8f2a359952ad.png)
+  
+
   *..Sẽ cố update các loại items như potions, atk_buff, def_buff,..vân vân..mây mây..*
 
 ### Power up! hay Level up!
