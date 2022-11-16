@@ -18,9 +18,6 @@
 
 # Chi tiết về game:
 
-## Cốt truyện 🧾
-  Một đầu bếp đã bị isekai vào một thế giới lạ và nơi anh tỉnh dậy là trong một hầm ngục với đầy những quái vật. Vũ khí duy nhất của anh chỉ có một chiếc dao phay mang theo người từ thế giới trước...
-
 ## Gameplay 
 
 **- Xem qua video gameplay tại đây: https://youtu.be/0f7jj8l0zjQ**
