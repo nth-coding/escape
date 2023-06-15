@@ -1,10 +1,6 @@
 # Escape
 
 # Giới thiệu
-  - Họ và tên: Nguyễn Tiến Hải
-  - MSV: 21020066
-  - Trường Đại học Công Nghệ - Trường Đại học Quốc Gia Hà Nội (UET-VNU)
-   
   #### `Escape` là một tựa game được làm bằng SFML (Simple and Fast Multimedia Library). Trong đó, SFML được sử dụng để vẽ các đối tượng trên màn hình mỗi frame. `Escape` là 1 game RPG đơn giản theo mô tuýp đánh quái vật, tăng level. Ở đây, nhiệm vụ của người chơi là đánh quái vật và sống sót thoát ra khỏi mê cung!
   
 # Cách vào và cài đặt game
@@ -141,19 +137,5 @@
  - Ngoài ra, sử dụng các kiểu dữ liệu như map, vector, stack,... 
  - Tạo ra AI có chức năng tấn công và tìm đường đi ngắn nhất đến player.
  - Nâng cao: sử dụng tối đa thư viện đồ họa SFML, lập trình hướng đối tượng (OOP), module hóa code, Clean Code...
-
-## Điều tâm đắc rút ra được
- - Tham khảo thật nhiều nguồn code chất lượng để có thể code thông minh hơn.
- - Biết được cách làm nên 1 game và biến nó trở nên sống động hơn.
- - Được tiếp xúc và sử dụng triệt để thư viện đồ họa SFML.
- - Sử dụng tốt đa các kiến thức trên lớp, class và các kiểu dữ liệu; tìm hiểu được thêm nhiều kiểu dữ liệu mới mà trước đây chưa từng thấy.
- - Rèn luyện cách code của bản thân "sạch" hơn.
- - Cách debug và sửa những bug ẩn của game *(rất rất khó và ngốn thời gian :<)*.
- - Rèn luyện được thêm khả năng sử dụng các phần mềm chỉnh sửa như PTS, GIMP để vẽ và cắt ghép textures.
- - Cách chia file hợp lý và dễ theo dõi, chỉnh sửa, cập nhật.
- - Điểm yếu rút ra được là vẫn chưa phân chia thời gian hợp lý và thông minh. 
- 
-## Bổ sung chương trình
- - Nếu có thể bổ sung thì sẽ còn phát triển items cho game, quái mới, nhiều tầng của hầm ngục hơn và cả bảng điểm, kỉ lục của top những người chơi... Khá nhiều thứ để tiếp cận và bổ sung...
 
 
